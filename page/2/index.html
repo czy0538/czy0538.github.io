@@ -1,934 +1,626 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="小曹同学">
+    
+    <title>
+        
+        随手写
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    <link rel="shortcut icon" href="/images/logo.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#66CCCC","avatar":"/images/avatar.jpg","favicon":"/images/logo.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"慢慢走，比较快"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
+<meta name="generator" content="Hexo 5.4.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
 
-<link rel="canonical" href="http://example.com/page/2/">
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
-
-  <title>Hexo</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+</div>
 
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
+<main class="page-container">
 
-          <div class="content index posts-expand">
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                随手写
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class="active"
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/">
+                <li class="drawer-menu-item flex-center">
+                    <a class="active"
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
+    <div class="window-mask"></div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">算法设计与分析</a>
-        </h2>
+</header>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-05-06 20:58:33 / Modified: 20:48:09" itemprop="dateCreated datePublished" datetime="2020-05-06T20:58:33+08:00">2020-05-06</time>
-            </span>
-
-          
 
         </div>
-      </header>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/05/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/">
+                        算法设计与分析
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Chapter 11.求任意两个负数的最大公约数1.1 穷举法1234567891011121314151617int fun1(int a, int b)&#123;	int r;	if (a &lt; b)	&#123;		r = a;	&#12...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed May 06 2020 20:58:33 GMT+0800">2020-05-06</span></span>
+        
+        
+    </div>
+
+    <a href="/2020/05/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/04/11/C-%E6%89%8B%E8%AE%B0/">
+                        C++手记
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        类sort排序
+2020年4月11日11:02:05
+
+
+场景描述
+有一个自定义的数据类型A（使用了类代替struct），A又被放在一个容器（如vector）中，需要依照A的某个成员的值进行排序。
+
+方法
+使用c++自带的sort函数即可，注意写一个...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Apr 11 2020 10:46:25 GMT+0800">2020-04-11</span></span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/c/">c++</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2020/04/11/C-%E6%89%8B%E8%AE%B0/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/02/13/%E7%BE%8E%E8%B5%9BLatex%E6%A8%A1%E7%89%88%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+                        Latex模版使用指南
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        1. Reference（BibTex）1234567%宏包\usepackage&#123;cite&#125;%插入部分\cite&#123;需要的引用的对应的bib条目的第一行内容&#125;%需要生成Reference的地方\bibliogr...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Feb 13 2020 14:14:21 GMT+0800">2020-02-13</span></span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Latex/">Latex</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2020/02/13/%E7%BE%8E%E8%B5%9BLatex%E6%A8%A1%E7%89%88%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/02/12/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86BibTex%E4%BD%BF%E7%94%A8/">
+                        文献管理BibTex使用
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        1.文献管理
+软件：NoteExpress
+
+1.1 CNKI
+进入文献详情界面，选择导出/参考文献 
+
+选择格式如图，选择复制到剪切板 
+
+进入NoteExpress软件选择导入题录
+ 
+操作如图，点击确定即可完成导入，存放位置自定义
+ 
+
+注：也...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Feb 12 2020 17:36:54 GMT+0800">2020-02-12</span></span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Latex/">Latex</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/">文献管理</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2020/02/12/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86BibTex%E4%BD%BF%E7%94%A8/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/02/07/Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0/">
+                        Android开发学习
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        第一章基本结构1.1 Android Studio目录
+
+我们需要注意的只是app文件夹，其他文件夹暂时交给系统来全权处理即可。
+
+
+
+java目录下存放主要的代码部分，即每个活动的代码部分
+
+res下存放的每个活动的图形界面以及相关的元素
+
+dra...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Feb 07 2020 21:46:20 GMT+0800">2020-02-07</span></span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Java/">Java</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Android/">Android</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2020/02/07/Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
+    
+        <a class="prev btn"
+           href="/"
+        >Prev</a>
+    
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</div>
 
-      
-          <h1 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h1><h2 id="1-求任意两个负数的最大公约数"><a href="#1-求任意两个负数的最大公约数" class="headerlink" title="1.求任意两个负数的最大公约数"></a>1.求任意两个负数的最大公约数</h2><h3 id="1-1-穷举法"><a href="#1-1-穷举法" class="headerlink" title="1.1 穷举法"></a>1.1 穷举法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun1</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> r;</span><br><span class="line">	<span class="keyword">if</span> (a &lt; b)</span><br><span class="line">	&#123;</span><br><span class="line">		r = a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		r = b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">0</span> != a % r || <span class="number">0</span> != b % r)</span><br><span class="line">	&#123;</span><br><span class="line">		--r;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-2-欧几里得算法"><a href="#1-2-欧几里得算法" class="headerlink" title="1.2 欧几里得算法"></a>1.2 欧几里得算法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun2</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a &lt; b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">swap</span>(a, b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> r = a % b;</span><br><span class="line">	<span class="keyword">while</span> (r)</span><br><span class="line">	&#123;</span><br><span class="line">		a = b;</span><br><span class="line">		b = r;</span><br><span class="line">		r = a % b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+</div>
 
 
+                
+            </div>
 
-<h2 id="2-循环与递归设计"><a href="#2-循环与递归设计" class="headerlink" title="2 循环与递归设计"></a>2 循环与递归设计</h2><h3 id="2-1-输出n-n的三角矩阵"><a href="#2-1-输出n-n的三角矩阵" class="headerlink" title="2.1 输出n*n的三角矩阵"></a>2.1 输出n*n的三角矩阵</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num[<span class="number">3</span>][<span class="number">3</span>];</span><br><span class="line">	<span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//测试数据生成</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; ++j)</span><br><span class="line">		&#123;</span><br><span class="line">			num[i][j] = temp++;</span><br><span class="line">			cout &lt;&lt; num[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//输出下三角形矩阵</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; ++j)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; num[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//按照主对角线输出</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span> - i; ++j)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; num[i + j][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
 
-<h3 id="2-2-求m个自然数中取出n个所有的组合"><a href="#2-2-求m个自然数中取出n个所有的组合" class="headerlink" title="2.2 求m个自然数中取出n个所有的组合"></a>2.2 求m个自然数中取出n个所有的组合</h3><p>设计思想：</p>
-<p>采用递归法。倒序从后向前进行输出，这样可以使得n承担了还有几个元素需要输入的功能，同时保证了最终输出的正序。n就意味着第n个元素，故将数组n位置赋值为该元素即可。</p>
-<p>如果此时n==1，说明只剩最后一个元素了，把该元素输入后开始输出即可，如果n&gt;1，则继续递归成更小的问题。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun3</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> n,vector&lt;<span class="keyword">int</span>&gt;&amp; num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = m; i &gt;= n; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		num[n] = i;</span><br><span class="line">		<span class="keyword">if</span> (n &gt; <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">fun3</span>(i - <span class="number">1</span>, n - <span class="number">1</span>, num);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = num[<span class="number">0</span>]; j &gt; <span class="number">0</span>; --j)</span><br><span class="line">			&#123;</span><br><span class="line">				cout &lt;&lt; num[j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			cout &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun3_1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; num;</span><br><span class="line">	<span class="keyword">int</span> m, n;</span><br><span class="line">	cin &gt;&gt; m &gt;&gt; n;</span><br><span class="line">	num.<span class="built_in">resize</span>(n + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">	num[<span class="number">0</span>] = n;</span><br><span class="line">	<span class="built_in">fun3</span>(m, n, num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">小曹同学</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+    </div>
+</footer>
 
-
-
-<h2 id="分治法求最大子列和"><a href="#分治法求最大子列和" class="headerlink" title="分治法求最大子列和"></a>分治法求最大子列和</h2><ol>
-<li><p>问题分析</p>
-<p>对于一个序列，我们可以把它分成两个子序列，故我们得到三个字列和，分别是</p>
-<ul>
-<li>序列的左半部分的最大子序列和</li>
-<li>序列的右半部分的最大子序列和</li>
-<li>横跨序列左半部分和右半部分得到的最大子序列和：即对包含左半部分的最后一个元素的最大子序列和以及包含右半部分第一个元素的最大子序列和二者求和所得到的值</li>
-</ul>
-<p>故这三种情况中最大的字列和，即为最大子列和。我们可以把问题不断的划分成一个个相同的子问题，再进行合并，最终得到的字列和即为最大子列和。</p>
-</li>
-<li><p>计算模型<br>$$<br>\left{ \begin{matrix}{}</p>
-<pre><code>mid&amp;        =\frac&#123;left+right&#125;&#123;2&#125;\,\,&amp;        \\
-Maxsequence&amp;        =\max \left\&#123; Maxsequence\left( left,mid \right) ,Maxsequence\left( mid+1,right \right) ,MaxsequenceMid\left( left,right,mid \right) \right\&#125;&amp;        ,left&lt;right\\
-Maxsequence&amp;        =num\left[ mid \right]&amp;        ,left==rigt\\
-</code></pre>
-<p>\end{matrix} \right. ,,<br>$$</p>
-</li>
-<li><p>算法分析<br>$$<br>\begin{cases}</p>
-<pre><code>T\left( n \right) =1&amp;        n=1\\
-T\left( n \right) =2T\left( \frac&#123;n&#125;&#123;2&#125; \right) +cn&amp;        n&gt;1\\
-</code></pre>
-<p>\end{cases}<br>$$<br>由主定理，推知算法的时间复杂度为：<br>$$<br>T\left( n \right) =\varTheta \left( n\log n \right)<br>$$</p>
-</li>
-<li><p>算法设计与描述</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Maxsequence</span>(left,right)</span><br><span class="line">    <span class="keyword">if</span> left==right then</span><br><span class="line">        <span class="keyword">return</span> num[left];</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">        mid&lt;-(left+right)/<span class="number">2</span></span><br><span class="line">        </span><br><span class="line">    midSequence&lt;-<span class="built_in">MidSequence</span>(mid)<span class="comment">//求中间序列子列和</span></span><br><span class="line">    leftSequence&lt;-<span class="built_in">Maxsequence</span>(left,mid)</span><br><span class="line">    rightSequence&lt;-<span class="built_in">Maxsequence</span>(mid+<span class="number">1</span>,right)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">max</span>(midSequence,leftSequence,rightSequence)</span><br></pre></td></tr></table></figure></li>
-<li><p>算法实现</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">author:曹志远</span></span><br><span class="line"><span class="comment">data:2020年3月31日12:10:40</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxSequence</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">const</span> vector&lt;<span class="keyword">int</span>&gt;&amp; num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> mid = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (left &gt; right)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (left == right)</span><br><span class="line">		<span class="keyword">return</span> num[left];</span><br><span class="line">	<span class="keyword">else</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//求中间子列和左半部分</span></span><br><span class="line">	<span class="keyword">int</span> lmax = num[mid];</span><br><span class="line">	<span class="keyword">int</span> ltemp = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = mid; i &gt;= left; --i)</span><br><span class="line">	&#123;</span><br><span class="line">		ltemp += num[i];</span><br><span class="line">		<span class="keyword">if</span> (ltemp &gt; lmax)</span><br><span class="line">			lmax = ltemp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//求中间子列和右半部分</span></span><br><span class="line">	<span class="keyword">int</span> rmax = num[mid + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">int</span> rtemp = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = mid + <span class="number">1</span>; i &lt;= right; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		rtemp += num[i];</span><br><span class="line">		<span class="keyword">if</span> (rtemp &gt; rmax)</span><br><span class="line">			rmax = rtemp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">max</span>(<span class="built_in">max</span>(<span class="built_in">MaxSequence</span>(left, mid, num), <span class="built_in">MaxSequence</span>(mid + <span class="number">1</span>, right, num)), rmax + lmax);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; num = &#123; <span class="number">-2</span>,<span class="number">11</span>,<span class="number">-4</span>,<span class="number">13</span>,<span class="number">-5</span>,<span class="number">-2</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="built_in">MaxSequence</span>(<span class="number">0</span>, num.<span class="built_in">size</span>() - <span class="number">1</span>, num);</span><br><span class="line">	<span class="keyword">if</span> (ans &lt; <span class="number">0</span>)</span><br><span class="line">		cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>测试</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20200331145632.png" alt="image-20200331121203207"></p>
-</li>
-</ol>
-<h2 id="贪心法求解活动选择问题"><a href="#贪心法求解活动选择问题" class="headerlink" title="贪心法求解活动选择问题"></a>贪心法求解活动选择问题</h2><ol start="0">
-<li><p>问题描述：学生有n项活动申请使用某一个会议室，每项活动都有一个开始时间和一个结束时间。任何两个活动都不能同时使用这个会议室。问如何安排这些活动，使得被安排活动的数量达到最多？</p>
-</li>
-<li><p>问题分析：</p>
-<p>设活动编号的集合为A={1,2,…,n}，第i项活动的起始时间为si，结束时间为ei。满足si≥ej或sj≥ei，i≠j，称为活动相容。求A的两两相容的最大活动子集S</p>
-<ul>
-<li>方法1：更早的开始活动，也许能安排更多的活动</li>
-<li>方法2：按占用时间由短到长来选择，也许可能安排更多的活动</li>
-<li>方法3：按结束时间从小到大选择，也许可以安排更多的活动。</li>
-</ul>
-<p>我们容易举出1,2的反例，而方法3则需要通过数学归纳法进行证明。</p>
-</li>
-<li><p>计算模型</p>
-<ul>
-<li>存储结构:</li>
-</ul>
- <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Activity</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    startTime s;</span><br><span class="line">    endTime e;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>算法设计与描述</p>
- <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">输入：n个活动的数组activites</span><br><span class="line">   输出：最多能安排的活动数目</span><br><span class="line">    </span><br><span class="line">   	<span class="built_in">sort</span>(avtivites)<span class="comment">//对所有活动按照结束时间进行升序排列</span></span><br><span class="line">    lastEnd&lt;- <span class="number">-1</span>;<span class="comment">//存储上个活动的结束时间</span></span><br><span class="line">   	<span class="keyword">for</span> i&lt;<span class="number">-0</span> to n step <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> avtivites[i].s&gt;lastEnd</span><br><span class="line">               selected.<span class="built_in">add</span>(avtivites[i])</span><br><span class="line">            lastEnd=avtivites[i].e</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>算法分析</p>
-<p>排序算法时间复杂度为O(nlogn)，而for循环中为O(n),故整体时间复杂度为O(nlogn)</p>
-</li>
-<li><p>算法实现</p>
-</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Activity</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> startTime, endTime;</span><br><span class="line">	<span class="built_in">Activity</span>()</span><br><span class="line">	&#123;</span><br><span class="line">		cin &gt;&gt; startTime &gt;&gt; endTime;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">sort</span><span class="params">(Activity a, Activity b)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (a.endTime &lt; b.endTime);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		cout &lt;&lt; startTime &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; endTime &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vector&lt;Activity&gt; activities;</span><br><span class="line">	vector&lt;Activity&gt; chosen;</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">	cin &gt;&gt; num;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		Activity at;</span><br><span class="line">		activities.<span class="built_in">push_back</span>(at);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(activities.<span class="built_in">begin</span>(), activities.<span class="built_in">end</span>(), Activity::sort);</span><br><span class="line">	<span class="keyword">int</span> lastEndTime=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> t : activities)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (t.startTime &gt; lastEndTime)</span><br><span class="line">		&#123;</span><br><span class="line">			chosen.<span class="built_in">push_back</span>(t);</span><br><span class="line">			lastEndTime = t.endTime;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;最终被选中的活动是&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> t : chosen)</span><br><span class="line">	&#123;</span><br><span class="line">		t.<span class="built_in">output</span>();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="贪心法求解数列极差问题"><a href="#贪心法求解数列极差问题" class="headerlink" title="贪心法求解数列极差问题"></a>贪心法求解数列极差问题</h2><ol>
-<li><p>问题描述</p>
-<p>给定含有n个正整数的数列a，做如下两步操作：</p>
-<p>(1)每一次删除其中的两个数ai和aj; </p>
-<p>(2)在数列中加入一个数ai×aj+1</p>
-<p>循环执行步骤(1)(2)直到集合中只剩下一个元素为止。设计算法求得数列中剩余的数为最大值max和最小值min，则该数列的极差为M=max-min。</p>
-</li>
-<li><p>问题分析</p>
-<p>当一个数列中含有n(n&gt;2)数时，该数列按数列极差法</p>
-<p>求最大数值的方法为：每次选择数列中最小的两个数进行相乘加1。</p>
-<p>求最小数值为：每次从数列中选择两个最大的数相乘加1。</p>
-<p>证明见附页1。</p>
-</li>
-<li><p>计算模型</p>
-<p>存储：数组num[n]</p>
-<p>计算：</p>
-<ul>
-<li>num[n]中前两个最大值（最小值）t1，t2</li>
-<li>两个数的极大值（极小值） t1*t2+1</li>
-</ul>
-</li>
-<li><p>算法设计与描述</p>
-<p>输入： n个数的数组num[n]</p>
-<p>输出：极大值或极小值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> calculate(num)//若求极大值只需将<span class="built_in">max</span>改为<span class="built_in">min</span></span><br><span class="line">    <span class="keyword">while</span>(size(num)&gt;<span class="number">2</span>)</span><br><span class="line">    	t1&lt;-<span class="built_in">min</span>(num)</span><br><span class="line">        delete(t1,num)</span><br><span class="line">        t2&lt;-<span class="built_in">min</span>(num)</span><br><span class="line">        delete(t2,num)</span><br><span class="line">        add(t1*t2+<span class="number">1</span>,num)</span><br><span class="line">    <span class="keyword">return</span> num[<span class="number">0</span>]*num[<span class="number">1</span>]+<span class="number">1</span>;</span><br></pre></td></tr></table></figure></li>
-<li><p>算法分析</p>
-<p>问题输入规模为n，核心在于while循环的执行次数以及最大值最小值的求解。</p>
-<p>其中寻找最大值最小值时间复杂度为O(logn)+O(log(n-1))=O(logn)</p>
-<p>该函数共被执行2*(n-2)次，此外还有综合函数</p>
-<p>故T(n)=2*(n-2)*O(logn)+c=O(nlogn)</p>
-</li>
-<li><p>算法实现</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calculate</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt; num, <span class="keyword">int</span> comp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (comp != <span class="number">1</span> &amp;&amp; comp != <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="string">&quot;use wrong compare type&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (num.<span class="built_in">size</span>() &gt; <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		vector&lt;<span class="keyword">int</span>&gt;::iterator itr;</span><br><span class="line">		<span class="keyword">int</span> t1, t2;</span><br><span class="line">		<span class="built_in"><span class="keyword">switch</span></span> (comp)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">			itr = <span class="built_in">max_element</span>(num.<span class="built_in">begin</span>(), num.<span class="built_in">end</span>());</span><br><span class="line">			t1 = *itr;</span><br><span class="line">			num.<span class="built_in">erase</span>(itr);</span><br><span class="line">			itr = <span class="built_in">max_element</span>(num.<span class="built_in">begin</span>(), num.<span class="built_in">end</span>());</span><br><span class="line">			t2 = *itr;</span><br><span class="line">			num.<span class="built_in">erase</span>(itr);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			itr = <span class="built_in">min_element</span>(num.<span class="built_in">begin</span>(), num.<span class="built_in">end</span>());</span><br><span class="line">			t1 = *itr;</span><br><span class="line">			num.<span class="built_in">erase</span>(itr);</span><br><span class="line">			itr = <span class="built_in">min_element</span>(num.<span class="built_in">begin</span>(), num.<span class="built_in">end</span>());</span><br><span class="line">			t2 = *itr;</span><br><span class="line">			num.<span class="built_in">erase</span>(itr);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		num.<span class="built_in">push_back</span>(t1 * t2 + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> num.<span class="built_in">at</span>(<span class="number">0</span>) * num.<span class="built_in">at</span>(<span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; num = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span> &#125;;</span><br><span class="line">	<span class="keyword">try</span></span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="built_in">calculate</span>(num, <span class="number">1</span>) - <span class="built_in">calculate</span>(num, <span class="number">0</span>) &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in"><span class="keyword">catch</span></span> (<span class="keyword">const</span> <span class="keyword">char</span>* e)</span><br><span class="line">	&#123;</span><br><span class="line">		cerr &lt;&lt; e &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>结果示例</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20200411174455.png" alt="image-20200411174425685"></p>
-</li>
-</ol>
-
-      
+        </div>
     </div>
 
     
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/04/11/C-%E6%89%8B%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/11/C-%E6%89%8B%E8%AE%B0/" class="post-title-link" itemprop="url">C++手记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-11 10:46:25" itemprop="dateCreated datePublished" datetime="2020-04-11T10:46:25+08:00">2020-04-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-21 21:30:17" itemprop="dateModified" datetime="2020-12-21T21:30:17+08:00">2020-12-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="类sort排序"><a href="#类sort排序" class="headerlink" title="类sort排序"></a>类sort排序</h3><blockquote>
-<p>2020年4月11日11:02:05</p>
-</blockquote>
-<ol>
-<li><p>场景描述</p>
-<p>有一个自定义的数据类型A（使用了类代替struct），A又被放在一个容器（如vector）中，需要依照A的某个成员的值进行排序。</p>
-</li>
-<li><p>方法</p>
-<p>使用c++自带的sort函数即可，注意写一个排序函数，且该函数需要为类的静态函数，返回值为需要比较的元素的比较。</p>
-</li>
-<li><p>代码</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span><span class="comment">//sort函数头文件</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Activity</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> startTime, endTime;</span><br><span class="line">	<span class="built_in">Activity</span>()</span><br><span class="line">	&#123;</span><br><span class="line">		cin &gt;&gt; startTime &gt;&gt; endTime;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">sort</span><span class="params">(Activity a, Activity b)</span><span class="comment">//静态排序函数，必须要有static</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (a.endTime &lt; b.endTime);<span class="comment">//升序，降序改为&gt;号即可</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		cout &lt;&lt; startTime &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; endTime &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vector&lt;Activity&gt; activities;</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">	cin &gt;&gt; num;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		Activity at;</span><br><span class="line">		activities.<span class="built_in">push_back</span>(at);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(activities.<span class="built_in">begin</span>(), activities.<span class="built_in">end</span>(), Activity::sort);<span class="comment">//不要忘记命名空间</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> t : activities)</span><br><span class="line">	&#123;</span><br><span class="line">		t.<span class="built_in">output</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="stringstream使用"><a href="#stringstream使用" class="headerlink" title="stringstream使用"></a>stringstream使用</h3><blockquote>
-<p>2020年5月18日17:40:47</p>
-</blockquote>
-<ol>
-<li><p>应用场景</p>
-<p>数串串数转换。</p>
-</li>
-<li><p>方法</p>
-<p>包含在头文件#include&lt;sstream&gt;中。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span> P&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">format</span><span class="params">(P data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    stringstream ss;</span><br><span class="line">    ss&lt;&lt;data;</span><br><span class="line">    T out;</span><br><span class="line">    ss&gt;&gt;out;</span><br><span class="line">    <span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>备注</p>
-<p>多次使用stringstream转换同一个数据请先清空，执行ss.clean()</p>
-</li>
-</ol>
-<h3 id="for循环判断条件"><a href="#for循环判断条件" class="headerlink" title="for循环判断条件"></a>for循环判断条件</h3><p>c++中，for循环中的判断条件是每次都会更新的，比如如下写法</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">int</span>&gt; num=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num.<span class="built_in">size</span>();)</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;num[i]&lt;&lt;endl;</span><br><span class="line">    num.<span class="built_in">erase</span>(num.<span class="built_in">begin</span>()+i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>是可以正确输出整个数组的。但在matlab等语言里面可能不会更新</p>
-<h3 id="读取数量不定的输入数据"><a href="#读取数量不定的输入数据" class="headerlink" title="读取数量不定的输入数据"></a>读取数量不定的输入数据</h3><blockquote>
-<p>2020年9月14日08:53:31</p>
-</blockquote>
-<p>有时我们不知道需要读取多少数据，这是可以把读入语句放入while的判断条件中。当读入数据不符合要求（或遇到EOF）时，istream 对象会变为无效，使得while循环的值为假，循环中止。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> value = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">while</span> (cin &gt;&gt; value)</span><br><span class="line">   &#123;</span><br><span class="line">       cout &lt;&lt; value &lt;&lt; endl;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="常量指针和指向常量的指针"><a href="#常量指针和指向常量的指针" class="headerlink" title="常量指针和指向常量的指针"></a>常量指针和指向常量的指针</h3><blockquote>
-<p>2020年9月14日09:20:38</p>
-</blockquote>
-<ul>
-<li><p><strong>指向常量的指针</strong>不能用于改变其所指对象的值。</p>
-</li>
-<li><p>要想存放常量对象的地址，只能使用<strong>指向常量的指针</strong>。</p>
-</li>
-<li><p>允许一个<strong>指向常量的指针</strong>指向一个非常量对象，但不能修改对象的值。</p>
-</li>
-<li><p>常量指针初始化完成后，不再能改变，但其指向的值可以改变。</p>
-</li>
-<li><p>对const 的引用同理。</p>
-</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;aa = a; <span class="comment">//常量引用</span></span><br><span class="line"><span class="comment">//int &amp;ea = a; //错误，必须进行常量引用</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;bb = b; <span class="comment">//常量引用，只能访问b，不能修改b</span></span><br><span class="line"><span class="keyword">int</span> &amp;eb = b; <span class="comment">//引用，可以修改b的值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *pa = &amp;a;<span class="comment">//指向常量的指针</span></span><br><span class="line"><span class="comment">//int *pa = &amp;a;//错误，必须使用指向常量的指针</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *pb = &amp;b;<span class="comment">//正确，b的值无法被修改</span></span><br><span class="line"><span class="keyword">int</span> *ppb = &amp;b;<span class="comment">//b的值可以被修改</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *<span class="keyword">const</span> cpa = &amp;a;<span class="comment">//正确，cpa a均为常量</span></span><br><span class="line"><span class="comment">//int *const int cpa = &amp;a;//错误，cpa是一个常量指针，cpa无法被修改，但a仍可以被修改</span></span><br><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> cpb = &amp;b;<span class="comment">//cpb只能指向b</span></span><br></pre></td></tr></table></figure>
-
-<p>简单来说，const也应当被看作一个类似int的值。</p>
-<p>const int其实是一个数据类型，意为不能被修改的整数。</p>
-<p>故不能被修改的int指针就应该是 int *const</p>
-<h3 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h3><ul>
-<li>头文件通常包含那些只能被定义一次的实体，如类、const等</li>
-<li>最好包含#pragma once,相当于 #ifndef #endif的组合，作为头文件保护符</li>
-<li>头文件不应该包含using声明</li>
-</ul>
-<h3 id="string读入非空行"><a href="#string读入非空行" class="headerlink" title="string读入非空行"></a>string读入非空行</h3><p>getline不会忽略空行，但是遇到换行符就停止，但他也将换行符读入了,但在写入string对象时并不会写入换行符。所有getline如果只读到一个换行符，那么string对象为空.</p>
-<h3 id="使用stringstream分割数据"><a href="#使用stringstream分割数据" class="headerlink" title="使用stringstream分割数据"></a>使用stringstream分割数据</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;Person&gt; persons;</span><br><span class="line">    string line;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;start input:&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">getline</span>(cin, line))</span><br><span class="line">    &#123;</span><br><span class="line">        Person p;</span><br><span class="line">        stringstream ss;</span><br><span class="line">        ss &lt;&lt; line;</span><br><span class="line">        string word;</span><br><span class="line">        ss &gt;&gt; p.name;</span><br><span class="line">        <span class="keyword">while</span>(ss&gt;&gt;word)</span><br><span class="line">        &#123;</span><br><span class="line">            p.phones.<span class="built_in">push_back</span>(word);</span><br><span class="line">        &#125;</span><br><span class="line">        persons.<span class="built_in">push_back</span>(p);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>整行读入的数据，包含一个姓名，多个号码，可以先放入stringstream中，再逐个输出、</p>
-<h3 id="泛型算法"><a href="#泛型算法" class="headerlink" title="泛型算法"></a>泛型算法</h3><ul>
-<li><p>大多数算法定义在头文件algorithm中，数值泛型算法定义在numeric中一般接受三个参数，头迭代器，尾迭代器，和一个值。</p>
-</li>
-<li><p>泛型算法不会改变容器的大小，也不会修改容器中的值，不会增删元素。</p>
-</li>
-</ul>
-<h4 id="find-cbeg-cend-val"><a href="#find-cbeg-cend-val" class="headerlink" title="find(cbeg,cend,val)"></a>find(cbeg,cend,val)</h4><p>查找范围内的与val匹配的元素</p>
-<h4 id="accumulate-cbeg-cend-val"><a href="#accumulate-cbeg-cend-val" class="headerlink" title="accumulate(cbeg,cend,val)"></a>accumulate(cbeg,cend,val)</h4><p>以val为求和起点（假定元素类型定义了+运算符），将beg和end之间的元素加起来)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string num=<span class="built_in">accumulate</span>(v.<span class="built_in">cbegin</span>(),v.<span class="built_in">cend</span>(),<span class="built_in">string</span>(<span class="string">&quot;&quot;</span>))<span class="comment">//注意不要把空串当参数</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="equal-v1-cbeg-v1-cend-v2-cbeg"><a href="#equal-v1-cbeg-v1-cend-v2-cbeg" class="headerlink" title="equal(v1.cbeg,v1.cend,v2.cbeg)"></a>equal(v1.cbeg,v1.cend,v2.cbeg)</h4><p>确定两个序列是否保存相同的值。</p>
-<p>将v1元素与v2中元素逐个比较，全部相同返回true，否则返回false。</p>
-<p>注意要求v2至少于v1一样长。</p>
-<h4 id="fill-beg-end-val"><a href="#fill-beg-end-val" class="headerlink" title="fill(beg,end,val)"></a>fill(beg,end,val)</h4><p>向beg，end范围内写入val</p>
-<h4 id="fill-n-beg-num-val"><a href="#fill-n-beg-num-val" class="headerlink" title="fill_n(beg,num,val)"></a>fill_n(beg,num,val)</h4><p>从beg开始，顺序写入num个val</p>
-<h4 id="copy-beg-end-a2"><a href="#copy-beg-end-a2" class="headerlink" title="copy(beg,end,a2)"></a>copy(beg,end,a2)</h4><p>将a1beg，end之间元素拷贝到a2，并返回a2最后一个拷贝位置后元素</p>
-<p>注意保证a2空间足够大</p>
-<h4 id="replace-beg-end-raw-targt"><a href="#replace-beg-end-raw-targt" class="headerlink" title="replace(beg,end,raw,targt)"></a>replace(beg,end,raw,targt)</h4><p>将beg，end之间的所有值为raw的元素改为target</p>
-<h3 id="指针delete"><a href="#指针delete" class="headerlink" title="指针delete"></a>指针delete</h3><p>指针p delete后，只会释放其空间，而不会将指针p置为nullptr，这时候再访问p会产生问题。</p>
-<h3 id="对象的消亡"><a href="#对象的消亡" class="headerlink" title="对象的消亡"></a>对象的消亡</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">Cat</span>(<span class="keyword">int</span> j) : <span class="built_in">i</span>(j)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;cat&quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;was born&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">Cat</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;cat&quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;was killed&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">Cat <span class="title">i</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="built_in">Cat</span>(<span class="number">2</span>);</span><br><span class="line">    Cat j = <span class="built_in">Cat</span>(<span class="number">5</span>);</span><br><span class="line">    Cat *p = <span class="keyword">new</span> <span class="built_in">Cat</span>(<span class="number">3</span>);</span><br><span class="line">    <span class="comment">//Cat *j = &amp;Cat(4);</span></span><br><span class="line">    <span class="comment">//Cat &amp;k = Cat(6);</span></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">————————————————————————————————————————————————————————————————</span><br><span class="line">cat1was born<span class="comment">//Cat1有变量名，可以被实例化</span></span><br><span class="line">cat2was born<span class="comment">//Cat2是匿名对象，产生后被消亡了</span></span><br><span class="line">cat2was killed</span><br><span class="line">cat5was born<span class="comment">//Cat5是匿名对象，但他接着被实例化，所以没有消亡</span></span><br><span class="line">cat3was born<span class="comment">//Cat3是对象，且采用new分配</span></span><br><span class="line">Press any key to <span class="keyword">continue</span> . . . </span><br><span class="line">cat5was killed<span class="comment">//执行return，编译器自动调用Cat5,1的析构函数</span></span><br><span class="line">cat1was killed</span><br><span class="line"><span class="comment">//cat3 析构函数未调用</span></span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>为什么cat3没有析构函数在程序退出时未被调用：</p>
-<p>new出来的在堆上<br>直接定义的在栈上</p>
-<p>栈，就是那些由编译器在需要的时候分配，在不需要的时候自动清除的变量的存储区。里面的变量通常是局部变量、函数参数等。<br>堆，就是那些由new分配的内存块，他们的释放编译器不去管，由我们的应用程序去控制，一般一个new就要对应一个delete。如果程序员没有释放掉，那么在程序结束后，操作系统会自动回收。</p>
-</li>
-<li><p>为什么注释掉的语句不可以</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cat *j = &amp;<span class="built_in">Cat</span>(<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>error: taking address of temporary [-fpermissive]<br>A “taking address of temporary array” error means that you were trying to take the address of a temporary object. That won’t do what you think, because temporary objects self-destruct immediately after first use, so any address would be invalid before you could use it. So don’t do that. The error message should flag the code line (and even character number on that line) where the problem is. That should show you where you’re taking the address of a temporary. If you need to refer back to the contents of a temporary object, save it in a separate variable first. You can’t “re-visit” temporaries.</p>
-</blockquote>
-<p>不能够取临时对象（匿名对象）的地址</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cat &amp;k = <span class="built_in">Cat</span>(<span class="number">6</span>);</span><br></pre></td></tr></table></figure>
-
-<p>error: cannot bind non-const lvalue reference of type ‘Cat&amp;’ to an rvalue of type Cat’</p>
-</li>
-</ol>
-<h3 id="屏蔽警告"><a href="#屏蔽警告" class="headerlink" title="屏蔽警告"></a>屏蔽警告</h3><p>在开头加入这个语句，后面的数字是警告的编号</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4819)</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="屏蔽控制台"><a href="#屏蔽控制台" class="headerlink" title="屏蔽控制台"></a>屏蔽控制台</h3><img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201221213005.png" alt="image-20201221213004832" style="zoom: 50%;" />
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/13/%E7%BE%8E%E8%B5%9BLatex%E6%A8%A1%E7%89%88%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/13/%E7%BE%8E%E8%B5%9BLatex%E6%A8%A1%E7%89%88%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">Latex模版使用指南</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-13 14:14:21" itemprop="dateCreated datePublished" datetime="2020-02-13T14:14:21+08:00">2020-02-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-10 15:41:05" itemprop="dateModified" datetime="2020-09-10T15:41:05+08:00">2020-09-10</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-Reference（BibTex）"><a href="#1-Reference（BibTex）" class="headerlink" title="1. Reference（BibTex）"></a>1. Reference（BibTex）</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%宏包</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;cite&#125;</span><br><span class="line"><span class="comment">%插入部分</span></span><br><span class="line"><span class="keyword">\cite</span>&#123;需要的引用的对应的bib条目的第一行内容&#125;</span><br><span class="line"><span class="comment">%需要生成Reference的地方</span></span><br><span class="line"><span class="keyword">\bibliographystyle</span>&#123;gbt7714-2005&#125;</span><br><span class="line"><span class="keyword">\bibliography</span>&#123;.bib文件名，不需要后缀&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-公式"><a href="#2-公式" class="headerlink" title="2.公式"></a>2.公式</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%单行公式带自动编号</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line"><span class="comment">%公式内容，注意前后不要用空行</span></span><br><span class="line">a<span class="built_in">^</span>2 <span class="keyword">\label</span>&#123;aa&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%多行公式带自动编号（一个编号）</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;split&#125;</span><br><span class="line"><span class="comment">%公式内容，前后不要有空行</span></span><br><span class="line"><span class="keyword">\end</span>&#123;split&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%多行公式，带判定条件</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;split&#125;</span><br><span class="line">p<span class="built_in">_</span>&#123;j&#125;=<span class="keyword">\begin</span>&#123;cases&#125; 0,<span class="built_in">&amp;</span><span class="keyword">\text</span>&#123;if <span class="built_in">$</span>j<span class="built_in">$</span> is odd&#125;<span class="keyword">\\</span></span><br><span class="line">r!<span class="keyword">\,</span>(-1)<span class="built_in">^</span>&#123;j/2&#125;,<span class="built_in">&amp;</span><span class="keyword">\text</span>&#123;if <span class="built_in">$</span>j<span class="built_in">$</span> is even&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;cases&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;split&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line"><span class="comment">%标签语句如下，$j$花体</span></span><br><span class="line">,<span class="built_in">&amp;</span><span class="keyword">\text</span>&#123;if <span class="built_in">$</span>j<span class="built_in">$</span> is even&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%引用公式</span></span><br><span class="line"><span class="keyword">\cref</span>&#123;eq:aa&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-格式控制"><a href="#3-格式控制" class="headerlink" title="3.格式控制"></a>3.格式控制</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%段首空几个字符</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;indentfirst&#125;</span><br><span class="line"><span class="keyword">\setlength</span>&#123;<span class="keyword">\parindent</span>&#125;&#123;2em&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%目录</span></span><br><span class="line"><span class="keyword">\tableofcontents</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%新的一页</span></span><br><span class="line"><span class="keyword">\newpage</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%一级标题 1</span></span><br><span class="line"><span class="keyword">\section</span>&#123;Introduction&#125;</span><br><span class="line"><span class="comment">%二级标题 1.1</span></span><br><span class="line"><span class="keyword">\subsection</span>&#123;Other Assumptions&#125;</span><br><span class="line"><span class="comment">%三级标题 1.1.1</span></span><br><span class="line"><span class="keyword">\subsubsection</span>&#123;title&#125;</span><br><span class="line"><span class="comment">%条目</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line"><span class="keyword">\item</span> test</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-代码"><a href="#4-代码" class="headerlink" title="4.代码"></a>4.代码</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\textbf</span>&#123;<span class="keyword">\textcolor</span>[rgb]&#123;0.98,0.00,0.00&#125;&#123;Input matlab source:&#125;&#125;</span><br><span class="line"><span class="keyword">\lstinputlisting</span>[language=Matlab]&#123;./code/mcmthesis-matlab1.m&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="5-图片"><a href="#5-图片" class="headerlink" title="5.图片"></a>5.图片</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!h]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=.6<span class="keyword">\textwidth</span>]&#123;smokeblk&#125;</span><br><span class="line">    <span class="keyword">\caption</span>&#123;电路图&#125;<span class="comment">%图片名</span></span><br><span class="line">    <span class="keyword">\label</span>&#123;fig:circuit-diagram&#125;<span class="comment">%标签</span></span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\cref</span>&#123;fig:circuit-diagram&#125;<span class="comment">%图片引用</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="6-表格"><a href="#6-表格" class="headerlink" title="6.表格"></a>6.表格</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;tabular&#125;&#123;cc&#125;</span><br><span class="line"> <span class="keyword">\hline</span></span><br><span class="line"> <span class="keyword">\makebox</span>[0.4<span class="keyword">\textwidth</span>][c]&#123;符号&#125;	<span class="built_in">&amp;</span>  <span class="keyword">\makebox</span>[0.5<span class="keyword">\textwidth</span>][c]&#123;意义&#125; <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>C<span class="built_in">_</span>&#123;O&#125;<span class="built_in">$</span>	    <span class="built_in">&amp;</span> 机会成本<span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>R<span class="built_in">_</span>&#123;t&#125;<span class="built_in">$</span>    <span class="built_in">&amp;</span> 载客时间（min) <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>W<span class="built_in">_</span>&#123;t&#125;<span class="built_in">$</span>    <span class="built_in">&amp;</span> 等待时间（min)  <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>I<span class="built_in">_</span>&#123;AVG&#125;<span class="built_in">$</span>	    <span class="built_in">&amp;</span> 全市平均收入  <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>I<span class="built_in">_</span>&#123;R&#125; <span class="built_in">$</span>  <span class="built_in">&amp;</span> 相对收入  <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>I<span class="built_in">_</span>&#123;AVGW&#125;<span class="built_in">$</span>	    <span class="built_in">&amp;</span> 机场载客平均收入 <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>M<span class="built_in">$</span>	    <span class="built_in">&amp;</span> 出租车司机所得的净收益 <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>W<span class="built_in">$</span>	    <span class="built_in">&amp;</span> 一位出租车司机一次工作向出租车公司缴纳的费用 <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>T<span class="built_in">_</span>&#123;0&#125;<span class="built_in">$</span>	    <span class="built_in">&amp;</span> 一辆出租车进入蓄车池后需要等待的平均时间 <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>T<span class="built_in">_</span>&#123;r&#125;<span class="built_in">$</span>	    <span class="built_in">&amp;</span> 出当地出租车平均的运营时间<span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>n<span class="built_in">_</span>&#123;i&#125;<span class="built_in">$</span>	    <span class="built_in">&amp;</span> 出租车司机所得的净收益 <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>v<span class="built_in">$</span>	    <span class="built_in">&amp;</span> 每个上车点的服务效率 <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>N<span class="built_in">$</span>	    <span class="built_in">&amp;</span> 停车道开设的上车点的个数 <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span><span class="keyword">\bar</span> d<span class="built_in">$</span>    <span class="built_in">&amp;</span> 平均排队消耗时间 <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span><span class="keyword">\bar</span> W<span class="built_in">$</span>    <span class="built_in">&amp;</span> 平均排队等待时间 <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span> n<span class="built_in">$</span>    <span class="built_in">&amp;</span> 蓄车池中出租车的数量 <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="built_in">$</span>t<span class="built_in">$</span>    <span class="built_in">&amp;</span> 一天中的时间（0&lt;t&lt;24） <span class="keyword">\\</span> <span class="keyword">\hline</span></span><br><span class="line"><span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/12/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86BibTex%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/12/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86BibTex%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">文献管理BibTex使用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-12 17:36:54" itemprop="dateCreated datePublished" datetime="2020-02-12T17:36:54+08:00">2020-02-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-08 17:00:01" itemprop="dateModified" datetime="2020-09-08T17:00:01+08:00">2020-09-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-文献管理"><a href="#1-文献管理" class="headerlink" title="1.文献管理"></a>1.文献管理</h1><ul>
-<li>软件：NoteExpress</li>
-</ul>
-<h2 id="1-1-CNKI"><a href="#1-1-CNKI" class="headerlink" title="1.1 CNKI"></a>1.1 CNKI</h2><ol>
-<li><p>进入文献详情界面，选择导出/参考文献<br> <img src="https://i.loli.net/2020/02/12/YmWKaoSxFeJNHVI.png" alt="1.png"></p>
-</li>
-<li><p>选择格式如图，选择复制到剪切板<br> <img src="https://i.loli.net/2020/02/12/FSurlvXyhJ9NoRT.png" alt="2.png"></p>
-</li>
-<li><p>进入NoteExpress软件选择导入题录</p>
- <img src="https://i.loli.net/2020/02/12/jkDNXKyAxotvf73.png" alt="3.png" style="zoom:50%;" /></li>
-<li><p>操作如图，点击确定即可完成导入，存放位置自定义</p>
- <img src="https://i.loli.net/2020/02/12/EIY6DazVne4R7bv.png" alt="4.png" style="zoom:50%;" /></li>
-</ol>
-<p>注：也可以直接采用下载全文然后在软件中导入的方法</p>
-<h2 id="1-2-谷歌学术"><a href="#1-2-谷歌学术" class="headerlink" title="1.2 谷歌学术"></a>1.2 谷歌学术</h2><p>操作如图</p>
-<p><img src="https://i.loli.net/2020/02/13/UDW1GuV4bczjgsM.png" alt="5.png"></p>
-<p>然后在将所有内容复制，导入题录的过滤器选择BibTex。</p>
-<img src="https://i.loli.net/2020/02/13/9bZnS73lkgrDREu.png" alt="6.png" style="zoom:50%;" />
-
-
-
-<h1 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h1><ul>
-<li><p>在NoteExpress选择需要复制的文献如图，然后将内容粘贴到相应位置即可</p>
-<img src="https://i.loli.net/2020/02/13/4XmIWO5uDhHCpnT.png" alt="7.png" style="zoom:50%;" /></li>
-<li><p>所有文献插入完成后，文件-&gt;导出题录，具体配置如图，把导出来的文件发给我我集中处理即可</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/07/Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/07/Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Android开发学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-07 21:46:20" itemprop="dateCreated datePublished" datetime="2020-02-07T21:46:20+08:00">2020-02-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-09 15:37:45" itemprop="dateModified" datetime="2020-02-09T15:37:45+08:00">2020-02-09</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="第一章基本结构"><a href="#第一章基本结构" class="headerlink" title="第一章基本结构"></a>第一章基本结构</h1><h2 id="1-1-Android-Studio目录"><a href="#1-1-Android-Studio目录" class="headerlink" title="1.1 Android Studio目录"></a>1.1 Android Studio目录</h2><img src="https://i.loli.net/2020/02/09/Yh6kSzZocvmQBX7.png" alt="image-20200209143354370.png" style="zoom:50%;" />
-
-<p>我们需要注意的只是app文件夹，其他文件夹暂时交给系统来全权处理即可。</p>
-<img src="https://i.loli.net/2020/02/09/3ZJgeifSMEcmY7F.png" alt="image.png" style="zoom:50%;" />
-
-<ul>
-<li><p>java目录下存放主要的代码部分，即每个活动的代码部分</p>
-</li>
-<li><p>res下存放的每个活动的图形界面以及相关的元素</p>
-<ul>
-<li>drawable开头存放图片</li>
-<li>mipmap开头存放应用图标</li>
-<li>values开头存放字符串、样式、色彩等配置</li>
-<li>layout存放布局文件</li>
-</ul>
-</li>
-<li><p>AndroidManifest是活动注册文件</p>
-</li>
-<li><p>libs负责引入的第三方jar</p>
-<h2 id="1-2-日志工具"><a href="#1-2-日志工具" class="headerlink" title="1.2 日志工具"></a>1.2 日志工具</h2><ul>
-<li>Log.v() verbose级别</li>
-<li>Log.d() debug级别</li>
-<li>Log.i()  info级别，分析用户行为、</li>
-<li>Log.w() warn信息</li>
-<li>Log.e() error信息</li>
-</ul>
-<p>两个参数 tag一般是类名,msg 想打出的信息</p>
-<ul>
-<li>快捷键 logd +tab</li>
-<li>onCreat方法外输入上述快捷键可快速设置tag</li>
-</ul>
-</li>
-</ul>
-<h1 id="第二章-活动"><a href="#第二章-活动" class="headerlink" title="第二章 活动"></a>第二章 活动</h1><h2 id="2-1-活动定义"><a href="#2-1-活动定义" class="headerlink" title="2.1 活动定义"></a>2.1 活动定义</h2><p>包含用户界面的组件，由于和用户进行交互</p>
-<h2 id="2-2-简单活动"><a href="#2-2-简单活动" class="headerlink" title="2.2 简单活动"></a>2.2 简单活动</h2><h3 id="2-2-1-活动创建"><a href="#2-2-1-活动创建" class="headerlink" title="2.2.1 活动创建"></a>2.2.1 活动创建</h3><p>app/src/main/java/com.example.activitytest 文件夹，右键new-&gt;Activity-&gt;Empty Activity</p>
-<p>Generate Layout File会自动创建布局文件，建议勾选</p>
-<p>LauncherActivity 设置为主活动</p>
-<h3 id="2-2-2-手动创建于加载布局"><a href="#2-2-2-手动创建于加载布局" class="headerlink" title="2.2.2 手动创建于加载布局"></a>2.2.2 手动创建于加载布局</h3><p>app/src/main/res-&gt;New-&gt;Dirrectory 新建layout目录-&gt;Layout resource file 输入文件名即可得到布局文件</p>
-<p>然后再FirstActivity中进行关联，setContentView(R.layour.first_layout)</p>
-<h3 id="2-2-3-手动注册主活动"><a href="#2-2-3-手动注册主活动" class="headerlink" title="2.2.3 手动注册主活动"></a>2.2.3 手动注册主活动</h3><p>活动关联时会自动注册，但是需要我们手动设置哪个活动为主活动</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">&quot;com.example.activitytest&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;application</span><br><span class="line">        android:allowBackup=&quot;true&quot;</span><br><span class="line">        android:icon=&quot;@mipmap/ic_launcher&quot;</span><br><span class="line">        android:label=&quot;@string/app_name&quot;</span><br><span class="line">        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;</span><br><span class="line">        android:supportsRtl=&quot;true&quot;</span><br><span class="line">        android:theme=&quot;@style/AppTheme&quot;&gt;</span><br><span class="line">        &lt;activity</span><br><span class="line">            android:name=&quot;.FirstActivity&quot;//标题栏内容及应用名称</span><br><span class="line">            android:label=&quot;This is FirstActivity&quot;&gt;</span><br><span class="line">            //设置主活动需要添加</span><br><span class="line">            <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.action.MAIN&quot;</span> /&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.category.LAUNCHER&quot;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">            //设置主活动end</span><br><span class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2-4-活动销毁"><a href="#2-2-4-活动销毁" class="headerlink" title="2.2.4 活动销毁"></a>2.2.4 活动销毁</h3><ul>
-<li>back键自动销毁</li>
-<li>在活动中调用 finish方法</li>
-</ul>
-<h3 id="2-3-使用Intent在活动间穿梭"><a href="#2-3-使用Intent在活动间穿梭" class="headerlink" title="2.3 使用Intent在活动间穿梭"></a>2.3 使用Intent在活动间穿梭</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
         </li>
-        <li class="sidebar-nav-overview">
-          Overview
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
         </li>
-      </ul>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
         
-          <span class="site-state-item-count">15</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
 </div>
-
-
-
-      </div>
 
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
 
+    
 
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+    <div class="image-viewer-container">
+    <img src="">
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
-
-        
 
 
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
 
+    
 
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
+</main>
 
 
 
 
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/dark-light-toggle.js"></script>
 
 
-
-
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/local-search.js"></script>
 
 
 
 
 
 
-  
+<div class="post-scripts">
+    
+</div>
 
-  
+
 
 </body>
 </html>
