@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="第二章 8086微处理器 BIU的功能  EU功能  BIU和EU的动作管理  常见的标志寄存器功能及其设置命令  CF ZF SF OF DF IF   8086有哪些周期？总线周期有哪几个？各自完成什么任务？  :heavy_exclamation_mark:8086的工作模式  :heavy_exclamation_mark:8086的复位和启动？复位后寄存器设置？  :heavy_excl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编与接口简单与填空整理">
+<meta property="og:url" content="http://example.com/2020/12/23/%E6%B1%87%E7%BC%96%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E4%B8%8E%E5%A1%AB%E7%A9%BA%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第二章 8086微处理器 BIU的功能  EU功能  BIU和EU的动作管理  常见的标志寄存器功能及其设置命令  CF ZF SF OF DF IF   8086有哪些周期？总线周期有哪几个？各自完成什么任务？  :heavy_exclamation_mark:8086的工作模式  :heavy_exclamation_mark:8086的复位和启动？复位后寄存器设置？  :heavy_excl">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201228112958.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201228112951.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201228113046.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201228113054.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201229222211.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201231090238.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201231090221.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201231090527.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201231090553.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20210103083630.png">
+<meta property="article:published_time" content="2020-12-23T12:32:18.000Z">
+<meta property="article:modified_time" content="2021-01-04T12:54:23.730Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201228112958.png">
+
+<link rel="canonical" href="http://example.com/2020/12/23/%E6%B1%87%E7%BC%96%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E4%B8%8E%E5%A1%AB%E7%A9%BA%E6%95%B4%E7%90%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>汇编与接口简单与填空整理 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/23/%E6%B1%87%E7%BC%96%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E4%B8%8E%E5%A1%AB%E7%A9%BA%E6%95%B4%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          汇编与接口简单与填空整理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-12-23 20:32:18" itemprop="dateCreated datePublished" datetime="2020-12-23T20:32:18+08:00">2020-12-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-04 20:54:23" itemprop="dateModified" datetime="2021-01-04T20:54:23+08:00">2021-01-04</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="第二章-8086微处理器"><a href="#第二章-8086微处理器" class="headerlink" title="第二章 8086微处理器"></a>第二章 8086微处理器</h2><ol>
+<li><p>BIU的功能</p>
+</li>
+<li><p>EU功能</p>
+</li>
+<li><p>BIU和EU的动作管理</p>
+</li>
+<li><p>常见的标志寄存器功能及其设置命令</p>
+<ul>
+<li>CF</li>
+<li>ZF</li>
+<li>SF</li>
+<li>OF</li>
+<li>DF</li>
+<li>IF</li>
+</ul>
+</li>
+<li><p>8086有哪些周期？总线周期有哪几个？各自完成什么任务？</p>
+</li>
+<li><p>:heavy_exclamation_mark:8086的工作模式</p>
+</li>
+<li><p>:heavy_exclamation_mark:8086的复位和启动？复位后寄存器设置？</p>
+</li>
+<li><p>:heavy_exclamation_mark:存储器编址？规则字？边界对准？规则存放？</p>
+</li>
+<li><p>:heavy_exclamation_mark:逻辑地址？物理地址？转换？为什么要分段？分段的意义？</p>
+</li>
+</ol>
+<h2 id="第三章-汇编"><a href="#第三章-汇编" class="headerlink" title="第三章 汇编"></a>第三章 汇编</h2><ol>
+<li>汇编语言语句类型是什么，各自有什么样的功能？</li>
+<li>各条指令对于标志位的影响<ul>
+<li>add，adc</li>
+<li>sub，sbb</li>
+<li>Inc，dec</li>
+<li>cmp</li>
+<li>mul,imul</li>
+</ul>
+</li>
+<li>and/or/xor/test操作的功能</li>
+<li>中断与子程序有什么不同？</li>
+<li>标号的段总是在<strong>CS</strong>寄存器中</li>
+<li>变量在<strong>数据段</strong>或<strong>附加段</strong>中给出定义</li>
+<li>org使<strong>下一个字节的</strong>地址成为常数表达式的值n</li>
+<li>多个操作数用<strong>逗号</strong>分隔</li>
+<li>操作数项可以使<strong>常数、寄存器、标号、变量、表达式</strong></li>
+<li>表达式可以是<strong>地址表达式、数字表达式</strong></li>
+</ol>
+<h3 id="汇编指令与伪指令总结练习"><a href="#汇编指令与伪指令总结练习" class="headerlink" title="汇编指令与伪指令总结练习"></a>汇编指令与伪指令总结练习</h3><ol>
+<li><p>伪指令是用来执行的，对吗？</p>
+<p>不对，伪指令语句为汇编和链接程序提供一些必要控制和管理性语句，它不产生目标代码，仅仅在汇编过程中告诉汇编程序如何汇编，并完成相应的伪操作。</p>
+</li>
+<li><p>在代码段的开始，一般要完成段寄存器赋值，这其中是否包括CS？不包括</p>
+</li>
+<li><p>assume语句是否能完成段寄存器DS、ES等的赋值？不能，需要手动赋值</p>
+</li>
+<li><p>End伪指令后面一定要跟一个标号吗？</p>
+<p>如果多个程序模块相连接，则只有主程序要使用标号，其他子程序模块则只用end而不用指定标号</p>
+</li>
+<li><p>masm和link、debug的作用</p>
+<ul>
+<li>masm对文件进行汇编，产生二进制目标文件obj</li>
+<li>link产生exe文件</li>
+<li>debug为程序员提供了非常有效的调试手段</li>
+</ul>
+</li>
+<li><p>汇编程序的主要功能</p>
+<ul>
+<li>检查源程序，并给出错误信息</li>
+<li>产生源程序和目标程序，并可给出列表文件</li>
+<li>展开宏指令</li>
+</ul>
+</li>
+<li><p>equ和=是否等价</p>
+<p>EQU伪操作中的表达式名是不允许重复定义的，但=伪操作则允许重复定义</p>
+</li>
+<li><p>$一定表示地址计数器的当前值吗？</p>
+<p>当$在指令中时，表示本条指令的<strong>第一个字节的地址</strong>。在伪操作时，表示的是<strong>地址计数器的当前值</strong>。</p>
+</li>
+<li><p>编写汇编程序时十进制数不需后缀，为什么</p>
+<p>汇编程序默认的数为十进制数</p>
+</li>
+</ol>
+<h2 id="第四章-存储器扩展"><a href="#第四章-存储器扩展" class="headerlink" title="第四章 存储器扩展"></a>第四章 存储器扩展</h2><ol>
+<li>半导体存储器的基本结构：地址锁存器、数据译码器、存储体、数据缓冲器、读写控制逻辑</li>
+<li>存储器的主要性能指标<ul>
+<li>存储容量：与存储器的<strong>字长</strong>和<strong>编码长度</strong>直接相关</li>
+<li>存取速度：包括存取时间、存取周期</li>
+<li>可靠性</li>
+</ul>
+</li>
+<li>存储容量扩展的方式：<ul>
+<li>位扩展：位数扩充，增加存储字长</li>
+<li>字扩展：增加存储字数（存储单元数）</li>
+<li>字位同时扩展</li>
+</ul>
+</li>
+<li>地址线的连接：<ul>
+<li>片外地址：经地址译码器译码后的输出，作为存储器芯片的片选信号</li>
+<li>片内地址：直接与所要访问的存取器芯片的地址引脚相连，用来直接选中该芯片的一个存储单元</li>
+</ul>
+</li>
+<li>片选控制的方式：<ul>
+<li>全译码：cpu全部的地址线参与译码，对用于存储器芯片中的任意单元只有<strong>唯一确定的地址</strong></li>
+<li>部分译码：cpu的地址线没有全部参与译码，一个存储单元的<strong>地址不唯一</strong>，会发生<strong>地址重叠</strong></li>
+<li>线选法：用单条地址线选择存储器，不需要<strong>地址译码器</strong></li>
+</ul>
+</li>
+</ol>
+<h2 id="第五章-输入输出基本技术"><a href="#第五章-输入输出基本技术" class="headerlink" title="第五章 输入输出基本技术"></a>第五章 输入输出基本技术</h2><ol>
+<li><p>cpu与外设之间的信息类型：数据、状态、控制</p>
+</li>
+<li><p>端口就是接口部件中的<strong>寄存器</strong>（外设编址是对外设中的寄存器编址，一个端口一个地址，而非一个外设一个地址）</p>
+</li>
+<li><p>I/O接口的基本功能：寻址、输入输出、数据缓冲、信息格式转换、联络、中断管理、提供时序、可编程、电气特征的匹配、错误检测</p>
+</li>
+<li><p>I/O编址方法</p>
+<ul>
+<li>统一编址:<ul>
+<li>I/O口编址占用内存编址空间</li>
+<li>可利用访存指令访问I/O口，控制灵活</li>
+<li>由于I/O设备速度慢，影响指令执行速度</li>
+</ul>
+</li>
+<li>独立编址：不占用内存编址空间，但需要专门的输入/输出指令，控制不够灵活</li>
+</ul>
+<p>8086系统I/O口采用<strong>独立编址</strong>方式，最多允许有 **2^16^(64K)**个8位I/O端口，通过16根地址线寻址，两个相邻的8位端口可组成一个16位端口2^15^个，使用专门的IN/OUT指令访存。</p>
+</li>
+<li><p>I/O的译码方式：<strong>全局译码</strong>、<strong>独立译码</strong></p>
+</li>
+<li><p>:heavy_exclamation_mark:<strong>端口地址复用</strong></p>
+<ul>
+<li><strong>读写操作区分</strong>：通过读写不同状态对应不同的功能，8237，8253</li>
+<li><strong>特征位法</strong>：使用指令中的位作为特征位，8259的ocw2/3 icw1</li>
+<li><strong>特定秩序法</strong>：通过命令的先后顺序区分，8259的icw2/3/4,8251</li>
+</ul>
+</li>
+<li><p>8086可以处理 <strong>256</strong>个不同中断，中断类型码对应00~FF（0~255）</p>
+</li>
+<li><p>中断向量：中断服务程序的<strong>入口地址</strong>，以逻辑地址形式给出</p>
+</li>
+<li><p>中断向量表：存放中断向量的一段内存空间</p>
+</li>
+<li><p>无条件传送方式：外设是一直准备好的，随时都能被读写访问额，对接口要求比较简单，只有数据口即可</p>
+</li>
+<li><p>查询传送方式：cpu在传送数据之前，首先检测外设的状态，接口除了数据口外还要有状态口，但cpu效率低</p>
+</li>
+<li><p>中断传送方式：外设准备就绪后向cpu发出申请，外设具有申请cpu的主动权。接口能够接受外设的中断请求，对多个请求进行管理，然后向cpu发出中断申请。实时性高，但不适合数据频繁传送的场合。</p>
+</li>
+<li><p>中断DMA剩余内容见 <em>5-10</em>，老师说不考计组的故可能性较低</p>
+</li>
+<li><p>8086对可屏蔽中断响应的执行步骤（见OneNote或5-21）</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201228112958.png"><br><img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201228112951.png" alt="image-20201228112951827"></p>
+</li>
+<li><p>8086对软件中断响应的特点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201228113046.png" alt="image-20201228113046169"></p>
+</li>
+<li><p>8086对非屏蔽中断响应的特点</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201228113054.png" alt="image-20201228113054197"></p>
+<h2 id="第九章-微型机系统专用接口"><a href="#第九章-微型机系统专用接口" class="headerlink" title="第九章 微型机系统专用接口"></a>第九章 微型机系统专用接口</h2><h3 id="8259"><a href="#8259" class="headerlink" title="8259"></a>8259</h3><ol>
+<li><p>8259的特点</p>
+<ul>
+<li>每片8259可以管理8级外部中断，且每一级可单独屏蔽</li>
+<li>具有级联系统，9片8259可以构成64级主从式中断系统</li>
+<li>具有多种优先权管理模式</li>
+<li>可以直接向cpu提供中断类型码<ul>
+<li>单电源+5v供电</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>:imp: 8259的工作寄存器与处理部件</p>
+<img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201229222211.png" alt="image-20201229222211169" style="zoom:50%;" />
+
+<ul>
+<li><strong>ISR中断服务寄存器</strong>:指出当前正在服务的中断源</li>
+<li><strong>IRR中断请求寄存器</strong>:用来保存8个外部中断源送来的中断请求信号</li>
+<li><strong>IMR中断屏蔽寄存器</strong>：与IRR中的一个中断请求位相对应，1屏蔽</li>
+<li><strong>PR中断优先权判别器</strong>：仲裁部件，用来实现中断优先级的判断</li>
+</ul>
+</li>
+<li><p>借助内部结构描述8259的判优与相应（4/5题合并回答）</p>
+</li>
+<li><p>8259对于外部中断的处理过程</p>
+<ul>
+<li>接受到中断请求信号，使IRR相应位置1，对中断请求信号进行锁存</li>
+<li>根据IMR的内容决定IRR中的中断请求请求是否被允许通过</li>
+<li>PR将IRR送来的中断请求与ISR的内容向比较，判断优先级，决定是否向CPU发出中断请求</li>
+</ul>
+</li>
+<li><p>cpu响应中断后8259的动作过程</p>
+<ul>
+<li>使IRR锁存功能失效，不接收中断请求</li>
+<li>使ISR相应位置1.为PR的工作提供裁决依据</li>
+<li>使IRR中的相应位清0，清除中断请求</li>
+<li>恢复IRR锁存功能</li>
+</ul>
+</li>
+<li><p>8259命令字见OneNote</p>
+</li>
+<li><p>8259的初始化流程：<br><img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201231090238.png" alt="image-20201231090238111"></p>
+</li>
+</ol>
+<ol start="9">
+<li><p>说明8259的内部结构<br><img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201231090221.png" alt="image-20201231090221775"></p>
+</li>
+<li><p>说明ISR/PR/IRR/IMR的内部含义</p>
+<ul>
+<li>ISR:中断服务寄存器</li>
+<li>PR：中断优先权判别器</li>
+<li>IRR：中断请求寄存器</li>
+<li>IMR:中断屏蔽寄存器</li>
+</ul>
+</li>
+<li><p>8259有多少命令字？可以分为哪几类？每类命令字功能是什么？哪些命令字是必须写的？</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201231090527.png" alt="image-20201231090527824"></p>
+</li>
+<li><p>8259不同特征位应该如何区分？</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20201231090553.png" alt="image-20201231090553831"></p>
+</li>
+</ol>
+<h3 id="8237"><a href="#8237" class="headerlink" title="8237"></a>8237</h3><ol>
+<li><p>8237的功能特点：</p>
+<ul>
+<li>每片8237内部有<strong>4个独立的DMA通道</strong>，每个通道可分别进行数据传送，一次传送最大可达<strong>64KB</strong>，能够实现<strong>存储器与外设设备或存储器两个区域间</strong>的数据传送</li>
+<li>每个DMA请求可以单独允许和屏蔽，具有不同的优先级，且优先级可以是循环的，也可以是固定的</li>
+<li>有四种传送方式：<strong>单字节传送方式、数据块传送方式、请求传送方式和级联方式</strong></li>
+</ul>
+</li>
+<li><p>8237的控制字</p>
+<ul>
+<li>设置通道计数初始值：设置地址初值寄存器与地址计数器、字节数初值寄存器与字节数计数器。</li>
+<li>设置通道功能：设置工作方式寄存器、屏蔽寄存器、命令寄存器。  </li>
+</ul>
+</li>
+<li><p>不需要写入控制字的命令</p>
+<p>不需要通过数据总线写入控制字，而是直接对地址信号和控制信号进行译码，并产生相应的片内操作</p>
+<ul>
+<li>复位命令</li>
+<li>清除先后触发器命令</li>
+</ul>
+<p>即直接给一个写动作，不需要关心送出的值是什么</p>
+</li>
+</ol>
+<h2 id="第六章-微型机系统通用接口"><a href="#第六章-微型机系统通用接口" class="headerlink" title="第六章 微型机系统通用接口"></a>第六章 微型机系统通用接口</h2><ol>
+<li><p>并行通信概念？特点？</p>
+<p>将构成数据的各位同时传送</p>
+<p>特点：与串行通信相比速率快，不适合远距离传输</p>
+</li>
+<li><p>并行接口概念？硬件要求</p>
+<p>实现并行通信的接口电路。</p>
+<p>具有锁存和缓冲功能的数据端口，提供与cpu、外设相联系的信号线。</p>
+</li>
+</ol>
+<h3 id="8255、串行接口、8251：见OneNote"><a href="#8255、串行接口、8251：见OneNote" class="headerlink" title="8255、串行接口、8251：见OneNote"></a>8255、串行接口、8251：见OneNote</h3><ol start="3">
+<li><p>说明8251a中引脚信号$\overline{RTS}$、$\overline{CTS}$、$\overline{DTR}$、$\overline{DSR}$的作用</p>
+<ul>
+<li>$\overline{RTS}$：请求发送信号，用于通知调制器cpu已经准备好发送</li>
+<li>$\overline{CTS}$：清除发送信号</li>
+<li>$\overline{DTR}$：数据终端贮备好信号，用以表示cpu准备就绪</li>
+<li>$\overline{DSR}$：数据装置准备好信号，表示调制器或外设的数据已经准备好</li>
+</ul>
+</li>
+<li><p>什么是8251a的方式指令字和命令指令字？对两者在串行通信中的写入流程进行说明。</p>
+<p>方式指令用来定义8251a的一般工作特性，他必须紧接在复位后由cpu写入。</p>
+<p>命令指令用来指定芯片的实际操作，只有在已经写入方式指令后，才能有cpu写入同步字符和命令指令。</p>
+<p>两者通过特定秩序法进行区分。</p>
+</li>
+<li><p>试说明8251a芯片控制信号$\overline{CS}$和$C/\overline{D}$的功能</p>
+<ul>
+<li>$\overline{CS}$：片选输入端，输入为低电平时可以在芯片与cpu之间传输数据。</li>
+<li>$C/\overline{D}$：决定cpu对芯片读写内容的输入控制端。如果输入为高电平，CPU对芯片写控制字或者读状态字，如果输入为低电平，读写的内容为数据。</li>
+</ul>
+</li>
+</ol>
+<h2 id="第七章可编程定时器-计数器"><a href="#第七章可编程定时器-计数器" class="headerlink" title="第七章可编程定时器/计数器"></a>第七章可编程定时器/计数器</h2><ol>
+<li><p>定时的本质是计数，定时必须由稳定准确的<strong>时间基准</strong>，把若干小片时间单元累加起来，就获得精确的时间控制</p>
+</li>
+<li><p>定时的方法：</p>
+<img src="https://cdn.jsdelivr.net/gh/czy0538/photoBed/20210103083630.png" alt="image-20210103083630376" style="zoom:67%;" /></li>
+<li><p>说明8253的方式2与方式3的工作特点</p>
+<p>可输出重复波形，既可软件触发启动，又可硬件触发启动。</p>
+</li>
+<li><p>说明8253方式1与方式5的工作特点</p>
+<p>只能采用硬件触发启动。</p>
+</li>
+</ol>
+<h2 id="第八章模拟接口"><a href="#第八章模拟接口" class="headerlink" title="第八章模拟接口"></a>第八章模拟接口</h2><ol>
+<li><p>说明 DAC0832 芯片中 8 位输入寄存器和 8 位 DAC 寄存器的作用及工作过程。</p>
+<p>8位输入寄存器是与数据总线接口。 8位DAC寄存器用来存放待转换数据。 数据线送来的数据先经过输入寄存器，再到达DAC寄存器，最后送给D/A转换器进行转换。</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/16/Pintos%E7%AC%94%E8%AE%B0/" rel="prev" title="Pintos笔记">
+      <i class="fa fa-chevron-left"></i> Pintos笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/12/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E7%AD%94%E5%A1%AB%E7%A9%BA/" rel="next" title="数据库简答填空">
+      数据库简答填空 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-8086%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">第二章 8086微处理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B1%87%E7%BC%96"><span class="nav-number">2.</span> <span class="nav-text">第三章 汇编</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E4%B8%8E%E4%BC%AA%E6%8C%87%E4%BB%A4%E6%80%BB%E7%BB%93%E7%BB%83%E4%B9%A0"><span class="nav-number">2.1.</span> <span class="nav-text">汇编指令与伪指令总结练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%AD%98%E5%82%A8%E5%99%A8%E6%89%A9%E5%B1%95"><span class="nav-number">3.</span> <span class="nav-text">第四章 存储器扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E5%9F%BA%E6%9C%AC%E6%8A%80%E6%9C%AF"><span class="nav-number">4.</span> <span class="nav-text">第五章 输入输出基本技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E5%BE%AE%E5%9E%8B%E6%9C%BA%E7%B3%BB%E7%BB%9F%E4%B8%93%E7%94%A8%E6%8E%A5%E5%8F%A3"><span class="nav-number">5.</span> <span class="nav-text">第九章 微型机系统专用接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8259"><span class="nav-number">5.1.</span> <span class="nav-text">8259</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8237"><span class="nav-number">5.2.</span> <span class="nav-text">8237</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%BE%AE%E5%9E%8B%E6%9C%BA%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E6%8E%A5%E5%8F%A3"><span class="nav-number">6.</span> <span class="nav-text">第六章 微型机系统通用接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8255%E3%80%81%E4%B8%B2%E8%A1%8C%E6%8E%A5%E5%8F%A3%E3%80%818251%EF%BC%9A%E8%A7%81OneNote"><span class="nav-number">6.1.</span> <span class="nav-text">8255、串行接口、8251：见OneNote</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0%E5%8F%AF%E7%BC%96%E7%A8%8B%E5%AE%9A%E6%97%B6%E5%99%A8-%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="nav-number">7.</span> <span class="nav-text">第七章可编程定时器&#x2F;计数器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0%E6%A8%A1%E6%8B%9F%E6%8E%A5%E5%8F%A3"><span class="nav-number">8.</span> <span class="nav-text">第八章模拟接口</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

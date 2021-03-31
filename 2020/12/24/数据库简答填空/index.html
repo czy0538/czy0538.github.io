@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="数据库绪论 数据是数据库系统中存储的基本对象 描述事物的符号记录称为数据 数据的含义称为数据的语义  数据库是长期存储在计算机内，有组织的、可共享的大量数据的集合  什么是**数据库管理系统(DBMS)**？ 数据库管理系统是位于用户与操作系统之间的一层数据管理软件  :heavy_exclamation_mark: 数据库管理系统的功能？  数据定义功能：数据定义语言DDL：对数据库中的数据对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库简答填空">
+<meta property="og:url" content="http://example.com/2020/12/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E7%AD%94%E5%A1%AB%E7%A9%BA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数据库绪论 数据是数据库系统中存储的基本对象 描述事物的符号记录称为数据 数据的含义称为数据的语义  数据库是长期存储在计算机内，有组织的、可共享的大量数据的集合  什么是**数据库管理系统(DBMS)**？ 数据库管理系统是位于用户与操作系统之间的一层数据管理软件  :heavy_exclamation_mark: 数据库管理系统的功能？  数据定义功能：数据定义语言DDL：对数据库中的数据对象">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-24T11:04:55.000Z">
+<meta property="article:modified_time" content="2021-01-05T07:17:22.817Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="知识点">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2020/12/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E7%AD%94%E5%A1%AB%E7%A9%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>数据库简答填空 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E7%AD%94%E5%A1%AB%E7%A9%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据库简答填空
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-12-24 19:04:55" itemprop="dateCreated datePublished" datetime="2020-12-24T19:04:55+08:00">2020-12-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-05 15:17:22" itemprop="dateModified" datetime="2021-01-05T15:17:22+08:00">2021-01-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="数据库绪论"><a href="#数据库绪论" class="headerlink" title="数据库绪论"></a>数据库绪论</h1><ol>
+<li><p><strong>数据</strong>是数据库系统中存储的<strong>基本对象</strong></p>
+<p>描述事物的<strong>符号记录</strong>称为数据</p>
+<p>数据的含义称为<strong>数据的语义</strong></p>
+</li>
+<li><p>数据库是长期存储在计算机内，有组织的、可共享的大量<strong>数据的集合</strong></p>
+</li>
+<li><p>什么是**数据库管理系统(DBMS)**？</p>
+<p>数据库管理系统是位于用户与操作系统之间的一层数据管理软件</p>
+</li>
+<li><p>:heavy_exclamation_mark: 数据库管理系统的功能？</p>
+<ul>
+<li>数据定义功能：<strong>数据定义语言DDL</strong>：对数据库中的数据对象的组成与结构进行定义</li>
+<li>数据操纵功能：<strong>数据操纵语言DML：</strong>用户可以操纵数据，实现对数据库的基本操作，如查询插入删除和修改。</li>
+<li>数据库的运行管理： <strong>数据控制语言DCL</strong><ul>
+<li>安全性：权限控制</li>
+<li>完整性：保证数据库数据正确的机制</li>
+<li>并发性：允许一个数据库被多人访问</li>
+<li>故障恢复</li>
+</ul>
+</li>
+<li>数据库的建立和维护功能：备份、系统重构等</li>
+</ul>
+</li>
+<li><p>:heavy_exclamation_mark: <strong>数据库系统（DBS）</strong>定义：数据库系统是指在计算机系统中引入数据库后的系统构成。</p>
+<p>由<strong>数据库(DB)、数据库管理系统（及其开发工具DBMS）、应用系统、数据库管理员(DBA)和用户</strong>构成</p>
+</li>
+<li><p>:heavy_exclamation_mark: 数据库系统的特点</p>
+<ul>
+<li>数据结构化</li>
+<li>数据的共享性高，冗余度低且易扩充</li>
+<li>数据的独立性高，包括物理独立性和逻辑独立性。物理独立性指物理存储改变了，但应用程序不用改变。逻辑独立性指逻辑结构改变了但用户程序不用改变。</li>
+<li>数据由DBMS统一管理和控制。DBMS提供了数据控制功能，包括：安全性、完整性、并发控制和数据库恢复</li>
+</ul>
+</li>
+<li><p>信息处理的三个领域：现实世界（具体事务）、信息世界（概念模型）、机器世界（数据模型）</p>
+</li>
+<li><p>什么是概念模型？什么是实体？属性？实体型？实体集？码？域？联系？ <em>1-3</em></p>
+</li>
+<li><p>:heavy_exclamation_mark: E-R图 <em>1-5</em></p>
+</li>
+<li><p>什么是数据模型？</p>
+<p>数据模型是概念模型的数据化，从计算角度出发，提供表示和组织数据的方法。</p>
+</li>
+<li><p>:heavy_exclamation_mark: 数据模型的三要素：</p>
+<ul>
+<li><strong>数据结构：</strong>记录间的组织形式</li>
+<li><strong>数据操纵：</strong>建立特定结构下的操纵实现</li>
+<li><strong>数据完整性约束</strong>：记录内部及记录间的限定</li>
+</ul>
+</li>
+<li><p>关系模型*:1-7*关系？元组？属性？码？域？分量？</p>
+</li>
+<li><p>关系模型的优缺点？</p>
+<p>优点：</p>
+<ul>
+<li>建立在严格的数学概念的基础上</li>
+<li>概念单一，数据结构简单清晰用户易懂易用</li>
+<li>关系模型的存取路径对用户透明</li>
+</ul>
+<p>缺点：查询效率往往不如非关系数据模型</p>
+</li>
+<li><p>:heavy_exclamation_mark: :heavy_exclamation_mark: <strong>概念模型E-R图与关系模型的转换</strong>:<em>1-7</em></p>
+</li>
+<li><p>:heavy_exclamation_mark: :heavy_exclamation_mark: 数据库系统的三级模式是什么？试阐述数据库系统的三级模式？这种结构的优点是什么？</p>
+<p>数据库系统的三级模式结构由<strong>外模式、模式和内模式</strong>构成。</p>
+<ul>
+<li>外模式是数据库用户使用的局部数据的逻辑结构和特征的描述。</li>
+<li>模式是数据库中全体数据结构的逻辑结构和特性的描述。</li>
+<li>内模式是对数据的物理结构和存储方式的描述。</li>
+</ul>
+<p>为了能够在内部实现这三个抽象层次的联系和转换，数据库系统在这三级模式之间提供了两级映象：<strong>外模式/模式映象和模式/内模式映象。</strong></p>
+<p>正是这两级映象保证了数据库系统中的数据能够具有较高的逻辑独立性和物理独立性。</p>
+</li>
+<li><p>:heavy_exclamation_mark: :heavy_exclamation_mark: 数据库的三级模式解决了什么问题？三级模式有什么作用？什么是数据和程序的逻辑独立性和物理独立性？为什么具有数据和程序的独立性？</p>
+<p>数据库的三级模式解决了数据库的独立性问题，分为<strong>逻辑独立性和物理独立性</strong>。</p>
+<ul>
+<li>逻辑独立性是指当模式改变时，数据库管理员修改有关的外模式/模式映象，使外模式保持不变。</li>
+<li>物理独立性是指当数据库的存储结构改变时，数据库管理员修改模式/内模式使模式保持不变，应用程序不受影响。</li>
+</ul>
+<p>DBMS在三级模式之间提供的两级映像保证了数据库系统中的数据能够具有较高的逻辑独立性和物理独立性。</p>
+</li>
+</ol>
+<h1 id="关系数据库"><a href="#关系数据库" class="headerlink" title="关系数据库"></a>关系数据库</h1><ol>
+<li><p>域、关系、笛卡尔积、属性、元组、候选码、主码、主属性、非主属性、基数、关系的度</p>
+</li>
+<li><p>关系的六条性质：</p>
+<ul>
+<li>列是同质的</li>
+<li>不同的列可以出自同一个域</li>
+<li>列序无关性</li>
+<li>任意两个元组不能完全相同</li>
+<li>行序无关性</li>
+<li>分量不可再分</li>
+</ul>
+</li>
+<li><p>试述关系的完整性约束：</p>
+<p>关系完整性是对关系的某种条件约束</p>
+<ul>
+<li>实体完整性：关系的主属性（组）不能取空值</li>
+<li>参照完整性：外码与基本关系的主码相对应，只能取空值或基本关系的某个元组的主码值</li>
+<li>用户定义完整性：反映某一具体应用所涉及的数据必须满足的语义要求</li>
+</ul>
+</li>
+<li><p>什么情况下外码的值可以为空</p>
+<p>在参照完整性中，如果外码属性不是其所在关系的主属性，外码属性的值可以取空值</p>
+</li>
+<li><p>试述关系模式的三个组成部分</p>
+<ul>
+<li>关系数据结构</li>
+<li>关系操作集合</li>
+<li>关系的完整性约束</li>
+</ul>
+</li>
+<li><p>外码？参照关系？被参照关系？<em>2-5</em></p>
+</li>
+</ol>
+<h1 id="关系数据库标准语言"><a href="#关系数据库标准语言" class="headerlink" title="关系数据库标准语言"></a>关系数据库标准语言</h1><p>主要内容见笔记3</p>
+<ol>
+<li><p>视图的作用</p>
+<ul>
+<li>简化用户的操作</li>
+<li>对重构数据库提供了一定的<strong>逻辑独立性</strong></li>
+<li>对机密数据提供安全保护</li>
+</ul>
+</li>
+<li><p>sql与主语言如何交互</p>
+<ul>
+<li>sqlca（sql通信区）：向主语言传递sql语句的执行状态信息，主语言据此控制程序流程</li>
+<li>主变量：向sql语句提供参数，将sql语句查询数据库的结果交给主语言进一步处理</li>
+<li>游标：解决集合性操作语言与过程性操作语言的不匹配</li>
+</ul>
+</li>
+</ol>
+<h1 id="数据库完整性"><a href="#数据库完整性" class="headerlink" title="数据库完整性"></a>数据库完整性</h1><ol>
+<li><p>什么是数据库的完整性？数据的正确性和相容性，防止不合语义的数据进入数据库</p>
+</li>
+<li><p>完整性控制机制应该具有哪些功能</p>
+<ul>
+<li>完整性约束条件定义机制：即在数据模型的组成部分约束数据库中的语义</li>
+<li>完整性检查机制：由DBMS提供的检查用户发出的操作请求是否违背了完整性约束条件的功能</li>
+<li>违约反应：如果发现用户的操作请求使数据违背了完整性约束条件，采取一定的动作来保证数据的完整性</li>
+</ul>
+</li>
+<li><p>完整性约束条件作用的对象：列、元组、关系</p>
+</li>
+<li><p>在关系系统中，当操作违反实体完整性、参照完整性和用户定义的完整性约束条件时，一般如何分别进行处理？</p>
+<p>对于违反实体完整性和用户定义完整性的操作，一般都采用拒绝执行的方式进行处理。</p>
+<p>对于违反参照完整性的操作，并不都是简单的拒绝拒绝执行，有时需要根据应用语义执行一些附加的操作，包括级联删除、设置为空值等，以保证数据库的正确性</p>
+</li>
+</ol>
+<h1 id="关系数据库理论"><a href="#关系数据库理论" class="headerlink" title="关系数据库理论"></a>关系数据库理论</h1><ol>
+<li><p>好的模式</p>
+<p>不会发生<strong>插入异常、删除异常、更新异常，数据冗余应尽可能少</strong></p>
+</li>
+<li><p>规范化：是指定义一组关系模式应该符合的条件（范式），而符合这些条件的关系模式就不存在某些操作异常，冗余也会减少</p>
+</li>
+<li><p>规范化的实质：概念单一化</p>
+</li>
+<li><p>模式分解的原则：</p>
+<ul>
+<li>消除不合理依赖</li>
+<li>保持好的依赖</li>
+<li>无损分解</li>
+</ul>
+</li>
+</ol>
+<h1 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h1><h2 id="数据库设计的阶段"><a href="#数据库设计的阶段" class="headerlink" title="数据库设计的阶段"></a>数据库设计的阶段</h2><p>包括需求分析、概念结构设计、逻辑结构设计、数据库物理设计、数据库实施、数据库运行和维护</p>
+<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><ol>
+<li><p>:heavy_check_mark: 需求分析阶段的设计目标？</p>
+<p>通过详细调查现实世界要处理的对象，充分了解原系统工作概况，明确用户的各种需求，然后在此基础上确定新系统的功能</p>
+</li>
+<li><p>:heavy_check_mark: 需求分析阶段调查的内容是什么？</p>
+<p>调查的内容是“数据”和“处理”，即获得用户对数据库的如下要求：</p>
+<ul>
+<li>信息要求：即在数据库中需要存储哪些数据</li>
+<li>处理要求：用户对处理功能的要求</li>
+<li>安全性与完整性要求</li>
+</ul>
+</li>
+<li><p>需求信息的收集应得到的主要材料</p>
+<ul>
+<li>详细的组织机构图及各机构的职能</li>
+<li>各项业务功能中用到的原始单据、报表等已有的样表</li>
+<li>业务处理的流程及相互关系</li>
+<li>企业已实现的信息系统</li>
+<li>对现有业务处理中用户的期望</li>
+</ul>
+</li>
+<li><p>系统数据分析包括 业务流程分析、建立数据字典、工作流程分析</p>
+</li>
+<li><p>:heavy_check_mark: 数据字典的内容</p>
+<p>数据字典的内容通常包括<strong>数据项、数据结构、数据流、数据存储和处理过程</strong>。其中数据项是数据的最小组成单位，若干个数据项可以组成一个数据结构。数据字典通过对数据项和数据结构的定义来描述数据流、数据存储的逻辑内容。</p>
+<ul>
+<li>数据项：是数据的最小单位</li>
+<li>数据结构：是若干数据项的有意义的集合，通常代表某一类具体的事务</li>
+<li>数据流：可以使数据项，也可以是数据结构，表示某一次处理的输入输出流向</li>
+<li>数据存储：加工中需要存储的数据</li>
+<li>处理过程：加工处理过程定义和说明</li>
+</ul>
+</li>
+<li><p>:heavy_check_mark: 数据字典的作用</p>
+<p>数据字典是关于数据库中的数据的描述，在需求分析阶段建立，是下一步进行概念设计的基础，并在数据库设计过程中不断修改、充实和完善</p>
+</li>
+</ol>
+<h3 id="概念结构设计"><a href="#概念结构设计" class="headerlink" title="概念结构设计"></a>概念结构设计</h3><p>概念结构设计就是将用户的需求抽象为概念模型的过程。</p>
+<p>概念结构设计的内容就是建立概念模型（E-R图）。</p>
+<h3 id="逻辑结构设计"><a href="#逻辑结构设计" class="headerlink" title="逻辑结构设计"></a>逻辑结构设计</h3><ol>
+<li><p>:heavy_check_mark: 什么是数据库的逻辑结构设计？</p>
+<p>数据库的逻辑结构设计就是把概念结构设计阶段设计好的基本E-R图转换为与选用的DBMS产品所支持的数据模型相符合的逻辑结构。</p>
+</li>
+<li><p>:heavy_check_mark:简述数据库逻辑结构设计步骤</p>
+<ul>
+<li>依照选用的DBMS支持的数据模型，确定欲转换的数据模型</li>
+<li>根据确定的数据模型进行E-R图向该数据模型的转换</li>
+<li>对得到的数据模型进行优化</li>
+<li>设计子模式</li>
+</ul>
+</li>
+<li><p>关系模型的优化方法通常以规范化理论为指导，方法为：</p>
+<ul>
+<li>确定数据依赖</li>
+<li>对各个关系模式之间的数据依赖进行极小化处理，消除冗余关系</li>
+<li>按照数据依赖的理论对关系模式逐一分析</li>
+<li>根据需求分析阶段得到的处理要求分析对于这样的应用环境这些模式是否合适，确定是否要对某些模式进行合并或分解。并非规范化程度越高的关系越优。</li>
+<li>对关系模式进行必要分解，提高数据操作效率和空间利用率。常用的两种分解是水平分解和垂直分解。</li>
+</ul>
+</li>
+<li><p>:heavy_check_mark:规范化理论对数据库设计有什么指导意义？</p>
+<p>规范化理论为数据库设计人员判断关系模式提供了理论标准，可以用来指导关系数据模型的优化，用来预测模式可能出现的问题；为设计人员提供了自动产生各种模式的算法工具，使数据库设计工作有了严格的理论基础。</p>
+</li>
+<li><p>为什么要引入用户子模式（外模式）</p>
+<ul>
+<li>实现数据的逻辑独立性</li>
+<li>使用更符合用户习惯的别名</li>
+<li>定义外模式可以实现数据的安全性</li>
+<li>简化用户对系统的使用</li>
+</ul>
+</li>
+</ol>
+<h3 id="数据库的物理设计"><a href="#数据库的物理设计" class="headerlink" title="数据库的物理设计"></a>数据库的物理设计</h3><p>数据库在物理设备上的存储结构与存取方法称为数据库的物理结构，依赖于给定的计算机系统。</p>
+<p>为一个给定的逻辑数据模型选取一个最适合应用环境的物理结构的过程，就是数据库的物理设计。</p>
+<ol>
+<li>数据库物理设计的步骤<ul>
+<li>确定数据库的物理结构</li>
+<li>对物理结构进行评价，重点是时间和空间效率</li>
+<li>如果评价结果满足原设计要求则可进入到物理实施阶段</li>
+</ul>
+</li>
+<li>关系数据库物理设计的内容<ul>
+<li>为关系模式选择存取方法</li>
+<li>设计关系、索引等数据库文件的物理存储结构</li>
+</ul>
+</li>
+</ol>
+<h3 id="数据库实施"><a href="#数据库实施" class="headerlink" title="数据库实施"></a>数据库实施</h3><p>数据库实施的工作内容</p>
+<ul>
+<li>用ddl定义数据库结构</li>
+<li>组织数据入库</li>
+<li>编制与调试应用程序</li>
+<li>数据库试运行</li>
+</ul>
+<h3 id="数据库运行维护"><a href="#数据库运行维护" class="headerlink" title="数据库运行维护"></a>数据库运行维护</h3><ol>
+<li>数据库的转储和恢复</li>
+<li>数据库的安全性、完整性控制</li>
+<li>数据库性能的监督、分析和改进</li>
+<li>数据库的重组织和重构造</li>
+</ol>
+<h1 id="数据库恢复技术"><a href="#数据库恢复技术" class="headerlink" title="数据库恢复技术"></a>数据库恢复技术</h1><ol>
+<li><p>什么是事务：</p>
+<p>事务是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位</p>
+<p><em>事务是<strong>恢复和并发控制</strong>的基本单位</em></p>
+</li>
+<li><p>事务的ACID特性</p>
+<p><strong>原子性、一致性、隔离性、持续性</strong></p>
+<ul>
+<li>原子性：事务中包括的操作要么都做，要么都不做</li>
+<li>一致性：事务执行使数据库从一个一致性变到另一个一致性状态</li>
+<li>隔离性：一个事务的执行不能被其他事务干扰，而影响他对数据的正确使用和修改</li>
+<li>持续性：一个事务一旦提交，他对数据库中的数据的改变就应该是永久性的，接下来的其他操作或故障不应该对其执行结果有任何影响</li>
+</ul>
+</li>
+<li><p>:heavy_check_mark: 为什么事务非正常结束时会影响数据库数据的正确性</p>
+<p>事务执行的结果必须是使数据库从一个一致性状态变到另一个一致性状态。如果数据库系统运行中发生故障，有些事务尚未完成就被迫中断，这些未完成事务对数据库所做的修改有一部分已写入物理数据库，这时数据库就可能处于不正确状态，或者说不一致状态。</p>
+</li>
+<li><p>事务故障：包括<strong>事务故障、系统故障、介质故障</strong></p>
+<ul>
+<li>事务故障：某个事务由于某些原因未运行至正常终止点就夭折了</li>
+<li>系统故障：整个系统的正常运行突然被破坏，所有正在运行的事物都非正常终止</li>
+<li>介质故障：介质故障是指存储数据库的设备发生故障，使存储在其上的数据部分或全部丢失</li>
+</ul>
+</li>
+<li><p>恢复操作的基本原理是<strong>冗余</strong></p>
+</li>
+<li><p>如何建立数据冗余：<strong>数据转储和登记日志文件</strong></p>
+</li>
+<li><p>什么是转储：DBA将整个数据库复制到磁带或另一个磁盘保存起来的过程</p>
+<ul>
+<li>静态转储：在系统中无运行事务时进行转储，优点是实现简单，缺点是降低了数据库的可用性</li>
+<li>动态转储：转储操作与用户事务并发进行，允许对数据库进行存取或修改。优点是不用等待正在运行的用户事务结束，不会影响新事物的运行。缺点是不能保证副本中的数据正确有效。</li>
+<li>海量转储：每次转储全部数据库</li>
+<li>增量转储：只转储上次转储后更新过的数据</li>
+</ul>
+</li>
+<li><p>日志文件格式：<strong>以记录为单位的日记文件、以数据块为单位的日记文件</strong></p>
+</li>
+<li><p>登记日志文件原则：</p>
+<ul>
+<li>登记的次序严格按并行事务执行的时间次序</li>
+<li>必须先写日志文件再写数据库</li>
+</ul>
+</li>
+<li><p>:heavy_check_mark: :heavy_exclamation_mark: 为什么要先写日志文件</p>
+<p><strong>如果先谢了数据库修改，而在日志文件中没有登记下这个修改，则以后就无法恢复这个修改了。如果先写日记文件但没有修改数据库，按日记文件恢复时只不过是多执行一次没必要的UNDO操作，并不会影响数据库的正确性。</strong></p>
+</li>
+<li><p>:heavy_check_mark::heavy_exclamation_mark:针对不同的故障，试给出恢复的策略和方法</p>
+<ul>
+<li>事务故障的恢复步骤：<ol>
+<li>反向扫描文件日志，查找该事务的更新操作</li>
+<li>对该事物的更新操作执行逆操作，即将日志记录中“更新前的值”写入数据库</li>
+<li>继续反向扫描日志文件，查找该事务的其他更新操作，并做同样处理</li>
+<li>如此处理下去，直到读到此事务的开始标记，事务故障恢复就完成了</li>
+</ol>
+</li>
+<li>系统故障的恢复步骤：<ol>
+<li>正向扫描日志文件，REDO中存放在故障发生前已提交的事务，UNDO队列中存放故障发生时尚未完成的事务</li>
+<li>对UNDO队列中的各个事务进行UNDO处理</li>
+<li>对REDO队列中的事务进行REDO处理</li>
+</ol>
+</li>
+<li>介质故障的恢复步骤：<ol>
+<li>装入最新的后备数据库副本，使数据库恢复到最近一次转储时的一致性状态。对于动态转储的数据库副本，还需同时装入转储时刻的日志文件副本，利用与恢复系统故障相同的方法，才能将数据库恢复到一致性状态。</li>
+<li>装入有关的日记文件副本，重做已完成的事务。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>:heavy_check_mark::heavy_exclamation_mark:试述使用检查点方法进行恢复的步骤</p>
+<ul>
+<li>在重新开始文件中找到最后一个检查点记录在日志文件中的地址，由该地址在日志文件中找到最后一个检查点记录</li>
+<li>由该检查点记录得到检查点建立时刻所有正在执行的事务清单ACTIVE-LIST，建立两个事务队列：UNDO-LIST和REDO-LIST，把ACTIVE-LIST暂时放入UNDO-LIST,REDO队列暂时为空</li>
+<li>从检查点开始正向扫描日志文件，直到日志文件结束<ul>
+<li>如果有新开始的事务T<del>i</del>,则把T<del>i</del>暂时放入UNDO-LIST队列</li>
+<li>如果有提交的事务T<del>j</del>，则把T<del>j</del>从UNDO-LIST队列移到REDO-LIST队列</li>
+</ul>
+</li>
+<li>对UNDO-LIST中的每个事务执行UNDO操作，对REDO-LIST中的每个事务执行REDO操作</li>
+</ul>
+</li>
+</ol>
+<h1 id="数据库并发控制"><a href="#数据库并发控制" class="headerlink" title="数据库并发控制"></a>数据库并发控制</h1><ol>
+<li><p>:heavy_check_mark: 事务并发操作可能带来哪些问题？用什么方法可以避免？</p>
+<p>可能会存取和存储不正确的数据，破坏事务的隔离性和数据库的一致性。</p>
+<ul>
+<li>丢失修改：事务1与事务2从数据库读入同一数据并修改，事务2的提交结果破坏了事务1提交的结果，导致事务1的修改被丢失。</li>
+<li>不可重复读：是指事务1读取数据后，事务2执行更新操作，使事务1无法再现前一次读取结果。</li>
+<li>读脏数据：事务读取的数据与数据库中的数据不一致，称作脏数据。</li>
+</ul>
+<p>采用<strong>封锁机制</strong>可以避免不一致的问题。</p>
+</li>
+<li><p>:heavy_check_mark:什么是封锁？基本的封锁类型有几种？试述他们的含义</p>
+<p>封锁就是事务T在对某个数据对象操作之前，先向系统发出请求，对其加锁。加锁后事务T就对该数据对象有了一定的控制，在事务T释放他的锁之前，其他的事务不能更新此数据对象。</p>
+<p>基本的封锁类型有：<strong>排它锁（X锁）、共享锁（S锁）</strong></p>
+<ul>
+<li>排它锁：若事务T对数据对象A加上X锁，则只允许T读取和修改A，其他任何事务不能再对A加任何类型的锁，直到T释放A上的锁为止。</li>
+<li>共享锁：若事务T对数据对象A上S锁，则事务T可以读A但不能修改A，其他事务只能对A加S锁，不能加X锁，直到T释放A上的S锁为止。</li>
+</ul>
+</li>
+<li><p>常见的封锁协议：</p>
+<ul>
+<li><p>1级封锁协议：事务在修改数据R之前必须对其加X锁，直到事务结束才释放。</p>
+<p>可以防止丢失更改，不能保证可重复读和不读脏数据。</p>
+</li>
+<li><p>2级封锁协议：1级封锁协议+事务T在读取数据R前必须<strong>先加S锁，读完后</strong>即可释放S锁。</p>
+<p>可以防止丢失修改和读脏数据，不能保证可重复读</p>
+</li>
+<li><p>3级封锁协议：1级封锁协议+事务T在读取数据R之前必须<strong>先对其加S锁，直到事务结束才释放</strong>。</p>
+<p>可以防止丢失修改、读脏数据和不可重复读</p>
+</li>
+</ul>
+</li>
+<li><p>什么是活锁，如何解决？</p>
+<p>活锁是指由于系统调度的原因，某些事务的加锁请求得不到响应而永远等待下去。</p>
+<p>解决方法是采取合理的调度策略如FCFS</p>
+</li>
+<li><p>什么是死锁，如何解决？</p>
+<p>死锁是指两个或多个事务都已封锁了一些数据对象，然后又都请求对已被其他事务封锁的数据对象加锁，从而出现死等待。</p>
+<p>解决方法有：<strong>预防死锁、诊断与解除死锁</strong></p>
+<ul>
+<li><p>预防死锁：这两种策略并不太适合数据库的特点，因此采用诊断并解除的方法。</p>
+<ul>
+<li><p>一次封锁法</p>
+<p>要求每个事务必须一次将所有要使用的数据全部加锁，否则就不能继续执行 。</p>
+<p>问题：难于事先精确确定封锁对象，降低并发度</p>
+</li>
+<li><p>顺序封锁法</p>
+<p>顺序封锁法是预先对数据对象规定一个封锁顺序，所有事务都按这个顺序实行封锁。</p>
+<p>问题：维护成本高，难于实现</p>
+</li>
+</ul>
+</li>
+<li><p>诊断和解除死锁：</p>
+<ul>
+<li><p>诊断</p>
+<ul>
+<li><p>超时法</p>
+<p>如果一个事务的等待时间超过了规定的时限，就认为发生了死锁。</p>
+<p>优点：实现简单</p>
+<p>缺点：若时限设置过短，有可能误判死锁；若时限设置过长，容易发现不到死锁。</p>
+</li>
+<li><p>等待图法</p>
+<p>用事务等待图动态反映所有事务的等待情况。并发控制子系统周期性地生成事务等待图，并进行检测，若发现回路则说明死锁。</p>
+</li>
+</ul>
+</li>
+<li><p>解除</p>
+<p>选择一个处理死锁代价最小的事务，将其撤消，释放此事务持有的所有的锁，使其它事务能继续运行下去。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>什么样的并发操作调度是正确的？</p>
+<p>几个事务并发执行是正确的当且仅当其结果与按某一次序串行执行他们的结果相同。这种并行调度策略称为 <strong>可串行化调度</strong>。</p>
+<p>将所有事物串行起来的调度策略一定是正确的调度策略。</p>
+<p>可串行性是并行事务正确性的唯一准则。</p>
+</li>
+<li><p>保证并发操作调度正确性的方法：<strong>两段锁协议</strong></p>
+<p>事务分为两个阶段：第一阶段是获得封锁，也成为扩展阶段；第二阶段是释放封锁，也称为收缩阶段。</p>
+<p>并行执行的所有事务均遵守两段锁协议，则对这些事务的所有并行调度策略都是可串行化的。</p>
+<ul>
+<li><strong>所有遵守两段锁协议的事务，其并行执行的结果一定是正确的。</strong></li>
+<li>事务遵守两段锁协议是可串行化调度的<strong>充分条件</strong>。</li>
+<li>可串行化调度中，不一定所有事务都必须符合两段锁协议。</li>
+</ul>
+</li>
+<li><p>两段锁协议与防止死锁的一次封锁法的比较</p>
+<ul>
+<li><p>一次封锁法要求每个事务必须一次将所有要使用的数据全部加锁，否则就不能继续执行，因此，一次封锁法遵守两段锁协议；</p>
+</li>
+<li><p>但是两段锁协议并不要求事务必须一次将所有要使用的数据全部加锁，因此，<strong>遵守两段锁协议的事务可能发生死锁。</strong></p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="数据库安全性"><a href="#数据库安全性" class="headerlink" title="数据库安全性"></a>数据库安全性</h1><ol>
+<li><p>:heavy_check_mark:试述实现数据库安全性控制的常用方法和技术</p>
+<ul>
+<li><strong>用户身份鉴别</strong>：系统提供多种方式让用户标识自己的名字或身份。用户要使用数据库系统时由系统进行核对，通过鉴定后才可以使用数据库。</li>
+<li><strong>存取控制：</strong>系统提供用户权限定义和合法权限检查功能，用户只有获得某种权限才能访问数据库中的某些数据</li>
+<li><strong>视图机制：</strong>为不同的用户定义不同的视图，通过视图机制把要保密的数据对无权存取的用户隐藏起来，从而自动对数据提供一定程度的安全保护</li>
+<li><strong>审计：</strong>建立审计日志，将用户对数据库的所有操作记录在上面,DBA可以利用审计日志追踪非法存取数据的人。</li>
+<li><strong>数据加密：</strong>对存储和传输数据进行加密处理，不知道解密算法的人无法获得数据的内容</li>
+</ul>
+</li>
+<li><p><strong>C2级的DBMS必须有自主存取控制和审计功能，B1级别的DBMS必须有强制存取控制和审计功能</strong></p>
+</li>
+<li><p>常用的存取控制方法：<strong>自主存取控制DAC、强制存取控制MAC</strong></p>
+<p>见笔记</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag"># 知识点</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/23/%E6%B1%87%E7%BC%96%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E4%B8%8E%E5%A1%AB%E7%A9%BA%E6%95%B4%E7%90%86/" rel="prev" title="汇编与接口简单与填空整理">
+      <i class="fa fa-chevron-left"></i> 汇编与接口简单与填空整理
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/31/hello-world/" rel="next" title="Hello World">
+      Hello World <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%AA%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">数据库绪论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">关系数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%87%E5%87%86%E8%AF%AD%E8%A8%80"><span class="nav-number">3.</span> <span class="nav-text">关系数据库标准语言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-number">4.</span> <span class="nav-text">数据库完整性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA"><span class="nav-number">5.</span> <span class="nav-text">关系数据库理论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="nav-number">6.</span> <span class="nav-text">数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E9%98%B6%E6%AE%B5"><span class="nav-number">6.1.</span> <span class="nav-text">数据库设计的阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="nav-number">6.1.1.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">6.1.2.</span> <span class="nav-text">概念结构设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">6.1.3.</span> <span class="nav-text">逻辑结构设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%89%A9%E7%90%86%E8%AE%BE%E8%AE%A1"><span class="nav-number">6.1.4.</span> <span class="nav-text">数据库的物理设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E6%96%BD"><span class="nav-number">6.1.5.</span> <span class="nav-text">数据库实施</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%90%E8%A1%8C%E7%BB%B4%E6%8A%A4"><span class="nav-number">6.1.6.</span> <span class="nav-text">数据库运行维护</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%81%A2%E5%A4%8D%E6%8A%80%E6%9C%AF"><span class="nav-number">7.</span> <span class="nav-text">数据库恢复技术</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6"><span class="nav-number">8.</span> <span class="nav-text">数据库并发控制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">9.</span> <span class="nav-text">数据库安全性</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
