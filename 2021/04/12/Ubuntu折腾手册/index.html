@@ -63,7 +63,7 @@
                             <a class=""
                                href="/"
                             >
-                                HOME
+                                首页
                             </a>
                         </li>
                     
@@ -71,7 +71,7 @@
                             <a class=""
                                href="/archives"
                             >
-                                ARCHIVES
+                                归档
                             </a>
                         </li>
                     
@@ -98,12 +98,12 @@
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/">HOME</a>
+                       href="/">首页</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/archives">ARCHIVES</a>
+                       href="/archives">归档</a>
                 </li>
             
         </ul>
@@ -151,12 +151,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>25 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>570 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
         </span>
     
     
@@ -177,6 +177,31 @@
 <li>服务器为 Apache/2.4.41 (Ubuntu)</li>
 </ul>
 <h1 id="Apache2"><a href="#Apache2" class="headerlink" title="Apache2"></a>Apache2</h1><h2 id="基本路径"><a href="#基本路径" class="headerlink" title="基本路径"></a>基本路径</h2><p>配置文件：</p>
+<h2 id="ssh以及openssl升级"><a href="#ssh以及openssl升级" class="headerlink" title="ssh以及openssl升级"></a>ssh以及openssl升级</h2><h3 id="UBUNTU-18-04-升级OPENSSH-8-4P1"><a href="#UBUNTU-18-04-升级OPENSSH-8-4P1" class="headerlink" title="UBUNTU 18.04 升级OPENSSH 8.4P1"></a>UBUNTU 18.04 升级OPENSSH 8.4P1</h3><h4 id="查看当前版本"><a href="#查看当前版本" class="headerlink" title="查看当前版本"></a>查看当前版本</h4><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zale@zale-Parallels-Virtual-Platform:~$ ssh -V</span><br><span class="line">OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="安装telnet-防止无法登陆"><a href="#安装telnet-防止无法登陆" class="headerlink" title="安装telnet 防止无法登陆"></a>安装telnet 防止无法登陆</h4><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get install openbsd-inetd telnetd telnet -y</span><br><span class="line">/etc/init.d/openbsd-inetd restart</span><br><span class="line">telnet 127.0.0.1 </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="安装zlib-后面需要用到"><a href="#安装zlib-后面需要用到" class="headerlink" title="安装zlib 后面需要用到"></a>安装zlib 后面需要用到</h4><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget http://zlib.net/zlib-1.2.11.tar.gz</span><br><span class="line">tar xvf zlib-1.2.11.tar.gz</span><br><span class="line">cd zlib-1.2.11</span><br><span class="line">./configure --prefix=/usr/local/zlib</span><br><span class="line">make -j 8</span><br><span class="line">make install</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="如果运行“-configure-–prefix-usr-local-zlib”-出现错误-应该是gcc-的问题"><a href="#如果运行“-configure-–prefix-usr-local-zlib”-出现错误-应该是gcc-的问题" class="headerlink" title="如果运行“./configure –prefix=/usr/local/zlib” 出现错误 应该是gcc 的问题"></a>如果运行“./configure –prefix=/usr/local/zlib” 出现错误 应该是gcc 的问题</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#检测是否安装</span><br><span class="line">cc -v</span><br><span class="line">#安装</span><br><span class="line">sudo apt-get install gcc</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="更新openssl"><a href="#更新openssl" class="headerlink" title="更新openssl"></a>更新openssl</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.openssl.org/source/openssl-1.1.1h.tar.gz</span><br><span class="line">tar zxvf openssl-1.1.1h.tar.gz</span><br><span class="line">cd openssl-1.1.1h</span><br><span class="line">./config shared zlib</span><br><span class="line">make -j 8</span><br><span class="line">make install</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="如果更新过程中出现-error：-zlib-h-no-such-file-or-directory-请参考-这里"><a href="#如果更新过程中出现-error：-zlib-h-no-such-file-or-directory-请参考-这里" class="headerlink" title="如果更新过程中出现 error： zlib.h:no such file or directory 请参考 这里"></a>如果更新过程中出现 error： zlib.h:no such file or directory 请参考 <a class="link" target="_blank" rel="noopener" href="https://blog.51cto.com/53cto/1768007">这里<i class="fas fa-external-link-alt"></i></a></h5><h4 id="备份原来的openssl-创建软链接到系统位置"><a href="#备份原来的openssl-创建软链接到系统位置" class="headerlink" title="备份原来的openssl,创建软链接到系统位置"></a>备份原来的openssl,创建软链接到系统位置</h4><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mv /usr/bin/openssl /usr/bin/openssl.bak </span><br><span class="line">mv /usr/include/openssl /usr/include/openssl.bak </span><br><span class="line">ln -s /usr/local/bin/openssl /usr/bin/openssl</span><br><span class="line">ln -s /usr/local/include/openssl /usr/include/openssl</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="将openssl-的lib-库添加到系统，并使用"><a href="#将openssl-的lib-库添加到系统，并使用" class="headerlink" title="将openssl 的lib 库添加到系统，并使用"></a>将openssl 的lib 库添加到系统，并使用</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo "/usr/local/lib" &gt; /etc/ld.so.conf.d/openssl.conf</span><br><span class="line">ldconfig  </span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="查看openssl版本"><a href="#查看openssl版本" class="headerlink" title="查看openssl版本"></a>查看openssl版本</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@zale-Parallels-Virtual-Platform:~/openssl-1.1.1h# openssl version -a</span><br><span class="line">OpenSSL 1.1.1h  22 Sep 2020</span><br><span class="line">built on: Wed Nov 25 06:24:14 2020 UTC</span><br><span class="line">platform: linux-x86_64</span><br><span class="line">options:  bn(64,64) rc4(16x,int) des(int) idea(int) blowfish(ptr) </span><br><span class="line">compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -O3 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_CPUID_OBJ -DOPENSSL_IA32_SSE2 -DOPENSSL_BN_ASM_MONT -DOPENSSL_BN_ASM_MONT5 -DOPENSSL_BN_ASM_GF2m -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DKECCAK1600_ASM -DRC4_ASM -DMD5_ASM -DAESNI_ASM -DVPAES_ASM -DGHASH_ASM -DECP_NISTZ256_ASM -DX25519_ASM -DPOLY1305_ASM -DZLIB -DNDEBUG</span><br><span class="line">OPENSSLDIR: "/usr/local/ssl"</span><br><span class="line">ENGINESDIR: "/usr/local/lib/engines-1.1"</span><br><span class="line">Seeding source: os-specific</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="更新-openssh"><a href="#更新-openssh" class="headerlink" title="更新 openssh"></a>更新 openssh</h3><h5 id="备份原openssh文件-卸载原openssh"><a href="#备份原openssh文件-卸载原openssh" class="headerlink" title="备份原openssh文件,卸载原openssh"></a>备份原openssh文件,卸载原openssh</h5><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv /etc/init.d/ssh /etc/init.d/ssh.old</span><br><span class="line">cp -r /etc/ssh /etc/ssh.old</span><br><span class="line">apt-get remove openssh-server openssh-client -y</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="安装新版本"><a href="#安装新版本" class="headerlink" title="安装新版本"></a>安装新版本</h5><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">apt-get install libpam0g-dev   -y</span><br><span class="line"></span><br><span class="line">wget --no-check-certificate https://fastly.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.4p1.tar.gz</span><br><span class="line"></span><br><span class="line">tar zxvf openssh-8.4p1.tar.gz</span><br><span class="line"></span><br><span class="line">cd openssh-8.4p1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">./configure --prefix=/usr \</span><br><span class="line">--sysconfdir=/etc/ssh \</span><br><span class="line">--with-md5-passwords \</span><br><span class="line">--with-pam --with-zlib \</span><br><span class="line">--with-ssl-dir=/usr/local \</span><br><span class="line">--with-privsep-path=/var/lib/sshd #需要指定openssl的安装路径 </span><br><span class="line"></span><br><span class="line">make -j 8</span><br><span class="line">make install </span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="查看安装更新效果"><a href="#查看安装更新效果" class="headerlink" title="查看安装更新效果"></a>查看安装更新效果</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@zale-Parallels-Virtual-Platform:~/openssh-8.4p1# ssh -V</span><br><span class="line">OpenSSH_8.4p1, OpenSSL 1.1.1h  22 Sep 2020</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="还原配置文件"><a href="#还原配置文件" class="headerlink" title="还原配置文件"></a>还原配置文件</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/ssh</span><br><span class="line">mv sshd_config sshd_config.default</span><br><span class="line">cp ../ssh.old/sshd_config ./</span><br><span class="line">mv /etc/init.d/ssh.old /etc/init.d/ssh</span><br><span class="line">systemctl unmask ssh</span><br><span class="line">systemctl restart ssh</span><br></pre></td></tr></tbody></table></figure>
+
+<p>注：这次更新openssh改变了位置，导致了sftp无法使用，重新安装ssh-server就好了</p>
 
         </div>
 
@@ -195,7 +220,7 @@
                             </span>
                             <span class="title flex-center">
                                 <span class="post-nav-title-item">机试</span>
-                                <span class="post-nav-item">Prev posts</span>
+                                <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
                     </div>
@@ -208,7 +233,7 @@
                         >
                             <span class="title flex-center">
                                 <span class="post-nav-title-item">Latex模版使用指南</span>
-                                <span class="post-nav-item">Next posts</span>
+                                <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
                               <i class="fas fa-chevron-right"></i>
@@ -224,7 +249,7 @@
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;Comments</i>
+        <i class="fas fa-comments">&nbsp;评论</i>
     </div>
     
 
@@ -323,18 +348,18 @@
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
         </div>
         
     </div>
@@ -413,7 +438,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5"><span class="nav-text">基本情况</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache2"><span class="nav-text">Apache2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%B7%AF%E5%BE%84"><span class="nav-text">基本路径</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5"><span class="nav-text">基本情况</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache2"><span class="nav-text">Apache2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%B7%AF%E5%BE%84"><span class="nav-text">基本路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh%E4%BB%A5%E5%8F%8Aopenssl%E5%8D%87%E7%BA%A7"><span class="nav-text">ssh以及openssl升级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UBUNTU-18-04-%E5%8D%87%E7%BA%A7OPENSSH-8-4P1"><span class="nav-text">UBUNTU 18.04 升级OPENSSH 8.4P1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%89%88%E6%9C%AC"><span class="nav-text">查看当前版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85telnet-%E9%98%B2%E6%AD%A2%E6%97%A0%E6%B3%95%E7%99%BB%E9%99%86"><span class="nav-text">安装telnet 防止无法登陆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85zlib-%E5%90%8E%E9%9D%A2%E9%9C%80%E8%A6%81%E7%94%A8%E5%88%B0"><span class="nav-text">安装zlib 后面需要用到</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E8%BF%90%E8%A1%8C%E2%80%9C-configure-%E2%80%93prefix-usr-local-zlib%E2%80%9D-%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF-%E5%BA%94%E8%AF%A5%E6%98%AFgcc-%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">如果运行“.&#x2F;configure –prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;zlib” 出现错误 应该是gcc 的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0openssl"><span class="nav-text">更新openssl</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%9B%B4%E6%96%B0%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%87%BA%E7%8E%B0-error%EF%BC%9A-zlib-h-no-such-file-or-directory-%E8%AF%B7%E5%8F%82%E8%80%83-%E8%BF%99%E9%87%8C"><span class="nav-text">如果更新过程中出现 error： zlib.h:no such file or directory 请参考 这里</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E5%8E%9F%E6%9D%A5%E7%9A%84openssl-%E5%88%9B%E5%BB%BA%E8%BD%AF%E9%93%BE%E6%8E%A5%E5%88%B0%E7%B3%BB%E7%BB%9F%E4%BD%8D%E7%BD%AE"><span class="nav-text">备份原来的openssl,创建软链接到系统位置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86openssl-%E7%9A%84lib-%E5%BA%93%E6%B7%BB%E5%8A%A0%E5%88%B0%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%B9%B6%E4%BD%BF%E7%94%A8"><span class="nav-text">将openssl 的lib 库添加到系统，并使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8Bopenssl%E7%89%88%E6%9C%AC"><span class="nav-text">查看openssl版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0-openssh"><span class="nav-text">更新 openssh</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E5%8E%9Fopenssh%E6%96%87%E4%BB%B6-%E5%8D%B8%E8%BD%BD%E5%8E%9Fopenssh"><span class="nav-text">备份原openssh文件,卸载原openssh</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%96%B0%E7%89%88%E6%9C%AC"><span class="nav-text">安装新版本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%AE%89%E8%A3%85%E6%9B%B4%E6%96%B0%E6%95%88%E6%9E%9C"><span class="nav-text">查看安装更新效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%98%E5%8E%9F%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">还原配置文件</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
@@ -435,7 +460,7 @@
                 <input autocomplete="off"
                        autocorrect="off"
                        autocapitalize="off"
-                       placeholder="Search..."
+                       placeholder="搜索..."
                        spellcheck="false"
                        type="search"
                        class="search-input"
