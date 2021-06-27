@@ -24,7 +24,9 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#66CCCC","avatar":"/images/avatar.jpg","favicon":"/images/logo.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"慢慢走，比较快"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
-<meta name="generator" content="Hexo 5.4.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -136,9 +138,7 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style>
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+</style></head>
 
 
 <body>
@@ -263,12 +263,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>7.2k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>16.1k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>24 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>55 Mins</span>
         </span>
     
     
@@ -290,12 +290,14 @@ mjx-container[display="true"] + br {
 </ul>
 <h1 id="1-软件工程概论"><a href="#1-软件工程概论" class="headerlink" title="1 软件工程概论"></a>1 软件工程概论</h1><h2 id="1-1-软件的基本概念"><a href="#1-1-软件的基本概念" class="headerlink" title="1.1 软件的基本概念"></a>1.1 软件的基本概念</h2><ul>
 <li><p>软件定义：一组对象或项目所形成的一个“配置”，由<strong>程序、文档和数据</strong>等部分组成</p>
-</li>
+<ul>
 <li><p>程序(program)：可被计算机硬件理解并执行的一组指令，提供期望的功能和性能；</p>
 </li>
 <li><p>数据(data structure)：程序能正常操纵信息的数据结构；</p>
 </li>
 <li><p>文档(document)：与程序开发、维护和使用有关的图文材料 </p>
+</li>
+</ul>
 </li>
 <li><p>软件分类：应用软件，支撑软件，系统软件</p>
 <ul>
@@ -304,12 +306,20 @@ mjx-container[display="true"] + br {
 <li>系统软件：最靠近计算机硬件的一层软件 —— 控制和协调计算机及外部设备、支持应用软件开发与运行的软件</li>
 </ul>
 </li>
-<li><p>软件的四大特征：复杂性、不可见性、易变性、一致性</p>
+<li><p>软件的四大特征：<strong>复杂性、不可见性、易变性、一致性</strong></p>
 </li>
 <li><p>软件为何需要不断的变化：</p>
 <p>– 软件必须不断的变化以<strong>适应新的计算环境或新技术的发展</strong>；<br>– 软件必须通过不断的功能增强以<strong>实现新的业务需求</strong>；<br>– 软件必须通过扩展以<strong>与其他软件系统进行互操作</strong>；<br>– 软件必须被不断的重构以<strong>使其生命周期得以延续</strong></p>
 </li>
 <li><p>遗留系统：仍在使用中的软件系统，可满足客户需求，但很难以“优雅的”方式对其进行演变以适应新需求或新环境</p>
+</li>
+<li><p>结构化方法的软件=程序(Program)+文档(Document)+数据(Data)</p>
+</li>
+<li><p>面向对象的软件=对象(Object)+消息(Message)</p>
+</li>
+<li><p>面向构件的软件=构件(Component)+框架(Framework)</p>
+</li>
+<li><p>面向服务的软件=服务(Service)+消息(Message)+总线(Bus)</p>
 </li>
 </ul>
 <h2 id="1-2-软件工程产生的历史根源"><a href="#1-2-软件工程产生的历史根源" class="headerlink" title="1.2 软件工程产生的历史根源"></a>1.2 软件工程产生的历史根源</h2><h3 id="软件危机-star"><a href="#软件危机-star" class="headerlink" title="软件危机:star:"></a><strong>软件危机<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></strong></h3><ul>
@@ -324,7 +334,7 @@ mjx-container[display="true"] + br {
 <p>l软件成本比重上升；</p>
 <p>l软件开发生产率跟不上计算机应用迅速深入的趋势。</p>
 </li>
-<li><p>引发软件危机的主观原因和客观原因是什么（为什么会出现软件危机）</p>
+<li><p>引发软件危机的主观原因和客观原因是什么（为什么会出现软件危机）<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 <ul>
 <li>客观上：<strong>软件产品开发的复杂度和难度随软件规模呈指数级别增长</strong><ul>
 <li>随着软件规模的急速增长，传统的软件开发方法已经不可用了</li>
@@ -372,11 +382,11 @@ mjx-container[display="true"] + br {
 <p>–结构化开发方法(Structured Analysis and Design Technique, SADT)</p>
 <p>–面向对象开发方法(Object Oriented Analysis and Design, OOAD)</p>
 <p>–面向服务的软件开发方法（Service-oriented software engineering (SOSE)）</p>
-<img src="https://i.loli.net/2021/03/15/6JLcWZUvDnlBSa7.png" alt="image-20210315164137626" style="zoom:67%;">
+<img src="![](https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095328.png)" alt="image-20210315164137626" style="zoom:67%;">
 
-<img src="https://i.loli.net/2021/03/15/8hUuvtN7cmBknAF.png" alt="image-20210315164222641" style="zoom:67%;">
+<img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095145.png" alt="image-20210315164222641" style="zoom:67%;">
 
-<img src="https://i.loli.net/2021/03/20/Gpegimu1CM5A467.png" alt="image-20210315164321129" style="zoom:67%;"></li>
+<img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095345.png" alt="image-20210315164321129" style="zoom:67%;"></li>
 <li><p>基于微服务架构的软件开发方法</p>
 <ul>
 <li>微服务：是一项在云中部署应用和服务的新技术，是一种将单个应用程序作为一套小型服务开发的方法，每种应用程序都在自己的进程中运行，并与轻量级机制（通常是HTTP资源API）进行通信。这<strong>些服务是围绕业务功能构建的</strong>，可以通过全自动部署机制独立部署。这些服务的集中管理最少，可以用不同的编程语言编写，并使用不同的数据存储技术。</li>
@@ -419,22 +429,22 @@ mjx-container[display="true"] + br {
 <h2 id="1-4-软件工程核心思想"><a href="#1-4-软件工程核心思想" class="headerlink" title="1.4 软件工程核心思想"></a>1.4 软件工程核心思想</h2><h3 id="1-4-1-软件工程的本质"><a href="#1-4-1-软件工程的本质" class="headerlink" title="1.4.1 软件工程的本质"></a>1.4.1 软件工程的本质</h3><ul>
 <li>任何软件系统开发的共同本质在于： <strong>从现实空间的需求到计算机空间的软件代码之间的映射与转换</strong></li>
 <li>有单步映射和多步映射</li>
-<li>软件工程的本质：用严格的规范和管理手段来缩小偏差，通过牺牲“时间”来提高“质量”</li>
+<li>软件工程的作用：用严格的规范和管理手段来缩小偏差，通过牺牲“时间”来提高“质量”</li>
 </ul>
 <h3 id="1-4-2-软件工程的映射"><a href="#1-4-2-软件工程的映射" class="headerlink" title="1.4.2 软件工程的映射"></a>1.4.2 软件工程的映射</h3><ul>
-<li>概念映射：问题空间的概念与解空间的模型化概念之间的映射</li>
-<li>业务逻辑映射：问题空间的处理逻辑与解空间处理逻辑之间的映射</li>
+<li><strong>概念映射</strong>：问题空间的<strong>概念</strong>与解空间的<strong>模型化概念</strong>之间的映射</li>
+<li><strong>业务逻辑映射</strong>：问题空间的<strong>处理逻辑</strong>与解空间<strong>处理逻辑</strong>之间的映射</li>
 </ul>
 <h3 id="1-4-3-软件工程的作用"><a href="#1-4-3-软件工程的作用" class="headerlink" title="1.4.3 软件工程的作用"></a>1.4.3 软件工程的作用</h3><ul>
 <li><p>软件工程需要解决的问题</p>
 <ul>
-<li>需要设置哪些抽象层次——单步映射？多步映射？几步？</li>
-<li>每一抽象层次的概念、术语与表达方式——公式？图形？文字？</li>
-<li>相邻的两个抽象层次之间如何进行映射——需要遵循哪些途径和原则？</li>
+<li><strong>需要设置哪些抽象层次</strong>——单步映射？多步映射？几步？</li>
+<li><strong>每一抽象层次的概念、术语与表达方式</strong>——公式？图形？文字？</li>
+<li><strong>相邻的两个抽象层次之间如何进行映射</strong>——需要遵循哪些途径和原则？</li>
 </ul>
 </li>
 <li><p>软件工程：不同抽象层次之间的映射过程</p>
-<img src="https://i.loli.net/2021/03/17/frbOSWYxB1gUukG.png" alt="image-20210317194939357" style="zoom:50%;">
+<img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095353.png" alt="image-20210317194939357" style="zoom:50%;">
 
 <ul>
 <li><p>需求分析：</p>
@@ -460,31 +470,35 @@ mjx-container[display="true"] + br {
 </li>
 <li><p>过程：在各个抽象层次之间进行映射和转换</p>
 <p>软件工程具有“<strong>产品与过程二相性</strong>”的特点，必须把二者结合起来去考虑，而不能忽略其中任何一方。</p>
-<img src="https://i.loli.net/2021/03/17/mMUcJ8PSxZNWXa5.png" alt="image-20210317195657954" style="zoom:67%;"></li>
-<li><p>功能性需求：软件所实现的功能达到它的设计规范和满足用户需求的程度</p>
+</li>
+</ul>
+<img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095555.png" style="zoom:67%;">
+
 <ul>
-<li>完备性：软件能够支持用户所需求的全部功能的能力</li>
-<li>正确性：软件按照需求正确执行任务的能力</li>
-<li>健壮性：在异常情况下，软件能够正常运行的能力<ul>
+<li><p><strong>功能性需求</strong>：<strong>软件所实现的功能达到它的设计规范和满足用户需求的程度</strong></p>
+<ul>
+<li><strong>完备性</strong>：软件能够支持用户所需求的全部功能的能力</li>
+<li><strong>正确性</strong>：软件按照需求正确执行任务的能力</li>
+<li><strong>健壮性</strong>：在异常情况下，软件能够正常运行的能力<ul>
 <li>容错能力；</li>
 <li>恢复能力；</li>
 <li>正确性描述软件在需求范围之内的行为，而健壮性描述软件在需求范围之外的行为。 </li>
 </ul>
 </li>
-<li>可靠性：在给定的时间和条件下，软件能够正常维持其工作而不发生故障的能力。</li>
+<li><strong>可靠性</strong>：在给定的时间和条件下，软件能够正常维持其工作而不发生故障的能力。</li>
 </ul>
 </li>
-<li><p>非功能性需求：系统能够按期完成所期望的工作的性能与质量</p>
-<img src="https://i.loli.net/2021/03/17/5bBPFaDtVJpqwO7.png" alt="image-20210317200007259" style="zoom:80%;">
+<li><p><strong>非功能性需求：系统能够按期完成所期望的工作的性能与质量</strong></p>
+<img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095608.png" alt="image-20210317200007259" style="zoom:80%;">
 
-<p><img src="https://i.loli.net/2021/03/17/AJgIzk5aC9bsRZr.png" alt="image-20210317200037568"></p>
+<p><img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095614.png" alt="image-20210317200037568"></p>
 </li>
 </ul>
 <h3 id="1-4-6-软件开发中的多角色"><a href="#1-4-6-软件开发中的多角色" class="headerlink" title="1.4.6 软件开发中的多角色"></a>1.4.6 软件开发中的多角色</h3><ul>
 <li>顾客企业(Client，甲方)：<br>决策者(CxO)、终端用户(End User)、系统管理员；</li>
 <li>软件开发公司(Supplier，乙方)：<br>决策者(CxO)；<br>软件销售与市场人员；<br>咨询师、需求分析师；<br>软件架构师、软件设计师；<br>开发人员：开发经理/项目经理、程序员；<br>维护人员。</li>
 </ul>
-<img src="https://i.loli.net/2021/03/17/sLFUoPmpIHEa4SN.png" alt="image-20210317200200083" style="zoom:67%;">
+<img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095620.png" alt="image-20210317200200083" style="zoom:67%;">
 
 <h3 id="1-4-7-软件工程-最佳实践"><a href="#1-4-7-软件工程-最佳实践" class="headerlink" title="1.4.7 软件工程=最佳实践"></a>1.4.7 软件工程=最佳实践</h3><ul>
 <li>最佳实践：采用某种技术、方法、过程、活动或机制可以使生产或管理实践的<strong>结果达到最优，并减少出错的可能性</strong></li>
@@ -495,9 +509,9 @@ mjx-container[display="true"] + br {
 <li>软件复用的定义：是将已有软件的各种有关知识用于建立新的软件，以缩减软件开发和维护的花费。早期的软件复用主要是代码级复用，被复用的知识专指程序，后来扩大到包括:<strong>领域知识、开发经验、设计决定、体系结构、需求、设计、代码和文档等一切有关方面</strong>。</li>
 <li>软件复用的主要思想：将软件看成是由不同功能部分的“组件”所组成的有机体，每一个组件在设计编写时可以被设计成完成同类工作的通用工具，如果完成各种工作的组件被建立起来以后，编写一特定软件的工作就变成了将各种不同组件组织连接起来的简单问题。</li>
 <li><strong>软件复用的三个核心基本问题</strong>:<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><ul>
-<li>必须有可以复用的对象；</li>
-<li>所复用的对象必须是有用的；</li>
-<li>复用者需要知道如何去使用被复用的对象</li>
+<li><strong>必须有可以复用的对象；</strong></li>
+<li><strong>所复用的对象必须是有用的；</strong></li>
+<li><strong>复用者需要知道如何去使用被复用的对象</strong></li>
 </ul>
 </li>
 </ul>
@@ -507,24 +521,24 @@ mjx-container[display="true"] + br {
 <li>核心问题：如何的分解策略可以使得软件更容易理解、开发和维护</li>
 </ul>
 <h3 id="1-5-3-折中"><a href="#1-5-3-折中" class="headerlink" title="1.5.3 折中"></a>1.5.3 折中</h3><ul>
-<li>定义：不同的需求之间往往存在矛盾与冲突，需要通过折中来作出的合理的取舍，找到使双方均满意的点。</li>
-<li>核心问题：如何调和矛盾(需求之间、人与人之间、供需双方之间，等等)</li>
+<li>定义：不同的需求之间往往存在矛盾与冲突，需要通过<strong>折中</strong>来作出的<strong>合理的取舍</strong>，找到使<strong>双方均满意的点</strong>。</li>
+<li><strong>核心问题：如何调和矛盾(需求之间、人与人之间、供需双方之间，等等)</strong></li>
 <li>软件中的折衷策略：指通过协调各个质量因素,实现整体质量的最优。</li>
 <li>软件折衷的重要原则：是不能使某一方损失关键的职能,更不可以抛弃一方。</li>
 </ul>
 <h3 id="1-5-4-演化"><a href="#1-5-4-演化" class="headerlink" title="1.5.4 演化"></a>1.5.4 演化</h3><ul>
 <li><p>定义：软件系统在其生命周期中面临各种变化</p>
 </li>
-<li><p>核心问题：如何使软件系统适应外界的改变（在设计软件的初期，就要充分考虑到未来可能的变化，并采用恰当的设计决策，使软件具有适应变化的能力；可修改性、可维护性、可扩展性）</p>
+<li><p><strong>核心问题：如何使软件系统适应外界的改变（在设计软件的初期，就要充分考虑到未来可能的变化，并采用恰当的设计决策，使软件具有适应变化的能力；可修改性、可维护性、可扩展性）</strong></p>
 </li>
 </ul>
 <h1 id="2-敏捷开发过程"><a href="#2-敏捷开发过程" class="headerlink" title="2 敏捷开发过程"></a>2 敏捷开发过程</h1><h2 id="2-1-软件过程模型"><a href="#2-1-软件过程模型" class="headerlink" title="2.1 软件过程模型"></a>2.1 软件过程模型</h2><h3 id="2-1-1-软件过程"><a href="#2-1-1-软件过程" class="headerlink" title="2.1.1 软件过程"></a>2.1.1 软件过程</h3><ul>
 <li>定义：是指软件生命周期<br>所涉及的一系列相关过程，由关于软件项目的阶段、状态、方法、技术和开发、维护软件的人员以及相关Artifacts（计划、文档、模型、编码、测试、手册等）组成。是软件整个生命周期中从需求获取，需求分析，设计，实现，测试，发布和维护一个过程模型。软件过程不仅涉及工程开发，而且还涉及工程支持和工程管理。</li>
-<li>软件过程定义的内容：人员与分工、  所执行的活动、活动的细节和步骤</li>
-<li>软件过程通过以下方式组织和管理软件生命周期：定义软件生产过程中的活动、定义这些活动的顺序及其关系</li>
-<li>软件过程的目的：<ul>
-<li>标准化(可模仿)、可预见性(降低风险)、提高开发效率、得到<br>高质量产品</li>
-<li>提升制定时间和预算计划的能力</li>
+<li>软件过程定义的内容：人<strong>员与分工、  所执行的活动、活动的细节和步骤</strong></li>
+<li>软件过程通过以下方式组织和管理软件生命周期：<strong>定义软件生产过程中的活动、定义这些活动的顺序及其关系</strong></li>
+<li><strong>软件过程的目的：</strong><ul>
+<li><strong>标准化(可模仿)、可预见性(降低风险)、提高开发效率、得到</strong><br><strong>高质量产品</strong></li>
+<li><strong>提升制定时间和预算计划的能力</strong></li>
 </ul>
 </li>
 </ul>
@@ -537,28 +551,28 @@ mjx-container[display="true"] + br {
 <li>在开发过程中，通过不断地获得顾客的回馈</li>
 <li>允许变更——类似于服务过程（用户参与与交互，个性化定制）</li>
 </ul>
-<h2 id="2-2-典型的软件过程模型"><a href="#2-2-典型的软件过程模型" class="headerlink" title="2.2 典型的软件过程模型"></a>2.2 典型的软件过程模型</h2><img src="https://i.loli.net/2021/03/24/dSsJZWVbeKL5mHp.png" alt="image-20210324100547572" style="zoom:67%;">
+<h2 id="2-1-典型的软件过程模型"><a href="#2-1-典型的软件过程模型" class="headerlink" title="2.1 典型的软件过程模型"></a>2.1 典型的软件过程模型</h2><img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095626.png" alt="image-20210324100547572" style="zoom:67%;">
 
 <h3 id="2-2-1-瀑布模型（鲑鱼模型）"><a href="#2-2-1-瀑布模型（鲑鱼模型）" class="headerlink" title="2.2.1 瀑布模型（鲑鱼模型）"></a>2.2.1 瀑布模型（鲑鱼模型）</h3><ul>
 <li><p>定义：是软件开发的系统化的、顺序的方法</p>
-<img src="https://i.loli.net/2021/03/24/hTCmeHozud2B6iy.png" alt="image-20210324100908579" style="zoom:67%;"></li>
+<img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095632.png" alt="image-20210324100908579" style="zoom:67%;"></li>
 <li><p>上一个阶段结束，下一个阶段才能开始；<br>每个阶段均有里程碑和提交物；<br>上一阶段的输出是下一阶段的输入；<br>每个阶段均需要进行V&amp;V；<br>侧重于文档与产出物；</p>
 </li>
-<li><p>缺点：过于理想化：是不欢迎具有二义性问题存在的；线性模型</p>
+<li><p>缺点：<strong>过于理想化：</strong>是不欢迎具有二义性问题存在的；线性模型</p>
 </li>
-<li><p>优点：追求效率</p>
+<li><p>优点：<strong>追求效率</strong></p>
 </li>
 </ul>
-<img src="https://i.loli.net/2021/03/24/1Nej2ICXrTY6LHd.png" alt="image-20210324103452105" style="zoom:67%;">
+<img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095636.png" alt="image-20210324103452105" style="zoom:67%;">
 
 <h3 id="2-2-2-增量过程模型：增量模型，RAD模型"><a href="#2-2-2-增量过程模型：增量模型，RAD模型" class="headerlink" title="2.2.2 增量过程模型：增量模型，RAD模型"></a>2.2.2 增量过程模型：增量模型，RAD模型</h3><ul>
 <li><p>无须等到所有需求都出来才进行开发，只要某个需求的核心部分出来，即可进行开发。可能迫切需要为用户迅速提供一套功能有限的软件产品，然后在后续版本中再细化和扩展功能</p>
 </li>
 <li><p>增量定义：增量亦称改变量，指的是在一段时间内，自变量取不同的值所对应的函数值之差</p>
 </li>
-<li><p>软件被作为一系列的增量来设计、实现、集成和测试，每一个增量是由多种相互作用的模块所形成的提供功能的代码片段构成。</p>
+<li><p>软件被作为<strong>一系列的增量来设计、实现、集成和测试</strong>，每一个增量是由多种相互作用的模块所形成的提供功能的代码片段构成。</p>
 </li>
-<li><p>本质（核心思想）：以迭代的方式运用瀑布模型</p>
+<li><p><strong>本质（核心思想）：以迭代的方式运用瀑布模型</strong></p>
 <ul>
 <li>第一个增量往往是核心产品：满足了基本的需求，但是缺少附加的特性；</li>
 <li>客户使用上一个增量的提交物并进行自己评价，制定下一个增量计划，说明需要增加的特性和功能；</li>
@@ -566,53 +580,58 @@ mjx-container[display="true"] + br {
 </ul>
 </li>
 <li><p>优点：</p>
-<img src="https://i.loli.net/2021/03/24/yMiCVDma2RHEK5v.png" alt="image-20210324104331373" style="zoom:67%;"></li>
+<img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095641.png" alt="image-20210324104331373" style="zoom:67%;"></li>
 <li><p>缺点：</p>
 </li>
 </ul>
-<img src="https://i.loli.net/2021/03/24/gEpZBv5yxmHRXNY.png" alt="image-20210324104341064" style="zoom: 67%;">
+<img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095651.png" alt="image-20210324104341064" style="zoom: 67%;">
 
 <ul>
-<li><img src="https://i.loli.net/2021/03/24/qYQRCMlPUvErHc5.png" alt="image-20210324104652828"></li>
+<li><img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095655.png" alt="image-20210324104652828"></li>
 </ul>
 <h3 id="2-2-3-演化过程模型"><a href="#2-2-3-演化过程模型" class="headerlink" title="2.2.3 演化过程模型"></a>2.2.3 演化过程模型</h3><ul>
-<li>本质：循环、反复、不断调整当前系统以适应需求变化；</li>
+<li><strong>本质：循环、反复、不断调整当前系统以适应需求变化；</strong></li>
 <li>两种形态：<ul>
 <li>快速原型法</li>
 <li>螺旋模型</li>
 </ul>
 </li>
+<li>演化过程模型的目的：<br><strong>需求的变更频繁，要求在非常短的期限内实现，以充分满足客户/用户要求、及时投入市场；</strong></li>
 </ul>
 <h4 id="2-2-3-1-快速原型法"><a href="#2-2-3-1-快速原型法" class="headerlink" title="2.2.3.1 快速原型法"></a>2.2.3.1 快速原型法</h4><ul>
 <li><p>步骤：</p>
-<img src="https://i.loli.net/2021/03/24/juLrcR9vZ1NtPOI.png" alt="image-20210324105554185" style="zoom:80%;"></li>
+<img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095659.png" alt="image-20210324105554185" style="zoom:80%;"></li>
 <li><p>原形类型：</p>
 <ul>
-<li>抛弃式原型：最初的原型在完成并得到用户认可之后，将不会作为交付给用户的最终系统的一部分，而是被抛弃，其目的只是为了收集与验证需求；<br>该类原型可能是不可执行的(例如，只包含用户界面)；</li>
-<li>演化式原型：最初构造的原型将具备较高的质量，包含了系统的核心功能，然后通过收集需求对其进行不断的改善和精化；该类原型是可执行的，将成为最终系统的一部分；</li>
+<li><strong>抛弃式原型</strong>：最初的原型在完成并得到用户认可之后，将不会作为交付给用户的最终系统的一部分，而是被抛弃，其目的只是为了收集与验证需求；<br>该类原型可能是不可执行的(例如，只包含用户界面)；</li>
+<li><strong>演化式原型</strong>：最初构造的原型将具备较高的质量，包含了系统的核心功能，然后通过收集需求对其进行不断的改善和精化；该类原型是可执行的，将成为最终系统的一部分；</li>
 </ul>
 </li>
 <li><p><img src="https://i.loli.net/2021/03/24/KrzZMANV6FBsuOP.png" alt="image-20210324110326394"></p>
 </li>
+<li><p>优点：<br><strong>提高和改善客户/用户的参与程度，最大程度的响应用户需求的变化；</strong></p>
+</li>
+<li><p>缺点：<br>为了尽快完成原型，开发者没有考虑整体软件的质量和长期的可维护性，系统结构通常较差；<br>可能混淆原型系统与最终系统，原型系统在完全满足用户需求之后可能会被直接交付给客户使用；<br>额外的开发费用。</p>
+</li>
 </ul>
-<h4 id="2-2-3-1-螺旋式过程模型"><a href="#2-2-3-1-螺旋式过程模型" class="headerlink" title="2.2.3.1 螺旋式过程模型"></a>2.2.3.1 螺旋式过程模型</h4><p><img src="https://i.loli.net/2021/03/24/lFDpabZNKrLOeqt.png" alt="image-20210324110737905"></p>
+<h4 id="2-2-3-1-螺旋式过程模型"><a href="#2-2-3-1-螺旋式过程模型" class="headerlink" title="2.2.3.1 螺旋式过程模型"></a>2.2.3.1 螺旋式过程模型</h4><p>出发点：<strong>开发过程中及时识别和分析风险，并采取适当措施以消除或减少风险来的危害。</strong></p>
+<p><img src="https://i.loli.net/2021/03/24/lFDpabZNKrLOeqt.png" alt="image-20210324110737905"></p>
 <ul>
 <li>目的：需求的变更频繁，要求在非常短的期限内实现，以充分满足客户/用户要求、及时投入市场；</li>
 </ul>
 <h3 id="2-2-4-形式化过程模型"><a href="#2-2-4-形式化过程模型" class="headerlink" title="2.2.4 形式化过程模型"></a>2.2.4 形式化过程模型</h3><p><img src="https://i.loli.net/2021/03/24/EBMwv2qmoruCR7W.png" alt="image-20210324111503246"></p>
-<h3 id="2-2-5面向复用的软件过程"><a href="#2-2-5面向复用的软件过程" class="headerlink" title="2.2.5面向复用的软件过程"></a>2.2.5面向复用的软件过程</h3><p><img src="https://i.loli.net/2021/03/24/EBMwv2qmoruCR7W.png"></p>
-<h2 id="2-3-敏捷过程与方法-star"><a href="#2-3-敏捷过程与方法-star" class="headerlink" title="2.3 敏捷过程与方法:star:"></a>2.3 敏捷过程与方法<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h2><h3 id="2-3-1-敏捷"><a href="#2-3-1-敏捷" class="headerlink" title="2.3.1 敏捷"></a>2.3.1 敏捷</h3><ul>
+<h2 id="敏捷过程与方法-star"><a href="#敏捷过程与方法-star" class="headerlink" title="敏捷过程与方法:star:"></a>敏捷过程与方法<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h2><h3 id="2-3-1-敏捷"><a href="#2-3-1-敏捷" class="headerlink" title="2.3.1 敏捷"></a>2.3.1 敏捷</h3><ul>
 <li>敏捷=理念+优秀实践+具体应用</li>
 <li>理念：敏捷核心思想；</li>
 <li>优秀实践：敏捷的经验积累；</li>
 <li>具体应用：能够结合自身灵活应用才是真正的敏捷</li>
-<li>敏捷开发目标：<ul>
-<li>以用户的需求进化为核心</li>
-<li>更快（更早）的交付价值</li>
-<li>有效学习和灵活响应变化</li>
+<li><strong>敏捷开发目标：</strong><ul>
+<li><strong>以用户的需求进化为核心</strong></li>
+<li><strong>更快（更早）的交付价值</strong></li>
+<li><strong>有效学习和灵活响应变化</strong></li>
 </ul>
 </li>
-<li>本质：以快速的增量和迭代开发方式进行软件开发</li>
+<li><strong>本质：以快速的增量和迭代开发方式进行软件开发</strong></li>
 </ul>
 <h3 id="2-3-2-敏捷过程模型"><a href="#2-3-2-敏捷过程模型" class="headerlink" title="2.3.2 敏捷过程模型"></a>2.3.2 敏捷过程模型</h3><ul>
 <li><p>定义：敏捷方法是一种<strong>以人为核心、迭代、循序渐进的增量开发方法</strong>。在软件项目的敏捷开发中，软件项目的构建被切分成<strong>多个子项目（迭代）</strong>，每个子项目的成果都<strong>经过测试</strong>，具备集成和可运行的特征。也就是说，把一个大项目分为多个相互联系，但也可独立运行的小项目，并分别完成，在此过程中软件一直处于<strong>可使用状态。</strong></p>
@@ -643,6 +662,9 @@ mjx-container[display="true"] + br {
 </li>
 </ul>
 <h3 id="2-3-3-敏捷开发方法：极限编程XP"><a href="#2-3-3-敏捷开发方法：极限编程XP" class="headerlink" title="2.3.3 敏捷开发方法：极限编程XP"></a>2.3.3 敏捷开发方法：极限编程XP</h3><ul>
+<li><p>极限编程的核心价值</p>
+<p>沟通、简单、反馈、勇气、尊重</p>
+</li>
 <li><p>核心实践方法</p>
 <ul>
 <li>用户故事</li>
@@ -755,7 +777,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td>产品列表  Product Backlog</td>
+<td><strong>产品</strong>列表  Product Backlog</td>
 <td>根据用户价值进行优先级排序的高层需求;  产品需求变动的唯一来源  动态，永不完整, 持续更新  有序，排序越高越清晰具体，排序越低， 细节越少  每个产品一个, 与团队数量无关  产品负责人负责管理其内容, 可用性和排序</td>
 </tr>
 <tr>
@@ -763,7 +785,7 @@ mjx-container[display="true"] + br {
 <td>要在冲刺中完成的任务清单（Sprint Backlog中的每个项都是一个用户故事）  包含产品待办事项列表中当前 Sprint 的子集  包含完成 Sprint 目标所需的任务细节  开发团队可视情况增加或移除任务</td>
 </tr>
 <tr>
-<td>产品增量  Increment</td>
+<td><strong>产品</strong>增量  Increment</td>
 <td>最终交付给客户的内容  当前  Sprint 完成的产品待办事项列表, 以及之前所产生增量的总和  必须达到”完成”的标准  无论是否发布, 必须是可用的</td>
 </tr>
 </tbody></table>
@@ -820,7 +842,602 @@ mjx-container[display="true"] + br {
 </ul>
 <p>敏捷软件开发是以短周期迭代为核心，包含团队、工作件、管理和技术优秀实践的集合。</p>
 </li>
+<li><p>极限编程XP与Scrum的区别</p>
+<ul>
+<li>迭代长度不同</li>
+<li>迭代中是否允许修改需求</li>
+<li>在迭代中，用户故事是否严格按照优先级别来实现</li>
+<li>软件的实施过程中，是否采用严格的工程方法，保证进度或者质量</li>
 </ul>
+</li>
+</ul>
+<h3 id="2-3-4敏捷DevOps开发方法"><a href="#2-3-4敏捷DevOps开发方法" class="headerlink" title="2.3.4敏捷DevOps开发方法"></a>2.3.4敏捷DevOps开发方法</h3><h4 id="2-3-4-1-基本概念"><a href="#2-3-4-1-基本概念" class="headerlink" title="2.3.4.1 基本概念"></a>2.3.4.1 基本概念</h4><p>DevOps（Development和Operations的组合词）是一种重视“软件开发人员（Dev）”和“IT运维技术人员（Ops）”之间沟通合作的文化、运动或惯例。透过自动化“软件交付”和“架构变更”的流程，来使得构建、测试、发布软件能够更加地快捷、频繁和可靠。</p>
+<ul>
+<li>软件服务化需要软件企业关注长尾效应、专注业务升级、降低开发与维护成本，要求<strong>面向服务的方式构建软件</strong>，<strong>“多、快、好、省”</strong>地持续推出新服务或者升级现有服务。</li>
+<li>DevOps出现的背景–软件产业和交付模式发展的新需求</li>
+</ul>
+<h4 id="2-3-4-2-DevOps生命周期过程"><a href="#2-3-4-2-DevOps生命周期过程" class="headerlink" title="2.3.4.2 DevOps生命周期过程"></a>2.3.4.2 DevOps生命周期过程</h4><p><strong>DevOps五个要素</strong>：</p>
+<p>DevOps它不仅仅体现在流程上打通了软件开发的整个生命周期，它还包括以下五个要素：</p>
+<ol>
+<li>文化：DevOps与传统职能型团队不同，它的前提是建⽴一体化的全功能团队，打破开发(Dev)与技术运营(Ops)隔阂，形成DevOps的协同合作的文化氛围</li>
+<li>自动化：自动化一切可以自动化的，通过自动化的工具或脚本实现软件工程从构建到运维过程的自动化流水线作业</li>
+<li>精益：以精益的⽅式⼩步快跑，持续改善，</li>
+<li>度量：建⽴有效的监测与度量手段快速获得反馈，推动产品和团队的持续改进，测试驱动开发、增量式开发这些实践都是为了获得有效反馈并作用于下一次迭代周期中</li>
+<li>分享：不同职能、不同产品之间经验分享能够促进DevOps的文化沉淀，促进产品迭代和更新</li>
+</ol>
+<p><strong>DevOps是敏捷理念从开发领域向运维领域的延伸</strong></p>
+<ul>
+<li>计划阶段：运维人员为开发人员提供需求，并制定发布计划</li>
+<li>编码/构建/验证阶段：Scrum、极限编程和精益生产，持续集成、自动化测试等</li>
+<li>部署阶段：开发团队负责部署、监测部署过程，以及部署后的运行</li>
+</ul>
+<h4 id="2-3-4-3-DevOps带来的收益与价值"><a href="#2-3-4-3-DevOps带来的收益与价值" class="headerlink" title="2.3.4.3 DevOps带来的收益与价值"></a>2.3.4.3 DevOps带来的收益与价值</h4><p>大幅提升交付速度和交付质量</p>
+<h4 id="2-3-4-4-DevOps和敏捷的关系"><a href="#2-3-4-4-DevOps和敏捷的关系" class="headerlink" title="2.3.4.4 DevOps和敏捷的关系"></a>2.3.4.4 DevOps和敏捷的关系</h4><p>敏捷管理、持续交付、IT服务管理（ITSM）、精益管理（Lean/TPS）</p>
+<h4 id="2-2-4-5-DevOps覆盖端到端交付周期"><a href="#2-2-4-5-DevOps覆盖端到端交付周期" class="headerlink" title="2.2.4.5 DevOps覆盖端到端交付周期"></a>2.2.4.5 DevOps覆盖端到端交付周期</h4><ul>
+<li>从交付全流程的覆盖范围看，也经历了敏捷开发、持续集成、持续交付、DevOps四个重要阶段</li>
+<li>敏捷让开发团队拥抱变化、快速迭代，覆盖了计划、编码、软件生成阶段</li>
+<li>持续集成让开发团队提交代码后、立刻进行构建和单元测试，快速验证提交代码的正确性</li>
+<li>持续发布则在持续集成的基础上，将集成后的代码部署到更贴近真实运行环境验证，让团队可不断发布可用的软件版本</li>
+<li>DevOps则覆盖全流程，加入了运维环节，用于促进开发、运维和质量保障部门之间的沟通、协作与整合，实现工程效率最大化</li>
+</ul>
+<h4 id="2-2-4-6华为DevOps框架"><a href="#2-2-4-6华为DevOps框架" class="headerlink" title="2.2.4.6华为DevOps框架"></a>2.2.4.6华为DevOps框架</h4><ul>
+<li>规划与设计</li>
+<li>开发与集成</li>
+<li>测试与反馈</li>
+<li>安全与审计</li>
+<li>部署与发布</li>
+<li>运维与监测</li>
+</ul>
+<h3 id="2-2-5-软件开发过程模型的比较"><a href="#2-2-5-软件开发过程模型的比较" class="headerlink" title="2.2.5 软件开发过程模型的比较"></a>2.2.5 软件开发过程模型的比较</h3><img src="https://i.loli.net/2021/04/07/qS2KkMEOUouGLpT.png" alt="image-20210407112652102" style="zoom:67%;">
+
+<h2 id="2-3-软件项目管理"><a href="#2-3-软件项目管理" class="headerlink" title="2.3 软件项目管理"></a>2.3 软件项目管理</h2><h3 id="基本若干概念"><a href="#基本若干概念" class="headerlink" title="基本若干概念"></a>基本若干概念</h3><ul>
+<li>项目(Project) ：为创建某种特定的产品或服务而组织或设计的临时的、一次性的行动，通过执行一组活动，使用受约束的资源(资金、人、原料、能源、空间等)来满足预定义的目标。</li>
+<li>项目管理(Project Management, PM)：有效的组织与管理各类资源(例如人)，以使项目能够在预定的范围、质量、时间和成本等约束条件下顺利交付(deliver)。<br>挑战1：在各类约束条件下交付项目；<br>挑战2：通过优化资源的分配与集成来满足预先定义的目标；</li>
+<li><strong>软件项目的特征：</strong><ul>
+<li><strong>软件产品的不可见性</strong>软件项目复杂和抽象；</li>
+<li><strong>项目的高度不确定性</strong>预定计划于实际情况存在较大偏差；</li>
+<li><strong>软件过程的多变化性</strong>不确定、不稳定；</li>
+<li><strong>软件人员的高技能及其高流动性</strong>风险</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-4-软件演化与配置管理"><a href="#2-4-软件演化与配置管理" class="headerlink" title="2-4 软件演化与配置管理"></a>2-4 软件演化与配置管理</h2><ul>
+<li>软件演化：是指在软件生命周期内进行系统维护和系统更新的动态行为，<strong>修正和改善</strong>软件进入使用期后暴露出的问题，<strong>以适应需求等的不断变化</strong>。</li>
+<li>软件演化的Lehman定律<ul>
+<li>持续变化</li>
+<li>复杂度逐渐增大</li>
+</ul>
+</li>
+<li>软件演化的处理策略<ul>
+<li>软件维护</li>
+<li>软件再工程</li>
+</ul>
+</li>
+<li>软件维护的类型<ul>
+<li>纠错性维护</li>
+<li>适应性维护</li>
+<li>完善性维护</li>
+<li>预防性维护</li>
+</ul>
+</li>
+<li>软件配置：由在软件工程 过程中所产生的所有信息项构成，可以看作该软件的具体形态在某一时刻的瞬间影像。</li>
+</ul>
+<h1 id="3-1代码评审与优化"><a href="#3-1代码评审与优化" class="headerlink" title="3-1代码评审与优化"></a>3-1代码评审与优化</h1><p>为什么要进行代码评审：</p>
+<p>确保代码库一直保持「健康」的状态，代码评审的所有工具和过程都是为了这个目的而构建的。代码评审会系统化地检查一遍源代码，并希望<strong>检查出开发初期未察觉的一些错误，从而提升代码质量。</strong></p>
+<h2 id="1-关于编程语言"><a href="#1-关于编程语言" class="headerlink" title="1.关于编程语言"></a>1.关于编程语言</h2><ol>
+<li>如何选择编程语言：主要考虑的因素<ul>
+<li>编程语言本身的效率与生产率</li>
+<li>掌握该编程语言的人数</li>
+<li>该语言的受欢迎度</li>
+<li>团队里掌握该语言人员的比例</li>
+<li>学习难度</li>
+<li>工具支持和第三方库支持</li>
+<li>与待开发项目的吻合度</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-代码的错误与缺陷"><a href="#2-代码的错误与缺陷" class="headerlink" title="2.代码的错误与缺陷"></a>2.代码的错误与缺陷</h2><ol>
+<li>代码评审的主要内容<ul>
+<li>设计：代码是不是经过精心的设计，并适合我们的系统？</li>
+<li>命名：开发者是不是选择易于理解的名称给变量、类和方法进行命名？</li>
+<li>评论：代码评论是不是足够清晰并有用？风格：代码是不是采用了标准的编写风格？</li>
+<li>文档：开发者是不是更新了相关的文档？</li>
+</ul>
+</li>
+<li>代码规范：使代码“看起来很美”，面向代码的可读性、可维护性、可移植性</li>
+<li>内容规范：使代码“运行起来很美”，面向代码的正确性、可靠性、运行效率</li>
+<li>形式规范：<ul>
+<li>标准：简明，易读，无二义性。</li>
+<li>空行：在源代码中适度的使用空行可以使程序结构更加清晰</li>
+<li>空格：一行代码只写一条语句，避免使用复杂的语句行</li>
+<li>分行：</li>
+<li>命名规则：</li>
+<li>声明；</li>
+<li>语句结构：避免书写复杂的表达式<ul>
+<li>注释：</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-代码复审：静态程序分析"><a href="#3-代码复审：静态程序分析" class="headerlink" title="3.代码复审：静态程序分析"></a>3.代码复审：静态程序分析</h2><ol>
+<li><p>代码复审：代码是否在“代码规范”的框架内正确地解决了问题 </p>
+<table>
+<thead>
+<tr>
+<th><strong>名</strong> <strong>称</strong></th>
+<th><strong>形</strong> <strong>式</strong></th>
+<th><strong>目</strong> <strong>的</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>自我复审</strong></td>
+<td><strong>自己</strong> <strong>vs.</strong> <strong>自己</strong></td>
+<td><strong>用同伴复审的标准来要求自己。不一定最有效，因为开发者对自己总是过于自信。如果能持之以恒，则对个人有很大好处</strong></td>
+</tr>
+<tr>
+<td><strong>同伴复审</strong></td>
+<td><strong>复审者</strong> <strong>vs.</strong> <strong>开发者</strong></td>
+<td><strong>简便易行</strong></td>
+</tr>
+<tr>
+<td><strong>团队复审</strong></td>
+<td><strong>团队</strong> <strong>vs.</strong> <strong>开发者</strong></td>
+<td><strong>有比较严格的规定和流程，用于关键的代码，以及复审后不再更新的代码。</strong>  <strong>覆盖率高——有很多双眼睛盯着程序。但是有可能效率不高（全体人员都要到会）</strong></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>代码复查的目的：</p>
+<ul>
+<li>找出代码的错误</li>
+<li>发现算法错误</li>
+<li>发现潜在的错误和回归性错误</li>
+<li>发现可能改进的地方。</li>
+</ul>
+</li>
+<li><p>走查(Walkthrough)</p>
+<ul>
+<li>走查过程<br>与评审过程类似，即先把材料先发给走查小组每个成员，让他们认真研究程序，然后再开会；<br><strong>与评审的区别</strong>：评审通常是简单地读程序或对照错误检查表进行检查；<strong>走查则是按照所提交的测试用例，人工模仿计算机运行一遍，并记录跟踪情况。</strong></li>
+<li>会后：将问题分发给相应人员进行解决。</li>
+</ul>
+</li>
+<li><p>使用静态代码分析发现潜在bug </p>
+<ul>
+<li><strong>静态代码分析(static code analysis)<strong>：</strong>在代码构建过程中帮助开发人员快速、有效的定位代码缺陷；</strong></li>
+<li><strong>主要技术：****缺陷模式匹配、类型推断、模型检查、数据流分析等。</strong></li>
+</ul>
+</li>
+</ol>
+<h2 id="4-性能分析：动态程序分析"><a href="#4-性能分析：动态程序分析" class="headerlink" title="4. 性能分析：动态程序分析"></a>4. 性能分析：动态程序分析</h2><ol>
+<li><p>定义：性能分析(performance analysis，也称为profiling)：以收集程序运行时信息为手段研究程序行为的分析方法，是一种动态程序分析的方法。</p>
+<p>这种方法与静态代码分析相对，主要测量程序的<strong>空间或时间复杂度、特定指令的使用情形、函数调用的频率及运行时间等。</strong></p>
+</li>
+<li><p><strong>性能分析的目的在于</strong>：决定程序的哪个部分应该被优化，从而提高程序的速度或者内存使用效率。<br>性能分析可以由程序的源代码或是可执行文件进行，一般会使用性能分析工具(profiler) 进行。</p>
+</li>
+<li><p>程序性能分析的两种方法:</p>
+<ul>
+<li><strong>抽样</strong>：当程序运行时，分析工具时不时看一看这个程序运行在哪一个函数内，并记录下来，程序结束后，工具就会得出一个关于程序运行时间分布的大致的印象。<br>优点：是不需要改动程序，运行较快，可以很快地找到瓶颈。<br>缺点：是不能得出精确的数据，代码中的调用关系(CallTree)也不能准确表示。</li>
+<li><strong>代码注入</strong>：将检测的代码加入到每一个函数中，这样程序的一举一动都被记录在案，程序的各个效能数据都可以被精准地测量。<br>缺点：是程序的运行时间会大大加长，还会产生很大的数据文件，数据分析的时间也相应增加。同时，注入的代码也影响了程序真实的运行情况。</li>
+</ul>
+<p>一般的做法是：先用抽样的方法找到效能瓶颈所在，然后对特定的模块用代码注入的方法进行详细分析。 </p>
+</li>
+</ol>
+<h1 id="3-2-软件测试"><a href="#3-2-软件测试" class="headerlink" title="3-2 软件测试"></a>3-2 软件测试</h1><h2 id="1-软件测试基础"><a href="#1-软件测试基础" class="headerlink" title="1 软件测试基础"></a>1 软件测试基础</h2><ol>
+<li><p>为什么要进行产品测试？</p>
+<p>产品测试：是将产品原型或产品成品提供给消费者，由消费者根据自己的想法对产品属性进行评价，从中系统地获得消费者的意见和建议。</p>
+</li>
+<li><p>什么是软件测试？</p>
+<p>软件测试：使用人工或自动的手段来运行或测定某个软件系统的过程，其目的在于检验它是否满足规定的需求或弄清预期结果与实际结果之间的差别。（IEEE定义）</p>
+</li>
+<li><p><strong>软件测试的目的</strong>：</p>
+<p><strong>帮助识别开发完成（中间或最终的版本）的计算机软件（整体或部分）的正确度(correctness) 、完全度(completeness)和质量(quality) 。</strong></p>
+</li>
+<li><p><strong>软件测试的原则：</strong></p>
+<ul>
+<li>尽早和不断的测试</li>
+<li>避免检查自己的程序</li>
+<li>从小规模开始，逐渐扩到大规模</li>
+<li>设计测试用例时。应包括合理的输入和不合理的输入，以及各种边界条件</li>
+<li>充分注意测试中的聚集现象</li>
+<li>对错误要有确认过程</li>
+<li>制定严格的测试计划</li>
+<li>注意回归测试的关联性</li>
+<li>妥善保管一切测试过程文档</li>
+</ul>
+</li>
+<li><p>VN图理解测试</p>
+<p>软件测试关注的是<strong>行为视图</strong>，开发人员关心的是<strong>结构视图</strong></p>
+<p>结构视图关注的是<strong>他是什么</strong>，行为视图关注的是<strong>它做什么</strong></p>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2021/05/30/Lx1BAEXe6rPOTW8.png" alt="image-20210530163222691"></p>
+<ol start="5">
+<li><p>测试用例：为特定的目的设计的一组测试输入、执行条件和预期的结果。包括测试目标、测试环境、输入数据、测试步骤、预期结果、测试脚本，并形成文档。</p>
+<ul>
+<li><p><strong>测试用例的特征：</strong></p>
+<pre><code>最有可能抓住错误的；
+不是重复的、多余的；
+一组相似测试用例中最有效的；
+既不是太简单，也不是太复杂
+</code></pre>
+</li>
+<li><p>测试用例的设计原则：</p>
+<ul>
+<li>代表性</li>
+<li>可判定性</li>
+<li>可再现性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-软件测试过程"><a href="#2-软件测试过程" class="headerlink" title="2 软件测试过程"></a>2 软件测试过程</h2><h3 id="传统瀑布模型"><a href="#传统瀑布模型" class="headerlink" title="传统瀑布模型"></a>传统瀑布模型</h3><p><strong>项目计划-&gt;需求分析-&gt;软件设计-&gt;程序开发-&gt;软件测试-&gt;集成维护</strong></p>
+<p><strong>缺点</strong>：线性研发过程难以适应需求的频繁变化；项目周期后段才可看到成果，用户要到末期才能看到开发结果，增加了开发的风险；强制的里程碑，对于开发过程中出现的变化，适应能力较差；文档工作量较大，测试在项目的后期，文档的开发带来很大的工作量。</p>
+<p><strong>优点</strong>：强调需求，设计的作用；前一阶段完成后只需关注后续阶段；为项目提供按阶段划分的检查点，里程碑清晰。</p>
+<h3 id="V模型"><a href="#V模型" class="headerlink" title="V模型"></a>V模型</h3><p>开发与测试串行</p>
+<p>缺点：将测试放在整个开发的最后阶段，没有让测试尽早介入开发，没有在需求阶段就进入测试</p>
+<h3 id="W模型"><a href="#W模型" class="headerlink" title="W模型"></a>W模型</h3><p>开发与测试并行</p>
+<p>优点：测试开发并行，让测试尽早介入开发环节，使测试尽早发现问题尽早解决</p>
+<p>局限性：在整个开发阶段测试与开发仍是串行，不支持敏捷模式的开发</p>
+<h2 id="3-软件测试方法的分类"><a href="#3-软件测试方法的分类" class="headerlink" title="3 软件测试方法的分类"></a>3 软件测试方法的分类</h2><ul>
+<li><p>按照使用技术：</p>
+<ul>
+<li>静态测试：走查/评审</li>
+<li>动态测试：白盒/黑盒</li>
+</ul>
+</li>
+<li><p>按照软件组装策略分：</p>
+<ul>
+<li>非增量测试：整体集成</li>
+<li>增量测试：自顶向下、自底向上、三明治    </li>
+</ul>
+</li>
+<li><p>按实施步骤分：</p>
+<ul>
+<li><p>单元测试    Unit Testing     </p>
+<p>单元测试是对软件基本组成单元进行的测试，有时也称“组件测试”    </p>
+<p><strong>单元测试的目的</strong><br>验证开发人员所书写的代码是否可以按照其所设想的方式执行而产出符合预期值的结果，确保产生符合需求的可靠程序单元。</p>
+<p><strong>单元测试环境</strong></p>
+<ul>
+<li><strong>驱动模块(driver)：</strong>模拟被测模块的上一级模块，接收测试数据，把这些数据传送给所测模块，最后再输出实际测试结果；</li>
+<li><strong>桩模块(stub)：</strong>模拟被测单元需调用的其他函数接口，模拟实现子函数的某些功能。</li>
+</ul>
+</li>
+<li><p>集成测试    Integration Testing</p>
+<p>集成测试的对象是<strong>模块间的接口</strong>，其目的是找出在模块接口上和系统体系结构上的问题。</p>
+<p><strong>集成测试策略</strong>：</p>
+<ul>
+<li><strong>基于层次的集成</strong>：自顶向下与自底向上</li>
+<li><strong>基于功能的集成</strong>：按照功能的优先级逐步将模块加入系统中</li>
+<li><strong>基于进度的集成</strong>：把最早可获得的代码进行集成</li>
+<li><strong>基于使用的集成</strong>：通过类的使用关系进行集成</li>
+</ul>
+<p><strong>集成测试的方法</strong></p>
+<ul>
+<li>整体集成方式（非增量式集成）</li>
+<li>增量式集成测试方法</li>
+<li><strong>自顶向下的集成测试</strong>：：从主控模块开始，按软件的控制层次结构，以<strong>深度优先或广度优先</strong>的策略，逐步把各个模块集成在一起。</li>
+<li><strong>自底向上的集成测试：从软件结构最底层的模块开始组装测试。</strong></li>
+</ul>
+<p>自顶向下的集成测试与自底向上的集成测试优缺点对比：</p>
+<p>自顶向下集成：<br>优点：能尽早地对程序的主要控制和决策机制进行检验，因此较早地发现错误；较少需要驱动模块；<br>缺点：所需的桩模块数量巨大；在测试较高层模块时，低层处理采用桩模块替代，不能反映真实情况，重要数据不能及时回送到上层模块，因此测试并不充分；</p>
+<p>自底向上集成：<br>优点：不用桩模块，测试用例的设计亦相对简单；<br>缺点：程序最后一个模块加入时才具有整体形象，难以尽早建立信心。</p>
+</li>
+<li><p>确认测试    Validation Testing</p>
+</li>
+<li><p>系统测试    System Testing</p>
+<ul>
+<li>功能测试</li>
+<li>压力测试</li>
+<li>安全性测试</li>
+<li>恢复测试</li>
+<li>GUI测试</li>
+<li>安装测试</li>
+<li>验收测试</li>
+<li>回归测试</li>
+</ul>
+</li>
+<li><p>验收测试    Verification Testing</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>！！白盒测试与黑盒测试见笔记！！</strong></p>
+<img src="https://i.loli.net/2021/05/30/xPklfbiYRv2KyFN.png" alt="image-20210530210028701" style="zoom:67%;">
+
+<img src="https://i.loli.net/2021/05/30/tGwxnWJbgPqdaCy.png" alt="image-20210530210044640" style="zoom:67%;">
+
+<p>为什么有了黑盒还要白盒：</p>
+<ul>
+<li>黑盒只能观察软件的外部表现</li>
+<li>白盒测试能发现程序里的隐患</li>
+<li>通过了白盒测试只能说明符合设计需求，不一定符合用户需求</li>
+</ul>
+<h1 id="4-1-软件设计与架构概论"><a href="#4-1-软件设计与架构概论" class="headerlink" title="4-1 软件设计与架构概论"></a>4-1 软件设计与架构概论</h1><h2 id="软件设计的背景"><a href="#软件设计的背景" class="headerlink" title="软件设计的背景"></a>软件设计的背景</h2><h3 id="软件设计的定义"><a href="#软件设计的定义" class="headerlink" title="软件设计的定义"></a>软件设计的定义</h3><p><strong>为问题域的外部可见行为的规约增添实际的计算机系统实现所需的细节，包括关于人机交互、任务管理和数据管理的细节</strong></p>
+<p><strong>软件设计：将用户需求准确的转化为软件设计模型与文档的方法</strong></p>
+<h3 id="良好的设计的三个特征"><a href="#良好的设计的三个特征" class="headerlink" title="良好的设计的三个特征"></a>良好的设计的三个特征</h3><ul>
+<li>目标</li>
+<li>形态</li>
+<li>内容</li>
+</ul>
+<h2 id="软件设计的范畴和内容"><a href="#软件设计的范畴和内容" class="headerlink" title="软件设计的范畴和内容"></a>软件设计的范畴和内容</h2><h3 id="软件设计四方面内容"><a href="#软件设计四方面内容" class="headerlink" title="软件设计四方面内容"></a>软件设计四方面内容</h3><ul>
+<li><strong>架构</strong></li>
+<li><strong>接口设计（人机界面、通讯接口、软件接口、硬件接口）</strong></li>
+<li><strong>数据设计</strong></li>
+<li><strong>过程设计（算法设计）</strong></li>
+</ul>
+<h3 id="软件设计的两大阶段"><a href="#软件设计的两大阶段" class="headerlink" title="软件设计的两大阶段"></a>软件设计的两大阶段</h3><ul>
+<li>概要设计：将软件需求转化为数据结构和软件的系统结构</li>
+<li>详细设计：即过程设计，通过对结构表示进行细化，得到软件的详细的数据结构和算法。</li>
+</ul>
+<h2 id="软件架构的概念与范畴"><a href="#软件架构的概念与范畴" class="headerlink" title="软件架构的概念与范畴"></a>软件架构的概念与范畴</h2><h3 id="软件设计的过程"><a href="#软件设计的过程" class="headerlink" title="软件设计的过程"></a>软件设计的过程</h3><p>需求分析-&gt;概要设计-&gt;详细设计-&gt;编码、测试、实施、维护</p>
+<h3 id="面向服务的体系结构SOA"><a href="#面向服务的体系结构SOA" class="headerlink" title="面向服务的体系结构SOA"></a>面向服务的体系结构SOA</h3><p>SOA是一类<strong>分布式系统</strong>的体系结构，是实现由构件组成系统的模型。它将应用程序的不同功能单元（称为服务）通过服务之间定义好的接口和规范按<strong>松散耦合方式</strong>联系起来，通过网络整合成一个新的系统。</p>
+<p>接口是采用<strong>中立的</strong>方式进行定义的，独立于实现服务的硬件平台、操作系统和编程语言。这使得构建在各种系统中的服务可以以统一和通用的方式进行交互。</p>
+<p>SOA是一种<strong>粗粒度、松耦合</strong>服务架构，服务之间通过简单、精确定义<strong>接口</strong>进行通讯，不涉及底层编程接口和通讯模型。SOA可以看作是B/S模型、XML（标准通用标记语言的子集）/Web Service技术之后的自然延伸。</p>
+<h3 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h3><ul>
+<li><p>传统的Web开发模式</p>
+<p>效率低、维护难、不灵活、稳定性差、扩展性不够</p>
+</li>
+<li><p>微服务架构实现</p>
+<p><strong>各司其职、服务高可用和可扩展性</strong></p>
+</li>
+<li><p>概念：把一个大型的单个应用程序和服务拆分为数个甚至数十个的支持微服务，它可扩展单个组件而不是整个的应用程序堆栈，从而满足服务等级协议。</p>
+</li>
+<li><p>定义：围绕业务领域组件来创建应用，这些应用可独立地进行开发、管理和迭代。在分散的组件中使用云架构和平台式部署、管理和服务功能，使产品交付变得更加简单。</p>
+</li>
+<li><p>本质：用一些功能比较明确、业务比较精练的服务去解决更大、更实际的问题。</p>
+</li>
+</ul>
+<h3 id="软件架构SA"><a href="#软件架构SA" class="headerlink" title="软件架构SA"></a>软件架构SA</h3><ul>
+<li><p><strong>架构=构建+连接件+拓扑结构+约束+质量</strong></p>
+</li>
+<li><p>软件架构关注的是：<strong>如何将复杂的软件系统划分为模块、如何规范模块的构成和性能、以及如何将这些模块组织为完整的系统</strong></p>
+</li>
+<li><p>软件架构的主要目标：<strong>建立一个一致的系统及其视图集，并表达为最终用户和软件设计者需要的结构形式，支持用户与设计者之间的交流与理解</strong></p>
+</li>
+<li><p>作用：</p>
+<ul>
+<li>交流的手段</li>
+<li>可传递的、可复用的模型</li>
+<li>早期决策的体现</li>
+</ul>
+</li>
+</ul>
+<h3 id="外向目标vs内向目标"><a href="#外向目标vs内向目标" class="headerlink" title="外向目标vs内向目标"></a>外向目标vs内向目标</h3><p>外向目标：</p>
+<ul>
+<li><strong>关心为满足最终用户的需求，系统应该做些什么</strong></li>
+<li><strong>需要分析当前需求、扩展或细化结构、澄清模糊性、提高一致性</strong></li>
+</ul>
+<p>内向目标</p>
+<ul>
+<li><strong>关心如何使系统满足用户需求、需要建立哪些软件模块、软件模块的结构、模块之间的关系</strong></li>
+</ul>
+<p>为了达到这个目标，需要：<strong>考虑各种可选方案，重复更新和明确设计目标，必要时做出妥协和这种</strong></p>
+<h3 id="典型质量属性的架构设计"><a href="#典型质量属性的架构设计" class="headerlink" title="典型质量属性的架构设计"></a>典型质量属性的架构设计</h3><ul>
+<li><p>可用性</p>
+<ul>
+<li>错误检测</li>
+<li>错误恢复</li>
+<li>错误预防</li>
+</ul>
+</li>
+<li><p>可修改性：减少由某个修改所直接/间接影响的模块的数量</p>
+</li>
+<li><p>性能：外部请求到达后，系统将要耗费多少时间做出响应</p>
+</li>
+<li><p>安全性：系统向合法用户提供服务的同时，组织非授权使用的能力</p>
+<ul>
+<li>抵抗攻击</li>
+<li>检测攻击</li>
+<li>从攻击中恢复</li>
+</ul>
+</li>
+</ul>
+<h3 id="架构中的核心概念"><a href="#架构中的核心概念" class="headerlink" title="架构中的核心概念"></a>架构中的核心概念</h3><p><img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095735.png" alt="image-20210530223329771"></p>
+<ul>
+<li><p>构件：<strong>具有某种功能的可复用的软件结构单元</strong></p>
+</li>
+<li><p>接口与功能：构件只能通过<strong>接口</strong>与外部环境交互，表示了构件和外部环境的<strong>交互点</strong>，<strong>内部具体实现则隐藏起来</strong>。构件内部所实现的的功能以<strong>功能</strong>的形式体现出来，并通过<strong>接口</strong>向外发布，进而产生与其它构件之间的关联</p>
+</li>
+<li><p>连接：<strong>构件间建立和维护行为关联与信息传递的途径</strong></p>
+<p>需要<strong>机制</strong>和<strong>协议</strong>的支持</p>
+<p>协议是<strong>连接的规约</strong></p>
+<p>协议目的：<strong>使双方能够互相理解对方所发来的信息的语义</strong></p>
+<p>连接的种类：按照<strong>有无连接的返回信息和返回时间</strong>分为同步和异步</p>
+</li>
+<li><p>连接件：<strong>表示构件之间的交互并实现构件之间的连接</strong></p>
+<p>连接件是负责完成构件之间的<strong>信息交换和行为联系的专用构建</strong></p>
+</li>
+</ul>
+<h2 id="软件架构的四大思想"><a href="#软件架构的四大思想" class="headerlink" title="软件架构的四大思想"></a>软件架构的四大思想</h2><p><img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095731.png" alt="image-20210530225945678"></p>
+<ul>
+<li><p>分层：<strong>将功能进行有序的分组</strong>,可以达到如下目的：<strong>分散关注、松散耦合、逻辑复用、标准定义</strong></p>
+</li>
+<li><p>异步：通过第三方<strong>“消息”</strong>完成模块之间的功能调用</p>
+</li>
+<li><p>分布式+并发：功能层（数据层）并不一定只驻留在同一台服务器上，<strong>如果功能层（数据层）分布在多台物理服务器上，形成了基于集群的C/S物理分布模式</strong></p>
+</li>
+<li><p>集群：</p>
+<ul>
+<li>集群内<strong>各服务器上的内容保持一致</strong>（通过<strong>并发/冗余</strong>提高<strong>可靠性与可用性</strong>）</li>
+<li>集群内各服务器上的内容之和构成系统完整的功能/数据，是<strong>对系统功能集合/数据集合的一个划分(通过分布式提高速度与并发性)</strong></li>
+</ul>
+</li>
+<li><p>负载均衡：将负载（工作任务）进行平衡、分摊到多个操作单元上进行运行</p>
+<p><strong>从展示层、 逻辑层、 持久层三个层面进行负载均衡</strong></p>
+</li>
+<li><p>缓存：解决Web性能瓶颈</p>
+<p><strong>瓶颈的体现：高延时、拥塞和服务器负载</strong></p>
+</li>
+</ul>
+<h1 id="4-2-SaaS与云端软件部署"><a href="#4-2-SaaS与云端软件部署" class="headerlink" title="4-2 SaaS与云端软件部署"></a>4-2 SaaS与云端软件部署</h1><h2 id="C-S-客户机-服务器体系结构"><a href="#C-S-客户机-服务器体系结构" class="headerlink" title="C/S 客户机/服务器体系结构"></a>C/S 客户机/服务器体系结构</h2><p><strong>一个应用系统被分为两个逻辑上分离的部分</strong></p>
+<ul>
+<li><strong>客户机（前端）</strong>：业务逻辑、与服务器通讯的接口</li>
+<li><strong>服务器（后端）</strong>：与客户机通讯的接口、业务逻辑、数据管理。</li>
+</ul>
+<p><strong>客户机为完成特定的工作向服务器发出请求；</strong><br><strong>服务器处理客户机的请求并返回结果。</strong></p>
+<ul>
+<li>三层C/S体系结构：<strong>在客户端与数据库服务器之间增加了一个中间层</strong><ul>
+<li><strong>第一层：用户界面—表示层</strong>：向客户提供数据</li>
+<li><strong>第二层：业务逻辑—功能层</strong>：实施业务和数据规则</li>
+<li><strong>第三层：数据库—数据层</strong>：定义数据访问标准</li>
+</ul>
+</li>
+</ul>
+<h2 id="B-S结构-浏览器-服务器"><a href="#B-S结构-浏览器-服务器" class="headerlink" title="B/S结构 浏览器/服务器"></a>B/S结构 浏览器/服务器</h2><p><strong>浏览器/服务器(B/S)是三层C/S风格的一种实现方式。</strong></p>
+<ul>
+<li>表现层：浏览器</li>
+<li>逻辑层：<br>Web服务器<br>应用服务器</li>
+<li>数据层：数据库服务器</li>
+</ul>
+<p><strong>B/S与三层C/S结构的区别：</strong></p>
+<ul>
+<li>C/S：表现层仍部署在客户端；</li>
+<li>B/S：客户端除了浏览器之外无任何程序需要部署</li>
+</ul>
+<p>B/S系统结构的软件，系统安装、修改和维护全部在服务器端解决，</p>
+<ul>
+<li><strong>客户端无任何业务逻辑</strong></li>
+<li><strong>良好的灵活性和可拓展性</strong></li>
+<li>B/S成为真正意义上的<strong>“瘦客户端”</strong>，从而具备了很高的稳定性、延展性和执行效率。</li>
+<li>B/S将服务集中在一起管理，统一服务于客户端，从而具备了良好的<strong>容错能力和负载平衡能力</strong>。</li>
+</ul>
+<h2 id="C-S-B-S混合模式"><a href="#C-S-B-S混合模式" class="headerlink" title="C/S+B/S混合模式"></a>C/S+B/S混合模式</h2><ul>
+<li><strong>内外有别原则</strong><ul>
+<li><strong>内部用户通过局域网直接访问数据库服务器</strong>（C/S)</li>
+<li><strong>外部用户通过Internet访问Web服务器/应用服务器</strong>(B/S)</li>
+</ul>
+</li>
+<li><strong>查改有别原则</strong><ul>
+<li>数据库进行更新：C/S</li>
+<li>数据库查询浏览：B/S</li>
+</ul>
+</li>
+</ul>
+<h2 id="M-V-移动端-云端结构"><a href="#M-V-移动端-云端结构" class="headerlink" title="M/V 移动端/云端结构"></a>M/V 移动端/云端结构</h2><p>客户端：<strong>各类App或者小程序</strong></p>
+<p>优势：移动，随时随地使用</p>
+<h2 id="主流软件形态：SaaS"><a href="#主流软件形态：SaaS" class="headerlink" title="主流软件形态：SaaS"></a>主流软件形态：SaaS</h2><p>Software as a service 软件即服务</p>
+<h3 id="SaaS的特征"><a href="#SaaS的特征" class="headerlink" title="SaaS的特征"></a>SaaS的特征</h3><p>本质上属于B/S结构，对B/S的扩展</p>
+<ul>
+<li><strong>通过web来管理和使用软件</strong></li>
+<li><strong>软件被集中式的部署与管理，统一升级和维护</strong></li>
+<li><strong>单实例、多租户</strong></li>
+</ul>
+<p><strong>SaaS和传统B/S的本质区别：多租户共享Server和软件实例</strong></p>
+<h3 id="SaaS的层次划分"><a href="#SaaS的层次划分" class="headerlink" title="SaaS的层次划分"></a>SaaS的层次划分</h3><p><img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095724.png" alt="image-20210531083613081"></p>
+<h3 id="多租户技术"><a href="#多租户技术" class="headerlink" title="多租户技术"></a><strong>多租户技术</strong></h3><p>实现如何于多用户的环境下<strong>共用相同的系统或程序组件</strong>，并且仍可<strong>确保各用户间数据的隔离性</strong>。</p>
+<h3 id="SaaS惯用架构模式：MVC（模型-视图-控制器）"><a href="#SaaS惯用架构模式：MVC（模型-视图-控制器）" class="headerlink" title="SaaS惯用架构模式：MVC（模型-视图-控制器）"></a>SaaS惯用架构模式：MVC（模型-视图-控制器）</h3><ul>
+<li><p><strong>目标：将承担不同职责的软件实体之间清晰地分离开，降低耦合</strong></p>
+<p><strong>用户界面与业务逻辑功能实现模块化</strong>，以便使开发人员<strong>分别开发、单独修改</strong>各个部分而不影响其他部分</p>
+</li>
+<li><p>MVC是一种软件体系结构，它将<strong>应用程序的数据模型/业务逻辑、用户界面分别放在独立的构件中</strong>，从而对用户界面的修改不会对数据模型/业务逻辑造成很大影响。</p>
+</li>
+<li><p>在传统的B/S体系结构的基础上加入了一个新的元素：<strong>控制器</strong>，<strong>由控制器来决定视图与模型之间的依赖关系</strong>。</p>
+</li>
+<li><p><strong>模型(Model, M)<strong>：用于管理应用系统的行为和数据，并响应为获取其状态信息(通常来自视图)而发出的请求，还会响应更改状态的指令(通常来自控制器)； ——</strong>对应于传统B/S中的业务逻辑和数据</strong></p>
+</li>
+<li><p><strong>视图(View, V)<strong>：用于管理数据的显示；——</strong>对应于传统B/S中的用户界面</strong></p>
+</li>
+<li><p><strong>控制器(Controller, C)<strong>：用于解释用户的鼠标和键盘输入，以通知模型和视图进行相应的更改。 ——</strong>在传统B/S结构中新增的元素</strong></p>
+</li>
+</ul>
+<p><img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095719.png" alt="image-20210531084441151"></p>
+<ul>
+<li>框架体现了<strong>体系结构级别的复用</strong></li>
+</ul>
+<h2 id="SaaS的部署环境：云平台"><a href="#SaaS的部署环境：云平台" class="headerlink" title="SaaS的部署环境：云平台"></a>SaaS的部署环境：云平台</h2><p><strong>软件部署与实施</strong>(Software Deployment &amp; Implementation)：将系统设计方案与软件系统转换成实际运行系统的全过程。</p>
+<p><strong>云计算目标：使计算能力可以像电能一样提供给用户</strong></p>
+<ul>
+<li>Cloud能提供的三种典型服务<ul>
+<li>IaaS</li>
+<li>PaaS</li>
+<li>SaaS</li>
+</ul>
+</li>
+</ul>
+<h1 id="4-3-基本架构风格"><a href="#4-3-基本架构风格" class="headerlink" title="4-3 基本架构风格"></a>4-3 基本架构风格</h1><h2 id="什么是架构风格"><a href="#什么是架构风格" class="headerlink" title="什么是架构风格"></a>什么是架构风格</h2><p><strong>软件方面的架构风格（模式）</strong>：<br>    <strong>分为三个层次：代码模式、设计模式、架构模式。</strong></p>
+<ul>
+<li>代码模式也可以说是编码时的套路，一些技巧,是最低层次的套路。只能影响某一方法或类中的一些细节。</li>
+<li>设计模式解决了一般性的设计问题，影响一个模块内部,是中等层次的重用策略。</li>
+<li>架构模式最高层层次的重用策略，实现定义好一些子系统、层，指定他们的责任，并给出把它们组织在一起的法则和指南。</li>
+</ul>
+<h2 id="调用返回风格"><a href="#调用返回风格" class="headerlink" title="调用返回风格"></a>调用返回风格</h2><p>以函数/对象作为基本构造单元，彼此通过call-return相互连接</p>
+<p>特征：不考虑分层，主要遵循同步调用方式</p>
+<p>本质：<strong>将大系统分解为若干模块(模块化)，主程序调用这些模块实现完整的系统功能。</strong></p>
+<h3 id="面向对象风格"><a href="#面向对象风格" class="headerlink" title="面向对象风格"></a>面向对象风格</h3><p><strong>构件：类和对象</strong></p>
+<p><strong>连接件：对象之间通过函数调用、消息传递实现交互</strong></p>
+<h2 id="以数据为中心风格"><a href="#以数据为中心风格" class="headerlink" title="以数据为中心风格"></a>以数据为中心风格</h2><p>略</p>
+<h2 id="层次风格"><a href="#层次风格" class="headerlink" title="层次风格"></a>层次风格</h2><ul>
+<li><p><strong>层次化</strong>早已成为一种复杂系统设计的普遍性原则</p>
+</li>
+<li><p>在层次系统中，系统被组织成若干个层次，每个层次由一系列构件组成；</p>
+</li>
+<li><p>层次之间存在接口，通过接口形成call/return的关系<br><strong>下层构件向上层构件提供服务</strong><br><strong>上层构件被看作是下层构件的客户端</strong></p>
+</li>
+</ul>
+<h3 id="层次系统的优点"><a href="#层次系统的优点" class="headerlink" title="层次系统的优点"></a>层次系统的优点</h3><ul>
+<li>这种风格支持基于可增加抽象层的设计，允许<strong>将一个复杂问题分解成一个增量步骤序列</strong>的实现。</li>
+<li>不同的层次处于不同的抽象级别：<br>越靠近底层，抽象级别越高；<br>越靠近顶层，抽象级别越低；</li>
+<li>由于每一层最多只影响两层，同时只要给相邻层提供相同的接口，允许每层用不同的方法实现，同样为<strong>软件复用</strong>提供了强大的支持。 </li>
+</ul>
+<h2 id="C-S和B-S结构"><a href="#C-S和B-S结构" class="headerlink" title="C/S和B/S结构"></a>C/S和B/S结构</h2><p><strong>业务逻辑</strong>的划分比重：在客户端多一些还是在服务器段多一些？</p>
+<ul>
+<li><strong>胖客户端：客户端执行大部分的数据处理操作</strong></li>
+<li><strong>瘦客户端：客户端具有很少或没有业务逻辑</strong></li>
+</ul>
+<p>其他内容前面有过了</p>
+<h2 id="事件风格"><a href="#事件风格" class="headerlink" title="事件风格"></a>事件风格</h2><ul>
+<li>显式调用：<br><strong>各个构件之间的互动是由显性调用函数或程序完成的。</strong><br><strong>调用过程与次序是固定的、预先设定的。</strong></li>
+<li>隐式调用：<br><strong>调用过程与次序不是固定的、预先未知；</strong><br><strong>各构件之间通过事件的方式进行交互；</strong></li>
+</ul>
+<h3 id="事件系统的基本构成"><a href="#事件系统的基本构成" class="headerlink" title="事件系统的基本构成"></a>事件系统的基本构成</h3><p><img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095715.png" alt="image-20210531091830232"></p>
+<h1 id="4-4-面向NFR的架构设计思想与案例"><a href="#4-4-面向NFR的架构设计思想与案例" class="headerlink" title="4-4 面向NFR的架构设计思想与案例"></a>4-4 面向NFR的架构设计思想与案例</h1><p>NFR，非功能需求</p>
+<p>从各个角度对系统的约束和限制，反映了客户对<strong>软件系统质量和性能</strong>(quality and performance)的额外要求，如响应时间、数据精度、可靠性等。</p>
+<h2 id="用于描述软件架构的部署模型"><a href="#用于描述软件架构的部署模型" class="headerlink" title="用于描述软件架构的部署模型"></a>用于描述软件架构的部署模型</h2><p><strong>软件部署</strong>：将软件项目本身，包括配置文件、用户手册、帮助文档等进行收集、打包、安装、配置、发布的过程</p>
+<p>系统通常使用分布式的多台硬件设备，通过UML的<strong>部署图</strong>(deployment diagram)来描述；</p>
+<h3 id="部署图"><a href="#部署图" class="headerlink" title="部署图"></a>部署图</h3><p>是结构图的一种，它展示了系统的架构。例如：一个软件系统的众多实体（Artifacts）是如何构成部署目标（Node，节点）的。</p>
+<ul>
+<li>实体（Artifact）：<strong>表示在现实世界中具体的元素</strong>。实体通常是开发过程的结果，例如：可执行文件、库、存档、数据库schema、配置文件等等。</li>
+<li>部署目标（Deployment target）：通常用节点（Node）来表示，<strong>代表一个硬件设备或某些软件运行环境</strong>。节点可以通过communication paths构成任意复杂度的、网络连接的系统。</li>
+</ul>
+<h1 id="5-1-软件需求与需求获取"><a href="#5-1-软件需求与需求获取" class="headerlink" title="5-1 软件需求与需求获取"></a>5-1 软件需求与需求获取</h1><h2 id="软件需求定义"><a href="#软件需求定义" class="headerlink" title="软件需求定义"></a>软件需求定义</h2><p><strong>以一种清晰、简洁、一致且无二义性的方式，描述用户对目标软件系统在功能、行为、性能、设计约束等方面的期望，是在开发过程中对系统的约束。</strong></p>
+<h2 id="软件需求的分类"><a href="#软件需求的分类" class="headerlink" title="软件需求的分类"></a>软件需求的分类</h2><ul>
+<li>业务需求：用户对于系统的<strong>高层次目标要求</strong>，定义了项目的<strong>远景和范畴</strong></li>
+<li>用户需求：从用户角度描述的<strong>系统功能需求和非功能需求</strong>，通常只涉及系统的<strong>外部行为</strong>而不涉及内部特性</li>
+<li>功能需求：系统应该提供的<strong>功能或服务</strong>，通常涉及用户或外部系统与该系统之间的交互，不考虑系统内部的实现细节</li>
+<li>非功能需求：从各个角度对系统的约束和限制，反映了客户对软件系统<strong>质量和性能</strong>的额外要求</li>
+<li>约束条件：系统设计和实现时必须满足的<strong>限制条件</strong>，对其无法或很难进行权衡或调整</li>
+<li>业务规则：<strong>对业务定义和约束的描述</strong>，是对某些功能的可执行性或<strong>内部执行逻辑</strong>的一些限定条件</li>
+<li>外部接口需求：描述系统与其所处的<strong>外部环境之间如何进行交互</strong></li>
+</ul>
+<h2 id="好的需求vs坏的需求"><a href="#好的需求vs坏的需求" class="headerlink" title="好的需求vs坏的需求"></a>好的需求vs坏的需求</h2><h3 id="好的需求"><a href="#好的需求" class="headerlink" title="好的需求"></a>好的需求</h3><ul>
+<li>完整性</li>
+<li>正确性</li>
+<li>可行性</li>
+<li>必要性</li>
+<li>划分优先级</li>
+<li>无二义性</li>
+<li>可验证性</li>
+</ul>
+<h3 id="产生不合格需求的原因"><a href="#产生不合格需求的原因" class="headerlink" title="产生不合格需求的原因"></a>产生不合格需求的原因</h3><ul>
+<li>无足够用户参与</li>
+<li>用户需求的不断增加</li>
+<li>模棱两可的需求</li>
+<li>不必要的特性</li>
+<li>过于精简的规格说明</li>
+<li>忽略了用户分类</li>
+<li>不准确的计划</li>
+</ul>
+<h2 id="需求工程"><a href="#需求工程" class="headerlink" title="需求工程"></a>需求工程</h2><ul>
+<li>需求获取</li>
+<li>需求分析</li>
+<li>需求规格说明</li>
+<li>需求验证</li>
+<li>需求管理</li>
+</ul>
+<h2 id="需求获取"><a href="#需求获取" class="headerlink" title="需求获取"></a>需求获取</h2><p>需求获取的目标：收集准备建立的系统和正在使用的系统的信息，并从这些信息中提取用户和系统需求，为下一步的需求分析提供素材</p>
+<p><img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627095709.png" alt="image-20210531102131446"></p>
+<h1 id="5-2-用户故事与用例建模"><a href="#5-2-用户故事与用例建模" class="headerlink" title="5-2 用户故事与用例建模"></a>5-2 用户故事与用例建模</h1><p>见笔记</p>
 
         </div>
 
@@ -1057,7 +1674,7 @@ mjx-container[display="true"] + br {
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-%E8%BD%AF%E5%B7%A5%E7%AE%80%E4%BB%8B"><span class="nav-text">0 软工简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA"><span class="nav-text">1 软件工程概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">1.1 软件的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%BA%A7%E7%94%9F%E7%9A%84%E5%8E%86%E5%8F%B2%E6%A0%B9%E6%BA%90"><span class="nav-text">1.2 软件工程产生的历史根源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%8D%B1%E6%9C%BA-star"><span class="nav-text">软件危机⭐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B"><span class="nav-text">1.3 软件工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E5%BF%B5"><span class="nav-text">1.3.1软件工程概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95%E5%AD%A6"><span class="nav-text">1.3.2 软件开发方法学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%8E%AF%E5%A2%83"><span class="nav-text">1.3.3 软件工具与软件工程环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-4-%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B"><span class="nav-text">1.3.4 软件过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-5-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">1.3.5 软件工程管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-6-%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E7%89%B9%E6%80%A7"><span class="nav-text">1.3.6 软件质量特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="nav-text">1.4 软件工程核心思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-text">1.4.1 软件工程的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-2-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E6%98%A0%E5%B0%84"><span class="nav-text">1.4.2 软件工程的映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-3-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-text">1.4.3 软件工程的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-5-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%85%B3%E6%B3%A8%E7%9A%84%E7%9B%AE%E6%A0%87"><span class="nav-text">1.4.5 软件工程关注的目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-6-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%A4%9A%E8%A7%92%E8%89%B2"><span class="nav-text">1.4.6 软件开发中的多角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-7-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-text">1.4.7 软件工程&#x3D;最佳实践</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-text">1.5 软件工程的核心概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-%E5%A4%8D%E7%94%A8"><span class="nav-text">1.5.1 复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-2-%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B"><span class="nav-text">1.5.2 分而治之</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-3-%E6%8A%98%E4%B8%AD"><span class="nav-text">1.5.3 折中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-4-%E6%BC%94%E5%8C%96"><span class="nav-text">1.5.4 演化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B"><span class="nav-text">2 敏捷开发过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.1 软件过程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B"><span class="nav-text">2.1.1 软件过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-%E9%BB%91%E7%9B%92%E8%BF%87%E7%A8%8B"><span class="nav-text">2.1.2 黑盒过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3-%E7%99%BD%E7%9B%92%E8%BF%87%E7%A8%8B"><span class="nav-text">2.1.3 白盒过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E5%85%B8%E5%9E%8B%E7%9A%84%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2 典型的软件过程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B%EF%BC%88%E9%B2%91%E9%B1%BC%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="nav-text">2.2.1 瀑布模型（鲑鱼模型）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-%E5%A2%9E%E9%87%8F%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B%EF%BC%9A%E5%A2%9E%E9%87%8F%E6%A8%A1%E5%9E%8B%EF%BC%8CRAD%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.2 增量过程模型：增量模型，RAD模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-%E6%BC%94%E5%8C%96%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.3 演化过程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-1-%E5%BF%AB%E9%80%9F%E5%8E%9F%E5%9E%8B%E6%B3%95"><span class="nav-text">2.2.3.1 快速原型法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-1-%E8%9E%BA%E6%97%8B%E5%BC%8F%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.3.1 螺旋式过程模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4-%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.4 形式化过程模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-5%E9%9D%A2%E5%90%91%E5%A4%8D%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B"><span class="nav-text">2.2.5面向复用的软件过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E6%95%8F%E6%8D%B7%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%96%B9%E6%B3%95-star"><span class="nav-text">2.3 敏捷过程与方法⭐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-%E6%95%8F%E6%8D%B7"><span class="nav-text">2.3.1 敏捷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-%E6%95%8F%E6%8D%B7%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.3.2 敏捷过程模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95%EF%BC%9A%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8BXP"><span class="nav-text">2.3.3 敏捷开发方法：极限编程XP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-4-%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95%EF%BC%9AScrum"><span class="nav-text">2.3.4 敏捷开发方法：Scrum</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-1-%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="nav-text">2.3.4.1  特点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-2-%E5%9B%9B%E4%B8%AA%E9%87%8D%E8%A6%81%E9%98%B6%E6%AE%B5"><span class="nav-text">2.3.4.2  四个重要阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-3-%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B"><span class="nav-text">2.3.4.3  基本过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-4-Scrum%E7%9A%84%E8%A7%92%E8%89%B2"><span class="nav-text">2.3.4.4  Scrum的角色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-5-%E4%B8%89%E4%B8%AA%E5%B7%A5%E4%BB%B6%EF%BC%9A"><span class="nav-text">2.3.4.5  三个工件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-6-Scrum%E4%B8%AD%E7%9A%84%E4%BA%94%E9%A1%B9%E6%B4%BB%E5%8A%A8-%E4%B8%80%E4%B8%AA%E5%90%88%E7%BA%A6"><span class="nav-text">2.3.4.6  Scrum中的五项活动+一个合约</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-7-%E6%97%B6%E9%97%B4%E7%9B%92%EF%BC%9A"><span class="nav-text">2.3.4.7  时间盒：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-7-Sprint%E8%AE%A1%E5%88%92%E4%BC%9A%E8%AE%AE%EF%BC%9A"><span class="nav-text">2.3.4.7   Sprint计划会议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-8-%E7%87%83%E5%B0%BD%E5%9B%BE"><span class="nav-text">2.3.4.8   燃尽图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-9-%E4%BB%BB%E5%8A%A1%E5%A2%99"><span class="nav-text">2.3.4.9  任务墙</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-10-%E7%9C%8B%E6%9D%BF"><span class="nav-text">2.3.4.10  看板</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-%E8%BD%AF%E5%B7%A5%E7%AE%80%E4%BB%8B"><span class="nav-text">0 软工简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA"><span class="nav-text">1 软件工程概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">1.1 软件的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%BA%A7%E7%94%9F%E7%9A%84%E5%8E%86%E5%8F%B2%E6%A0%B9%E6%BA%90"><span class="nav-text">1.2 软件工程产生的历史根源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%8D%B1%E6%9C%BA-star"><span class="nav-text">软件危机⭐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B"><span class="nav-text">1.3 软件工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E5%BF%B5"><span class="nav-text">1.3.1软件工程概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95%E5%AD%A6"><span class="nav-text">1.3.2 软件开发方法学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%8E%AF%E5%A2%83"><span class="nav-text">1.3.3 软件工具与软件工程环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-4-%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B"><span class="nav-text">1.3.4 软件过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-5-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">1.3.5 软件工程管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-6-%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E7%89%B9%E6%80%A7"><span class="nav-text">1.3.6 软件质量特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="nav-text">1.4 软件工程核心思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-text">1.4.1 软件工程的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-2-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E6%98%A0%E5%B0%84"><span class="nav-text">1.4.2 软件工程的映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-3-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-text">1.4.3 软件工程的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-5-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%85%B3%E6%B3%A8%E7%9A%84%E7%9B%AE%E6%A0%87"><span class="nav-text">1.4.5 软件工程关注的目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-6-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%A4%9A%E8%A7%92%E8%89%B2"><span class="nav-text">1.4.6 软件开发中的多角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-7-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-text">1.4.7 软件工程&#x3D;最佳实践</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-text">1.5 软件工程的核心概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-%E5%A4%8D%E7%94%A8"><span class="nav-text">1.5.1 复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-2-%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B"><span class="nav-text">1.5.2 分而治之</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-3-%E6%8A%98%E4%B8%AD"><span class="nav-text">1.5.3 折中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-4-%E6%BC%94%E5%8C%96"><span class="nav-text">1.5.4 演化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B"><span class="nav-text">2 敏捷开发过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.1 软件过程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B"><span class="nav-text">2.1.1 软件过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-%E9%BB%91%E7%9B%92%E8%BF%87%E7%A8%8B"><span class="nav-text">2.1.2 黑盒过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3-%E7%99%BD%E7%9B%92%E8%BF%87%E7%A8%8B"><span class="nav-text">2.1.3 白盒过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E5%85%B8%E5%9E%8B%E7%9A%84%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.1 典型的软件过程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B%EF%BC%88%E9%B2%91%E9%B1%BC%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="nav-text">2.2.1 瀑布模型（鲑鱼模型）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-%E5%A2%9E%E9%87%8F%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B%EF%BC%9A%E5%A2%9E%E9%87%8F%E6%A8%A1%E5%9E%8B%EF%BC%8CRAD%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.2 增量过程模型：增量模型，RAD模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-%E6%BC%94%E5%8C%96%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.3 演化过程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-1-%E5%BF%AB%E9%80%9F%E5%8E%9F%E5%9E%8B%E6%B3%95"><span class="nav-text">2.2.3.1 快速原型法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-1-%E8%9E%BA%E6%97%8B%E5%BC%8F%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.3.1 螺旋式过程模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4-%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.2.4 形式化过程模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%8F%E6%8D%B7%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%96%B9%E6%B3%95-star"><span class="nav-text">敏捷过程与方法⭐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-%E6%95%8F%E6%8D%B7"><span class="nav-text">2.3.1 敏捷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-%E6%95%8F%E6%8D%B7%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">2.3.2 敏捷过程模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95%EF%BC%9A%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8BXP"><span class="nav-text">2.3.3 敏捷开发方法：极限编程XP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-4-%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95%EF%BC%9AScrum"><span class="nav-text">2.3.4 敏捷开发方法：Scrum</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-1-%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="nav-text">2.3.4.1  特点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-2-%E5%9B%9B%E4%B8%AA%E9%87%8D%E8%A6%81%E9%98%B6%E6%AE%B5"><span class="nav-text">2.3.4.2  四个重要阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-3-%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B"><span class="nav-text">2.3.4.3  基本过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-4-Scrum%E7%9A%84%E8%A7%92%E8%89%B2"><span class="nav-text">2.3.4.4  Scrum的角色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-5-%E4%B8%89%E4%B8%AA%E5%B7%A5%E4%BB%B6%EF%BC%9A"><span class="nav-text">2.3.4.5  三个工件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-6-Scrum%E4%B8%AD%E7%9A%84%E4%BA%94%E9%A1%B9%E6%B4%BB%E5%8A%A8-%E4%B8%80%E4%B8%AA%E5%90%88%E7%BA%A6"><span class="nav-text">2.3.4.6  Scrum中的五项活动+一个合约</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-7-%E6%97%B6%E9%97%B4%E7%9B%92%EF%BC%9A"><span class="nav-text">2.3.4.7  时间盒：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-7-Sprint%E8%AE%A1%E5%88%92%E4%BC%9A%E8%AE%AE%EF%BC%9A"><span class="nav-text">2.3.4.7   Sprint计划会议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-8-%E7%87%83%E5%B0%BD%E5%9B%BE"><span class="nav-text">2.3.4.8   燃尽图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-9-%E4%BB%BB%E5%8A%A1%E5%A2%99"><span class="nav-text">2.3.4.9  任务墙</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-10-%E7%9C%8B%E6%9D%BF"><span class="nav-text">2.3.4.10  看板</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-4%E6%95%8F%E6%8D%B7DevOps%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95"><span class="nav-text">2.3.4敏捷DevOps开发方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">2.3.4.1 基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-2-DevOps%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%BF%87%E7%A8%8B"><span class="nav-text">2.3.4.2 DevOps生命周期过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-3-DevOps%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%94%B6%E7%9B%8A%E4%B8%8E%E4%BB%B7%E5%80%BC"><span class="nav-text">2.3.4.3 DevOps带来的收益与价值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-4-DevOps%E5%92%8C%E6%95%8F%E6%8D%B7%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-text">2.3.4.4 DevOps和敏捷的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-4-5-DevOps%E8%A6%86%E7%9B%96%E7%AB%AF%E5%88%B0%E7%AB%AF%E4%BA%A4%E4%BB%98%E5%91%A8%E6%9C%9F"><span class="nav-text">2.2.4.5 DevOps覆盖端到端交付周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-4-6%E5%8D%8E%E4%B8%BADevOps%E6%A1%86%E6%9E%B6"><span class="nav-text">2.2.4.6华为DevOps框架</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-5-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-text">2.2.5 软件开发过程模型的比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86"><span class="nav-text">2.3 软件项目管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%8B%A5%E5%B9%B2%E6%A6%82%E5%BF%B5"><span class="nav-text">基本若干概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E8%BD%AF%E4%BB%B6%E6%BC%94%E5%8C%96%E4%B8%8E%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86"><span class="nav-text">2-4 软件演化与配置管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-1%E4%BB%A3%E7%A0%81%E8%AF%84%E5%AE%A1%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="nav-text">3-1代码评审与优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80"><span class="nav-text">1.关于编程语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BB%A3%E7%A0%81%E7%9A%84%E9%94%99%E8%AF%AF%E4%B8%8E%E7%BC%BA%E9%99%B7"><span class="nav-text">2.代码的错误与缺陷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%BB%A3%E7%A0%81%E5%A4%8D%E5%AE%A1%EF%BC%9A%E9%9D%99%E6%80%81%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90"><span class="nav-text">3.代码复审：静态程序分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%EF%BC%9A%E5%8A%A8%E6%80%81%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90"><span class="nav-text">4. 性能分析：动态程序分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-2-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95"><span class="nav-text">3-2 软件测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80"><span class="nav-text">1 软件测试基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%BF%87%E7%A8%8B"><span class="nav-text">2 软件测试过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9F%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B"><span class="nav-text">传统瀑布模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#V%E6%A8%A1%E5%9E%8B"><span class="nav-text">V模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#W%E6%A8%A1%E5%9E%8B"><span class="nav-text">W模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-text">3 软件测试方法的分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-1-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%9E%B6%E6%9E%84%E6%A6%82%E8%AE%BA"><span class="nav-text">4-1 软件设计与架构概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%83%8C%E6%99%AF"><span class="nav-text">软件设计的背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">软件设计的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%89%AF%E5%A5%BD%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%89%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="nav-text">良好的设计的三个特征</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%8C%83%E7%95%B4%E5%92%8C%E5%86%85%E5%AE%B9"><span class="nav-text">软件设计的范畴和内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%9B%9B%E6%96%B9%E9%9D%A2%E5%86%85%E5%AE%B9"><span class="nav-text">软件设计四方面内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%A4%E5%A4%A7%E9%98%B6%E6%AE%B5"><span class="nav-text">软件设计的两大阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%8C%83%E7%95%B4"><span class="nav-text">软件架构的概念与范畴</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-text">软件设计的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84SOA"><span class="nav-text">面向服务的体系结构SOA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84"><span class="nav-text">微服务架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84SA"><span class="nav-text">软件架构SA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E5%90%91%E7%9B%AE%E6%A0%87vs%E5%86%85%E5%90%91%E7%9B%AE%E6%A0%87"><span class="nav-text">外向目标vs内向目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7%E7%9A%84%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-text">典型质量属性的架构设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84%E4%B8%AD%E7%9A%84%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-text">架构中的核心概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E7%9A%84%E5%9B%9B%E5%A4%A7%E6%80%9D%E6%83%B3"><span class="nav-text">软件架构的四大思想</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-2-SaaS%E4%B8%8E%E4%BA%91%E7%AB%AF%E8%BD%AF%E4%BB%B6%E9%83%A8%E7%BD%B2"><span class="nav-text">4-2 SaaS与云端软件部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-S-%E5%AE%A2%E6%88%B7%E6%9C%BA-%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">C&#x2F;S 客户机&#x2F;服务器体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-S%E7%BB%93%E6%9E%84-%E6%B5%8F%E8%A7%88%E5%99%A8-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">B&#x2F;S结构 浏览器&#x2F;服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-S-B-S%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F"><span class="nav-text">C&#x2F;S+B&#x2F;S混合模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M-V-%E7%A7%BB%E5%8A%A8%E7%AB%AF-%E4%BA%91%E7%AB%AF%E7%BB%93%E6%9E%84"><span class="nav-text">M&#x2F;V 移动端&#x2F;云端结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E6%B5%81%E8%BD%AF%E4%BB%B6%E5%BD%A2%E6%80%81%EF%BC%9ASaaS"><span class="nav-text">主流软件形态：SaaS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SaaS%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">SaaS的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SaaS%E7%9A%84%E5%B1%82%E6%AC%A1%E5%88%92%E5%88%86"><span class="nav-text">SaaS的层次划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%A7%9F%E6%88%B7%E6%8A%80%E6%9C%AF"><span class="nav-text">多租户技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SaaS%E6%83%AF%E7%94%A8%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F%EF%BC%9AMVC%EF%BC%88%E6%A8%A1%E5%9E%8B-%E8%A7%86%E5%9B%BE-%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%89"><span class="nav-text">SaaS惯用架构模式：MVC（模型-视图-控制器）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SaaS%E7%9A%84%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%EF%BC%9A%E4%BA%91%E5%B9%B3%E5%8F%B0"><span class="nav-text">SaaS的部署环境：云平台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-3-%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC"><span class="nav-text">4-3 基本架构风格</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC"><span class="nav-text">什么是架构风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E8%BF%94%E5%9B%9E%E9%A3%8E%E6%A0%BC"><span class="nav-text">调用返回风格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%A3%8E%E6%A0%BC"><span class="nav-text">面向对象风格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E6%95%B0%E6%8D%AE%E4%B8%BA%E4%B8%AD%E5%BF%83%E9%A3%8E%E6%A0%BC"><span class="nav-text">以数据为中心风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E9%A3%8E%E6%A0%BC"><span class="nav-text">层次风格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BC%98%E7%82%B9"><span class="nav-text">层次系统的优点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-S%E5%92%8CB-S%E7%BB%93%E6%9E%84"><span class="nav-text">C&#x2F;S和B&#x2F;S结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E9%A3%8E%E6%A0%BC"><span class="nav-text">事件风格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9E%84%E6%88%90"><span class="nav-text">事件系统的基本构成</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-4-%E9%9D%A2%E5%90%91NFR%E7%9A%84%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B8%8E%E6%A1%88%E4%BE%8B"><span class="nav-text">4-4 面向NFR的架构设计思想与案例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E4%BA%8E%E6%8F%8F%E8%BF%B0%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E7%9A%84%E9%83%A8%E7%BD%B2%E6%A8%A1%E5%9E%8B"><span class="nav-text">用于描述软件架构的部署模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%9B%BE"><span class="nav-text">部署图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-1-%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E4%B8%8E%E9%9C%80%E6%B1%82%E8%8E%B7%E5%8F%96"><span class="nav-text">5-1 软件需求与需求获取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E5%AE%9A%E4%B9%89"><span class="nav-text">软件需求定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-text">软件需求的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%BD%E7%9A%84%E9%9C%80%E6%B1%82vs%E5%9D%8F%E7%9A%84%E9%9C%80%E6%B1%82"><span class="nav-text">好的需求vs坏的需求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%BD%E7%9A%84%E9%9C%80%E6%B1%82"><span class="nav-text">好的需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A7%E7%94%9F%E4%B8%8D%E5%90%88%E6%A0%BC%E9%9C%80%E6%B1%82%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-text">产生不合格需求的原因</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B"><span class="nav-text">需求工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E8%8E%B7%E5%8F%96"><span class="nav-text">需求获取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-2-%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%E4%B8%8E%E7%94%A8%E4%BE%8B%E5%BB%BA%E6%A8%A1"><span class="nav-text">5-2 用户故事与用例建模</span></a></li></ol>
     </div>
 </div>
         </aside>
