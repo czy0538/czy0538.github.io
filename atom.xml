@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://czy0538.github.io</id>
+    <title>Gridea</title>
+    <updated>2022-10-05T06:57:52.195Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://czy0538.github.io"/>
+    <link rel="self" href="https://czy0538.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://czy0538.github.io/images/avatar.png</logo>
+    <icon>https://czy0538.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[C++笔记]]></title>
+        <id>https://czy0538.github.io/post/CPP-Notes/</id>
+        <link href="https://czy0538.github.io/post/CPP-Notes/">
+        </link>
+        <updated>2022-10-05T06:56:21.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="类sort排序">类sort排序</h3>
+<blockquote>
+<p>2020年4月11日11:02:05</p>
+</blockquote>
+<ol>
+<li>
+<p>场景描述</p>
+<p>有一个自定义的数据类型A（使用了类代替struct），A又被放在一个容器（如vector）中，需要依照A的某个成员的值进行排序。</p>
+</li>
+<li>
+<p>方法</p>
+<p>使用c++自带的sort函数即可，注意写一个排序函数，且该函数需要为类的静态函数，返回值为需要比较的元素的比较。</p>
+</li>
+<li>
+<p>代码</p>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;algorithm&gt;//sort函数头文件
+using namespace std;
+class Activity
+{
+public:
+	int startTime, endTime;
+	Activity()
+	{
+		cin &gt;&gt; startTime &gt;&gt; endTime;
+	}
+	static bool sort(Activity a, Activity b)//静态排序函数，必须要有static
+	{
+		return (a.endTime &lt; b.endTime);//升序，降序改为&gt;号即可
+	}
+	void output()
+	{
+		cout &lt;&lt; startTime &lt;&lt; &quot; &quot; &lt;&lt; endTime &lt;&lt; endl;
+	}
+
+};
+
+int main()
+{
+	vector&lt;Activity&gt; activities;
+	int num = 0;
+	cin &gt;&gt; num;
+	for (int i = 0; i &lt; num; ++i)
+	{
+		Activity at;
+		activities.push_back(at);
+	}
+	sort(activities.begin(), activities.end(), Activity::sort);//不要忘记命名空间
+	for (auto t : activities)
+	{
+		t.output();
+	}
+	return 0;
+}
+
+</code></pre>
+</li>
+</ol>
+<h3 id="stringstream使用">stringstream使用</h3>
+<blockquote>
+<p>2020年5月18日17:40:47</p>
+</blockquote>
+<ol>
+<li>
+<p>应用场景</p>
+<p>数串串数转换。</p>
+</li>
+<li>
+<p>方法</p>
+<p>包含在头文件#include&lt;sstream&gt;中。</p>
+<pre><code class="language-c++">template&lt;typename T,typename P&gt;
+inline T format(P data)
+{
+    stringstream ss;
+    ss&lt;&lt;data;
+    T out;
+    ss&gt;&gt;out;
+    return out;
+}
+</code></pre>
+</li>
+<li>
+<p>备注</p>
+<p>多次使用stringstream转换同一个数据请先清空，执行ss.clean()</p>
+</li>
+</ol>
+<h3 id="for循环判断条件">for循环判断条件</h3>
+<p>c++中，for循环中的判断条件是每次都会更新的，比如如下写法</p>
+<pre><code class="language-c++">    vector&lt;int&gt; num={1,2,3,4};
+    for(int i=0;i&lt;num.size();)
+    {
+        cout&lt;&lt;num[i]&lt;&lt;endl;
+        num.erase(num.begin()+i);
+    }
+</code></pre>
+<p>是可以正确输出整个数组的。但在matlab等语言里面可能不会更新</p>
+<h3 id="读取数量不定的输入数据">读取数量不定的输入数据</h3>
+<blockquote>
+<p>2020年9月14日08:53:31</p>
+</blockquote>
+<p>有时我们不知道需要读取多少数据，这是可以把读入语句放入while的判断条件中。当读入数据不符合要求（或遇到EOF）时，istream 对象会变为无效，使得while循环的值为假，循环中止。</p>
+<pre><code class="language-c++"> int value = 0;
+    while (cin &gt;&gt; value)
+    {
+        cout &lt;&lt; value &lt;&lt; endl;
+    }
+</code></pre>
+<h3 id="常量指针和指向常量的指针">常量指针和指向常量的指针</h3>
+<blockquote>
+<p>2020年9月14日09:20:38</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>指向常量的指针</strong>不能用于改变其所指对象的值。</p>
+</li>
+<li>
+<p>要想存放常量对象的地址，只能使用<strong>指向常量的指针</strong>。</p>
+</li>
+<li>
+<p>允许一个<strong>指向常量的指针</strong>指向一个非常量对象，但不能修改对象的值。</p>
+</li>
+<li>
+<p>常量指针初始化完成后，不再能改变，但其指向的值可以改变。</p>
+</li>
+<li>
+<p>对const 的引用同理。</p>
+</li>
+</ul>
+<pre><code class="language-cpp">    const int a = 0;
+    int b = 1;
+    const int &amp;aa = a; //常量引用
+    //int &amp;ea = a; //错误，必须进行常量引用
+    const int &amp;bb = b; //常量引用，只能访问b，不能修改b
+    int &amp;eb = b; //引用，可以修改b的值
+
+    const int *pa = &amp;a;//指向常量的指针
+    //int *pa = &amp;a;//错误，必须使用指向常量的指针
+    const int *pb = &amp;b;//正确，b的值无法被修改
+    int *ppb = &amp;b;//b的值可以被修改
+
+    const int *const cpa = &amp;a;//正确，cpa a均为常量
+    //int *const int cpa = &amp;a;//错误，cpa是一个常量指针，cpa无法被修改，但a仍可以被修改
+    int *const cpb = &amp;b;//cpb只能指向b
+</code></pre>
+<p>简单来说，const也应当被看作一个类似int的值。</p>
+<p>const int其实是一个数据类型，意为不能被修改的整数。</p>
+<p>故不能被修改的int指针就应该是 int *const</p>
+<h3 id="头文件">头文件</h3>
+<ul>
+<li>头文件通常包含那些只能被定义一次的实体，如类、const等</li>
+<li>最好包含#pragma once,相当于 #ifndef #endif的组合，作为头文件保护符</li>
+<li>头文件不应该包含using声明</li>
+</ul>
+<h3 id="string读入非空行">string读入非空行</h3>
+<p>getline不会忽略空行，但是遇到换行符就停止，但他也将换行符读入了,但在写入string对象时并不会写入换行符。所有getline如果只读到一个换行符，那么string对象为空.</p>
+<h3 id="使用stringstream分割数据">使用stringstream分割数据</h3>
+<pre><code class="language-c++">vector&lt;Person&gt; persons;
+    string line;
+    cout &lt;&lt; &quot;start input:&quot; &lt;&lt; endl;
+    while (getline(cin, line))
+    {
+        Person p;
+        stringstream ss;
+        ss &lt;&lt; line;
+        string word;
+        ss &gt;&gt; p.name;
+        while(ss&gt;&gt;word)
+        {
+            p.phones.push_back(word);
+        }
+        persons.push_back(p);
+    }
+</code></pre>
+<p>整行读入的数据，包含一个姓名，多个号码，可以先放入stringstream中，再逐个输出、</p>
+<h3 id="泛型算法">泛型算法</h3>
+<ul>
+<li>
+<p>大多数算法定义在头文件algorithm中，数值泛型算法定义在numeric中一般接受三个参数，头迭代器，尾迭代器，和一个值。</p>
+</li>
+<li>
+<p>泛型算法不会改变容器的大小，也不会修改容器中的值，不会增删元素。</p>
+</li>
+</ul>
+<h4 id="findcbegcendval">find(cbeg,cend,val)</h4>
+<p>查找范围内的与val匹配的元素</p>
+<h4 id="accumulatecbegcendval">accumulate(cbeg,cend,val)</h4>
+<p>以val为求和起点（假定元素类型定义了+运算符），将beg和end之间的元素加起来)</p>
+<pre><code class="language-c++">string num=accumulate(v.cbegin(),v.cend(),string(&quot;&quot;))//注意不要把空串当参数
+</code></pre>
+<h4 id="equalv1cbegv1cendv2cbeg">equal(v1.cbeg,v1.cend,v2.cbeg)</h4>
+<p>确定两个序列是否保存相同的值。</p>
+<p>将v1元素与v2中元素逐个比较，全部相同返回true，否则返回false。</p>
+<p>注意要求v2至少于v1一样长。</p>
+<h4 id="fillbegendval">fill(beg,end,val)</h4>
+<p>向beg，end范围内写入val</p>
+<h4 id="fill_nbegnumval">fill_n(beg,num,val)</h4>
+<p>从beg开始，顺序写入num个val</p>
+<h4 id="copybegenda2">copy(beg,end,a2)</h4>
+<p>将a1beg，end之间元素拷贝到a2，并返回a2最后一个拷贝位置后元素</p>
+<p>注意保证a2空间足够大</p>
+<h4 id="replacebegendrawtargt">replace(beg,end,raw,targt)</h4>
+<p>将beg，end之间的所有值为raw的元素改为target</p>
+<h3 id="指针delete">指针delete</h3>
+<p>指针p delete后，只会释放其空间，而不会将指针p置为nullptr，这时候再访问p会产生问题。</p>
+<h3 id="对象的消亡">对象的消亡</h3>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+class Cat
+{
+public:
+    int i;
+    Cat(int j) : i(j)
+    {
+
+        cout &lt;&lt; &quot;cat&quot; &lt;&lt; i &lt;&lt; &quot;was born&quot; &lt;&lt; endl;
+    }
+    ~Cat()
+    {
+        cout &lt;&lt; &quot;cat&quot; &lt;&lt; i &lt;&lt; &quot;was killed&quot; &lt;&lt; endl;
+    }
+};
+int main()
+{
+    Cat i(1);
+    Cat(2);
+    Cat j = Cat(5);
+    Cat *p = new Cat(3);
+    //Cat *j = &amp;Cat(4);
+    //Cat &amp;k = Cat(6);
+    system(&quot;pause&quot;);
+    return 0;
+}
+————————————————————————————————————————————————————————————————
+cat1was born//Cat1有变量名，可以被实例化
+cat2was born//Cat2是匿名对象，产生后被消亡了
+cat2was killed
+cat5was born//Cat5是匿名对象，但他接着被实例化，所以没有消亡
+cat3was born//Cat3是对象，且采用new分配
+Press any key to continue . . . 
+cat5was killed//执行return，编译器自动调用Cat5,1的析构函数
+cat1was killed
+//cat3 析构函数未调用
+</code></pre>
+<ol>
+<li>
+<p>为什么cat3没有析构函数在程序退出时未被调用：</p>
+<p>new出来的在堆上<br>
+直接定义的在栈上</p>
+<p>栈，就是那些由编译器在需要的时候分配，在不需要的时候自动清除的变量的存储区。里面的变量通常是局部变量、函数参数等。<br>
+堆，就是那些由new分配的内存块，他们的释放编译器不去管，由我们的应用程序去控制，一般一个new就要对应一个delete。如果程序员没有释放掉，那么在程序结束后，操作系统会自动回收。</p>
+</li>
+<li>
+<p>为什么注释掉的语句不可以</p>
+<pre><code class="language-c++">Cat *j = &amp;Cat(4);
+</code></pre>
+<blockquote>
+<p>error: taking address of temporary [-fpermissive]<br>
+A “taking address of temporary array” error means that you were trying to take the address of a temporary object. That won’t do what you think, because temporary objects self-destruct immediately after first use, so any address would be invalid before you could use it. So don’t do that. The error message should flag the code line (and even character number on that line) where the problem is. That should show you where you’re taking the address of a temporary. If you need to refer back to the contents of a temporary object, save it in a separate variable first. You can’t “re-visit” temporaries.</p>
+</blockquote>
+<p>不能够取临时对象（匿名对象）的地址</p>
+<pre><code class="language-c++">Cat &amp;k = Cat(6);
+</code></pre>
+<p>error: cannot bind non-const lvalue reference of type 'Cat&amp;' to an rvalue of type Cat'</p>
+</li>
+</ol>
+<h3 id="屏蔽警告">屏蔽警告</h3>
+<p>在开头加入这个语句，后面的数字是警告的编号</p>
+<pre><code class="language-c++"># pragma warning(disable:4819)
+</code></pre>
+<h3 id="屏蔽控制台">屏蔽控制台</h3>
+<img src="https://picgo-1305367394.cos.ap-beijing.myqcloud.com/picgo/20210627094242.png" alt="image-20201221213004832" style="zoom: 50%;" />
+<h3 id="主函数的参数">主函数的参数</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(int argc, char *argv[])
+{
+    printf(&quot;%d %s %s %s %s&quot;, argc, argv[0] ,argv[1], argv[2],argv[3]);
+    return 0;
+}
+</code></pre>
+<pre><code class="language-shell">(base) PS C:\Users\czy05\Desktop&gt; gcc test.c
+(base) PS C:\Users\czy05\Desktop&gt; ./a.exe 1 2 3
+4 C:\Users\czy05\Desktop\a.exe 1 2 3
+</code></pre>
+<p>argc为argv的长度，argv[0]为程序的地址，其余为变量</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[中文测试]]></title>
+        <id>https://czy0538.github.io/post/zhong-wen-ce-shi/</id>
+        <link href="https://czy0538.github.io/post/zhong-wen-ce-shi/">
+        </link>
+        <updated>2022-10-05T03:13:21.000Z</updated>
+        <content type="html"><![CDATA[<p>测试</p>
+]]></content>
+    </entry>
+</feed>
